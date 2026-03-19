@@ -27,8 +27,8 @@ const OrgTreeSection = () => {
           <div className="w-px h-8 bg-border" />
 
           {/* Level 2 — Curators */}
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10 relative">
-            {/* Horizontal connector line */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 w-full max-w-5xl relative">
+          {/* Horizontal connector line */}
             <div className="hidden md:block absolute top-0 left-1/4 right-1/4 h-px bg-border" />
             {orgTree.children?.map((curator) => (
               <div key={curator.id} className="flex flex-col items-center gap-6">
