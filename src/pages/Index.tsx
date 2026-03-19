@@ -1,16 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useRef, useCallback } from "react";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import TalksSection from "@/components/TalksSection";
+import OrgTreeSection from "@/components/OrgTreeSection";
+import AboutSection from "@/components/AboutSection";
+import Footer from "@/components/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const talksRef = useRef<HTMLDivElement>(null);
+  const teamRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+
+  const scrollTo = useCallback((section: string) => {
+    const refs: Record<string, React.RefObject<HTMLDivElement>> = {
+      hero: heroRef,
+      talks: talksRef,
+      team: teamRef,
+      about: aboutRef,
+    };
+    refs[section]?.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen">
+      <Navbar onNavigate={scrollTo} />
+      <div ref={heroRef}>
+        <HeroSection onWatchTalks={() => scrollTo("talks")} />
+      </div>
+      <div ref={talksRef}>
+        <TalksSection />
+      </div>
+      <div ref={teamRef}>
+        <OrgTreeSection />
+      </div>
+      <div ref={aboutRef}>
+        <AboutSection />
+      </div>
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
