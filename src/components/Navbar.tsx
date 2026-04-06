@@ -29,7 +29,7 @@ const Navbar = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-accent/95 backdrop-blur-md shadow-lg"
-            : "bg-transparent"
+            : "bg-accent/80 backdrop-blur-md"
         }`}
       >
         <div className="container mx-auto flex items-center justify-between h-16 px-6">
@@ -38,9 +38,7 @@ const Navbar = () => {
               TEDx
             </span>
             <span
-              className={`text-xl font-black tracking-tight transition-colors duration-500 ${
-                scrolled ? "text-accent-foreground" : "text-foreground"
-              }`}
+              className={`text-xl font-black tracking-tight transition-colors duration-500 text-accent-foreground`}
             >
               GUC
             </span>
@@ -54,9 +52,7 @@ const Navbar = () => {
                 className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-primary ${
                   location.pathname === link.to
                     ? "text-primary"
-                    : scrolled
-                    ? "text-accent-foreground/70"
-                    : "text-foreground/70"
+                    : "text-accent-foreground/70"
                 }`}
               >
                 {link.label}
@@ -72,9 +68,7 @@ const Navbar = () => {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden transition-colors ${
-              scrolled ? "text-accent-foreground" : "text-foreground"
-            }`}
+            className={`md:hidden transition-colors text-accent-foreground`}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

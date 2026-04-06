@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const sponsors = [
   { name: "TED", tier: "License Partner" },
   { name: "GUC", tier: "Host University" },
-  { name: "Vodafone Egypt", tier: "Gold Sponsor" },
-  { name: "Microsoft Egypt", tier: "Gold Sponsor" },
-  { name: "Orange Egypt", tier: "Silver Sponsor" },
-  { name: "Etisalat Egypt", tier: "Silver Sponsor" },
+  { name: "Ameto", tier: "Gold Sponsor" },
+  { name: "V7", tier: "Gold Sponsor" },
+  { name: "Crepe 2000", tier: "Silver Sponsor" },
+  { name: "HagmaxLama", tier: "Silver Sponsor" },
 ];
 
 const Sponsors = () => {

@@ -46,10 +46,10 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/talks"
+                to="/events"
                 className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-primary/85 hover:gap-5"
               >
-                Watch Latest Talks
+                Previous Events
                 <ArrowRight size={18} />
               </Link>
               <Link

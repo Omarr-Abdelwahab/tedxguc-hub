@@ -162,8 +162,8 @@ export const years = [...new Set(talks.map((t) => t.year))].sort((a, b) => b - a
 // Org trees by season
 const orgTree2025: OrgNode = {
   id: "chairman",
-  title: "Chairman",
-  name: "Dr. Mohamed Ashraf",
+  title: "Chairwoman",
+  name: "Sama El-Badrawy",
   level: 1,
   description:
     "The Chairman oversees the entire TEDxGUC operation, ensuring the event aligns with TED's mission of spreading ideas worth sharing. Responsible for strategic direction and external partnerships.",
@@ -171,7 +171,7 @@ const orgTree2025: OrgNode = {
     {
       id: "curator-talks",
       title: "Curator — Talks",
-      name: "Sara Youssef",
+      name: "Yehia Amr",
       level: 2,
       description: "Leads the Talks division, curating speakers and ensuring content quality aligns with the event's theme.",
       children: [
@@ -182,7 +182,7 @@ const orgTree2025: OrgNode = {
     {
       id: "curator-operations",
       title: "Curator — Operations",
-      name: "Khaled Mostafa",
+      name: "Kareem Shawish",
       level: 2,
       description: "Manages all operational logistics, event planning, and day-of execution to ensure seamless delivery.",
       children: [
@@ -194,7 +194,7 @@ const orgTree2025: OrgNode = {
     {
       id: "curator-od",
       title: "Curator — Organizational Development",
-      name: "Mona Ibrahim",
+      name: "Hazem Talhawy",
       level: 2,
       description: "Focuses on team growth, internal culture, and organizational excellence across all divisions.",
       children: [
@@ -205,7 +205,7 @@ const orgTree2025: OrgNode = {
     {
       id: "curator-marketing",
       title: "Curator — Marketing & Coordination",
-      name: "Tamer Wael",
+      name: "Jana Nader",
       level: 2,
       description: "Directs all marketing, branding, and communication strategies to amplify the TEDxGUC message.",
       children: [
@@ -219,7 +219,7 @@ const orgTree2025: OrgNode = {
 const orgTree2026: OrgNode = {
   id: "chairman",
   title: "Chairman",
-  name: "Laila Mahmoud",
+  name: "Kareem Shawish",
   level: 1,
   description:
     "Leading TEDxGUC into 2026 with a renewed vision for cross-disciplinary dialogue and community impact.",
@@ -227,46 +227,46 @@ const orgTree2026: OrgNode = {
     {
       id: "curator-talks",
       title: "Curator — Talks",
-      name: "Yara Fathi",
+      name: "Moaz Akram",
       level: 2,
       description: "Curating a diverse lineup of speakers who challenge conventional thinking.",
       children: [
-        { id: "exec-coaching", title: "Coaching", name: "Nabil Samir", level: 3, description: "Guiding speakers through intensive coaching to deliver impactful talks." },
-        { id: "exec-research", title: "Research & Production", name: "Hana Mostafa", level: 3, description: "Researching cutting-edge topics and managing production workflows." },
+        { id: "exec-coaching", title: "Coaching", name: "Ammar Ibrahim", level: 3, description: "Guiding speakers through intensive coaching to deliver impactful talks." },
+        { id: "exec-research", title: "Research & Production", name: "Abdulrahman Waleed", level: 3, description: "Researching cutting-edge topics and managing production workflows." },
       ],
     },
     {
       id: "curator-operations",
       title: "Curator — Operations",
-      name: "Tarek Adel",
+      name: "Kareem Roshdy",
       level: 2,
       description: "Ensuring flawless event execution from planning to post-event wrap-up.",
       children: [
-        { id: "exec-events", title: "Events Management", name: "Salma Reda", level: 3, description: "Coordinating all event logistics and attendee experience." },
-        { id: "exec-partnerships", title: "Partnerships", name: "Mahmoud Karim", level: 3, description: "Securing strategic partnerships and sponsor relations." },
-        { id: "exec-logistics", title: "Logistics", name: "Lina Gamal", level: 3, description: "Managing all on-ground logistics and vendor coordination." },
+        { id: "exec-events", title: "Events Management", name: "Laila El-Hadidy", level: 3, description: "Coordinating all event logistics and attendee experience." },
+        { id: "exec-partnerships", title: "Partnerships", name: "Hamza El-Khobby", level: 3, description: "Securing strategic partnerships and sponsor relations." },
+        { id: "exec-logistics", title: "Logistics", name: "Abdallah Nazih", level: 3, description: "Managing all on-ground logistics and vendor coordination." },
       ],
     },
     {
       id: "curator-od",
       title: "Curator — Organizational Development",
-      name: "Dalia Essam",
+      name: "Nour Ayman",
       level: 2,
       description: "Building a stronger, more connected team culture.",
       children: [
-        { id: "exec-assoc-dev", title: "Associate Development", name: "Omar Hossam", level: 3, description: "Creating growth opportunities and mentorship programs for associates." },
-        { id: "exec-assoc-exp", title: "Associate Experience", name: "Menna Ahmed", level: 3, description: "Designing engaging team experiences and well-being initiatives." },
+        { id: "exec-assoc-dev", title: "Associate Development", name: "Rohanda Ahmed", level: 3, description: "Creating growth opportunities and mentorship programs for associates." },
+        { id: "exec-assoc-exp", title: "Associate Experience", name: "Abdullah Abosamra", level: 3, description: "Designing engaging team experiences and well-being initiatives." },
       ],
     },
     {
       id: "curator-marketing",
       title: "Curator — Marketing & Coordination",
-      name: "Rami Sherif",
+      name: "Laila Eid",
       level: 2,
       description: "Amplifying TEDxGUC's reach through innovative marketing strategies.",
       children: [
-        { id: "exec-media", title: "Media & Design", name: "Jana Wael", level: 3, description: "Producing visual storytelling content across all platforms." },
-        { id: "exec-campaigns", title: "Campaigns & Copywriting", name: "Kareem Nour", level: 3, description: "Crafting compelling narratives and managing multi-channel campaigns." },
+        { id: "exec-media", title: "Media & Design", name: "Farida Sabrah", level: 3, description: "Producing visual storytelling content across all platforms." },
+        { id: "exec-campaigns", title: "Campaigns & Copywriting", name: "Malak Hatem", level: 3, description: "Crafting compelling narratives and managing multi-channel campaigns." },
       ],
     },
   ],
@@ -283,18 +283,18 @@ export const orgTree = orgTree2025;
 // Events archive
 export const events: TEDxEvent[] = [
   {
-    id: "2024-spring",
-    year: 2024,
-    season: "Spring",
-    theme: "Redefining Tomorrow",
-    date: "April 12, 2024",
-    venue: "GUC Main Auditorium, New Cairo",
-    recap: "Our 2024 Spring event brought together 8 speakers across technology, health, design, and culture to explore how we can redefine the future. With over 400 attendees, the event featured immersive experiences, networking sessions, and thought-provoking talks that challenged conventional thinking.",
+    id: "2025-spring",
+    year: 2025,
+    season: "Winter",
+    theme: "UnderConstruction",
+    date: "September 27 2025",
+    venue: "GUC Green Area, New Cairo",
+    recap: "Our 2025 Spring event brought together 8 speakers across technology, health, design, and culture to explore how we can redefine the future. With over 1000 attendees, the event featured immersive experiences, networking sessions, and thought-provoking talks that challenged conventional thinking.",
     speakers: [
-      { name: "Amira Hassan", talkTitle: "The Power of Vulnerability", topic: "Psychology" },
-      { name: "Omar El-Sayed", talkTitle: "Rethinking Education in the AI Era", topic: "Technology" },
-      { name: "Nour Abdelrahman", talkTitle: "Sustainable Cities: A Blueprint", topic: "Environment" },
-      { name: "Salma Khaled", talkTitle: "Music as Medicine", topic: "Health" },
+      { name: "Abdelrahman Ghareeb", talkTitle: "The Game Of Numbers", topic: "Engineering & Technology" },
+      { name: "Aida Shaaban", talkTitle: "Reading Our Relationship With Food", topic: "Human Sciences" },
+      { name: "Rami Hamdi", talkTitle: "A Story Called Beauty", topic: "Arts, Media & Design" },
+      
     ],
     gallery: [
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
@@ -302,7 +302,7 @@ export const events: TEDxEvent[] = [
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=500&fit=crop",
       "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=500&fit=crop",
     ],
-    sponsors: ["TED", "GUC", "Vodafone Egypt", "Microsoft Egypt"],
+    sponsors: ["TED", "GUC", "Krispy Kreme"],
   },
   {
     id: "2023-fall",
@@ -347,7 +347,7 @@ export const eventYears = [...new Set(events.map((e) => e.year))].sort((a, b) =>
 // Upcoming event data
 export const upcomingEvent = {
   theme: "Catalyst",
-  date: "October 18, 2026",
+  date: "May 18, 2026",
   venue: "GUC Main Auditorium, New Cairo",
   description: "Ideas that ignite change. TEDxGUC 'Catalyst' will bring together innovators, artists, and thinkers who spark transformation in their communities.",
 };
