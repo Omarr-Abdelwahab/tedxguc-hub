@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import { orgTree, OrgNode } from "@/data/mockData";
+import { orgTreesBySeason, OrgNode } from "@/data/mockData";
+
+const seasons = Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a));
 
 const OrgTreeSection = () => {
+  const [selectedSeason, setSelectedSeason] = useState(seasons[0]);
   const [selectedNode, setSelectedNode] = useState<OrgNode | null>(null);
+
+  const tree = orgTreesBySeason[selectedSeason];
 
   return (
     <section className="py-24 bg-secondary">
@@ -13,28 +18,43 @@ const OrgTreeSection = () => {
           <p className="text-primary font-semibold tracking-[0.2em] uppercase text-xs mb-3">
             Our People
           </p>
-          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-8">
             The Team
           </h2>
+
+          {/* Season toggle */}
+          <div className="flex gap-3 justify-center">
+            {seasons.map((s) => (
+              <button
+                key={s}
+                onClick={() => setSelectedSeason(s)}
+                className={`px-5 py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${
+                  selectedSeason === s
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-background border-2 border-border text-foreground hover:text-primary hover:border-primary"
+                }`}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Tree */}
         <div className="flex flex-col items-center gap-12">
           {/* Level 1 — Chairman */}
-          <TreeNode node={orgTree} onClick={setSelectedNode} />
+          <TreeNode node={tree} onClick={setSelectedNode} />
 
           {/* Connector */}
           <div className="w-px h-8 bg-border" />
 
           {/* Level 2 — Curators */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 w-full max-w-5xl relative">
-          {/* Horizontal connector line */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 w-full max-w-5xl relative">
             <div className="hidden md:block absolute top-0 left-1/4 right-1/4 h-px bg-border" />
-            {orgTree.children?.map((curator) => (
+            {tree.children?.map((curator) => (
               <div key={curator.id} className="flex flex-col items-center gap-6">
                 <TreeNode node={curator} onClick={setSelectedNode} />
 
-                {/* Connector to children */}
                 {curator.children && curator.children.length > 0 && (
                   <>
                     <div className="w-px h-6 bg-border" />
