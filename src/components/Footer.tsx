@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Instagram, Linkedin, Youtube, Send } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const Footer = () => {
   return (
     <footer className="bg-accent text-accent-foreground py-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Newsletter */}
           <div>
             <h3 className="text-2xl font-black mb-2">Stay in the loop</h3>
@@ -28,10 +29,7 @@ const Footer = () => {
                 ✓ You're subscribed! We'll keep you posted.
               </p>
             ) : (
-              <form
-                onSubmit={handleSubscribe}
-                className="flex gap-0"
-              >
+              <form onSubmit={handleSubscribe} className="flex gap-0">
                 <input
                   type="email"
                   required
@@ -48,6 +46,29 @@ const Footer = () => {
                 </button>
               </form>
             )}
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <div className="flex flex-col gap-2">
+              {[
+                { label: "Home", to: "/" },
+                { label: "About", to: "/about" },
+                { label: "Events", to: "/events" },
+                { label: "Talks", to: "/talks" },
+                { label: "Upcoming Event", to: "/upcoming" },
+                { label: "Contact", to: "/contact" },
+              ].map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-accent-foreground/50 text-sm hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Social & Brand */}

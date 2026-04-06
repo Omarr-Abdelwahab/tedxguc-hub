@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
-interface NavbarProps {
-  onNavigate: (section: string) => void;
-}
-
-const Navbar = ({ onNavigate }: NavbarProps) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -17,15 +15,13 @@ const Navbar = ({ onNavigate }: NavbarProps) => {
   }, []);
 
   const links = [
-    { label: "Talks", section: "talks" },
-    { label: "Our Team", section: "team" },
-    { label: "About", section: "about" },
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
+    { label: "Events", to: "/events" },
+    { label: "Talks", to: "/talks" },
+    { label: "Sponsors", to: "/sponsors" },
+    { label: "Contact", to: "/contact" },
   ];
-
-  const handleClick = (section: string) => {
-    onNavigate(section);
-    setMobileOpen(false);
-  };
 
   return (
     <>
@@ -37,11 +33,7 @@ const Navbar = ({ onNavigate }: NavbarProps) => {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between h-16 px-6">
-          {/* Logo */}
-          <button
-            onClick={() => onNavigate("hero")}
-            className="flex items-center gap-2 group"
-          >
+          <Link to="/" className="flex items-center gap-2 group">
             <span className="text-xl font-black tracking-tight text-primary">
               TEDx
             </span>
@@ -52,29 +44,32 @@ const Navbar = ({ onNavigate }: NavbarProps) => {
             >
               GUC
             </span>
-          </button>
+          </Link>
 
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
-              <button
-                key={link.section}
-                onClick={() => handleClick(link.section)}
+              <Link
+                key={link.to}
+                to={link.to}
                 className={`text-sm font-medium tracking-wide uppercase transition-colors duration-300 hover:text-primary ${
-                  scrolled
+                  location.pathname === link.to
+                    ? "text-primary"
+                    : scrolled
                     ? "text-accent-foreground/70"
                     : "text-foreground/70"
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
-            <button className="bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:bg-primary/85">
-              Sign In
-            </button>
+            <Link
+              to="/upcoming"
+              className="bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:bg-primary/85"
+            >
+              Join Waitlist
+            </Link>
           </div>
 
-          {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`md:hidden transition-colors ${
@@ -86,7 +81,6 @@ const Navbar = ({ onNavigate }: NavbarProps) => {
         </div>
       </nav>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -98,17 +92,26 @@ const Navbar = ({ onNavigate }: NavbarProps) => {
           >
             <div className="flex flex-col items-center gap-8 py-12">
               {links.map((link) => (
-                <button
-                  key={link.section}
-                  onClick={() => handleClick(link.section)}
-                  className="text-lg font-semibold uppercase tracking-widest text-accent-foreground/80 hover:text-primary transition-colors"
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setMobileOpen(false)}
+                  className={`text-lg font-semibold uppercase tracking-widest hover:text-primary transition-colors ${
+                    location.pathname === link.to
+                      ? "text-primary"
+                      : "text-accent-foreground/80"
+                  }`}
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
-              <button className="bg-primary text-primary-foreground px-8 py-3 text-sm font-semibold uppercase tracking-wide">
-                Sign In
-              </button>
+              <Link
+                to="/upcoming"
+                onClick={() => setMobileOpen(false)}
+                className="bg-primary text-primary-foreground px-8 py-3 text-sm font-semibold uppercase tracking-wide"
+              >
+                Join Waitlist
+              </Link>
             </div>
           </motion.div>
         )}
