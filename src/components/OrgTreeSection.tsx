@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { orgTreesBySeason, OrgNode } from "@/data/mockData";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -18,25 +18,7 @@ const OrgTreeSection = () => {
             Our People
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-8">
-            The Team
           </h2>
-
-          {/* Season toggle */}
-          <div className="flex gap-3 justify-center">
-            {seasons.map((s) => (
-              <button
-                key={s}
-                onClick={() => setSelectedSeason(s)}
-                className={`px-5 py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${
-                  selectedSeason === s
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-background border-2 border-border text-foreground hover:text-primary hover:border-primary"
-                }`}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Master-Detail Layout */}
