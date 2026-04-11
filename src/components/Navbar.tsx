@@ -19,7 +19,7 @@ const Navbar = () => {
     { label: "About", to: "/about" },
     { label: "Events", to: "/events" },
     { label: "Talks", to: "/talks" },
-    { label: "Sponsors", to: "/sponsors" },
+    { label: "Partners", to: "/partners" },
     { label: "Contact", to: "/contact" },
   ];
 

@@ -107,7 +107,7 @@ const EventDetail = () => {
       {/* Sponsors */}
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-6 max-w-3xl">
-          <h2 className="text-2xl font-black text-foreground mb-8">Sponsors</h2>
+          <h2 className="text-2xl font-black text-foreground mb-8">Partners</h2>
           <div className="flex flex-wrap gap-4">
             {event.sponsors.map((sponsor) => (
               <div
