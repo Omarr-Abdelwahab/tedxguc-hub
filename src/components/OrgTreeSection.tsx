@@ -1,31 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { orgTreesBySeason, OrgNode } from "@/data/mockData";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-const seasons = Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a));
-
-// Flatten tree to find all nodes
-const flattenTree = (node: OrgNode): OrgNode[] => {
-  const children = node.children?.flatMap(flattenTree) ?? [];
-  return [node, ...children];
-};
+const currentTree = orgTreesBySeason[Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a))[0]];
 
 const OrgTreeSection = () => {
-  const [selectedSeason, setSelectedSeason] = useState(seasons[0]);
-  const [selectedNode, setSelectedNode] = useState<OrgNode | null>(null);
+  const [selectedNode, setSelectedNode] = useState<OrgNode | null>(currentTree);
 
-  const tree = orgTreesBySeason[selectedSeason];
-
-  // Default to chairman on season change
-  useEffect(() => {
-    setSelectedNode(tree);
-  }, [selectedSeason]);
-
-  // Set initial selection
-  useEffect(() => {
-    setSelectedNode(tree);
-  }, []);
+  const tree = currentTree;
 
   return (
     <section className="py-24 bg-secondary">
@@ -35,25 +18,7 @@ const OrgTreeSection = () => {
             Our People
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-8">
-            The Team
           </h2>
-
-          {/* Season toggle */}
-          <div className="flex gap-3 justify-center">
-            {seasons.map((s) => (
-              <button
-                key={s}
-                onClick={() => setSelectedSeason(s)}
-                className={`px-5 py-2 text-sm font-semibold uppercase tracking-wider transition-colors ${
-                  selectedSeason === s
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-background border-2 border-border text-foreground hover:text-primary hover:border-primary"
-                }`}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* Master-Detail Layout */}
