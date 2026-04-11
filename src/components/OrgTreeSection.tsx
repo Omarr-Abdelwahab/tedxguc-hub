@@ -3,29 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { orgTreesBySeason, OrgNode } from "@/data/mockData";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-const seasons = Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a));
-
-// Flatten tree to find all nodes
-const flattenTree = (node: OrgNode): OrgNode[] => {
-  const children = node.children?.flatMap(flattenTree) ?? [];
-  return [node, ...children];
-};
+const currentTree = orgTreesBySeason[Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a))[0]];
 
 const OrgTreeSection = () => {
-  const [selectedSeason, setSelectedSeason] = useState(seasons[0]);
-  const [selectedNode, setSelectedNode] = useState<OrgNode | null>(null);
+  const [selectedNode, setSelectedNode] = useState<OrgNode | null>(currentTree);
 
-  const tree = orgTreesBySeason[selectedSeason];
-
-  // Default to chairman on season change
-  useEffect(() => {
-    setSelectedNode(tree);
-  }, [selectedSeason]);
-
-  // Set initial selection
-  useEffect(() => {
-    setSelectedNode(tree);
-  }, []);
+  const tree = currentTree;
 
   return (
     <section className="py-24 bg-secondary">
