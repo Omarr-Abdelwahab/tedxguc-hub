@@ -14,11 +14,10 @@ const OrgTreeSection = () => {
     <section className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="mb-16 text-center">
-          <p className="text-primary font-semibold tracking-[0.2em] uppercase text-xs mb-3">
-            Our People
-          </p>
-          <h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight mb-8">
+          <h2 className="text-5xl md:text-6xl font-black text-foreground tracking-tight mb-3">
+            Our <span className="text-primary">People</span>
           </h2>
+          <p className="text-muted-foreground text-lg">The team behind the ideas</p>
         </div>
 
         {/* Master-Detail Layout */}
