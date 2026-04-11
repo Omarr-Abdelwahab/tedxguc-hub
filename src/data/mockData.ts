@@ -17,6 +17,9 @@ export interface OrgNode {
   name: string;
   level: 1 | 2 | 3;
   description: string;
+  imageUrl: string;
+  committeeDescription: string;
+  memberBio?: string;
   children?: OrgNode[];
 }
 
