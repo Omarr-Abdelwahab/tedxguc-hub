@@ -164,9 +164,9 @@ interface AvatarNodeProps {
 }
 
 const AvatarNode = ({ node, isSelected, onClick, size = "md" }: AvatarNodeProps) => {
-  const avatarSize = size === "lg" ? "h-20 w-20" : size === "sm" ? "h-12 w-12" : "h-16 w-16";
-  const textSize = size === "sm" ? "text-[10px]" : "text-xs";
-  const nameSize = size === "sm" ? "text-[9px]" : "text-[11px]";
+  const avatarSize = size === "lg" ? "h-32 w-32" : size === "sm" ? "h-28 w-28" : "h-32 w-32";
+  const textSize = size === "sm" ? "text-xs" : "text-sm";
+  const nameSize = size === "sm" ? "text-[11px]" : "text-[13px]";
 
   return (
     <button
