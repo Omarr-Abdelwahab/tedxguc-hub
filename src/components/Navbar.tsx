@@ -33,14 +33,14 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between h-16 px-6">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-0 group">
             <span className="text-xl font-black tracking-tight text-primary">
               TEDx
             </span>
             <span
               className={`text-xl font-black tracking-tight transition-colors duration-500 text-accent-foreground`}
             >
-              GUC
+            GUC
             </span>
           </Link>
 

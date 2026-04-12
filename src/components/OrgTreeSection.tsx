@@ -2,11 +2,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { orgTreesBySeason, OrgNode } from "@/data/mockData";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const currentTree = orgTreesBySeason[Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a))[0]];
 
 const OrgTreeSection = () => {
   const [selectedNode, setSelectedNode] = useState<OrgNode | null>(currentTree);
+  const [imageDialogOpen, setImageDialogOpen] = useState(false);
 
   const tree = currentTree;
 
@@ -86,12 +88,18 @@ const OrgTreeSection = () => {
 
                   {/* Photo + Name */}
                   <div className="flex items-center gap-5">
-                    <Avatar className="h-20 w-20 border-2 border-primary">
-                      <AvatarImage src={selectedNode.imageUrl} alt={selectedNode.name} />
-                      <AvatarFallback className="text-lg font-bold bg-muted text-muted-foreground">
-                        {selectedNode.name.split(" ").map(n => n[0]).join("")}
-                      </AvatarFallback>
-                    </Avatar>
+                    <button
+                      type="button"
+                      onClick={() => setImageDialogOpen(true)}
+                      className="block rounded-full border-2 border-primary overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <Avatar className="h-20 w-20">
+                        <AvatarImage src={selectedNode.imageUrl} alt={selectedNode.name} />
+                        <AvatarFallback className="text-lg font-bold bg-muted text-muted-foreground">
+                          {selectedNode.name.split(" ").map(n => n[0]).join("")}
+                        </AvatarFallback>
+                      </Avatar>
+                    </button>
                     <div>
                       <h3 className="text-xl font-black text-foreground leading-tight">
                         {selectedNode.name}
@@ -101,6 +109,19 @@ const OrgTreeSection = () => {
                       </p>
                     </div>
                   </div>
+
+                  <Dialog open={imageDialogOpen} onOpenChange={setImageDialogOpen}>
+                    <DialogContent className="max-w-3xl px-0 py-0 bg-transparent shadow-none sm:rounded-none">
+                      <div className="relative overflow-hidden rounded-2xl bg-background shadow-xl">
+                        <DialogTitle className="sr-only">{selectedNode.name} photo</DialogTitle>
+                        <img
+                          src={selectedNode.imageUrl}
+                          alt={selectedNode.name}
+                          className="block max-h-[80vh] w-full object-cover"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
 
                   <div className="w-full h-px bg-border" />
 

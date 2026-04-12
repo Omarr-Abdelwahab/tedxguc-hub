@@ -128,7 +128,7 @@ const Index = () => {
             rel="noopener noreferrer"
             className="text-primary font-semibold text-sm uppercase tracking-wider hover:underline"
           >
-            Learn more about the TEDx program →
+            Learn more about the TED<span className="text-xs">x</span> program →
           </a>
         </div>
       </section>

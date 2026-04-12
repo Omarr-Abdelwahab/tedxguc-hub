@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# TEDxGUC Hub
 
 TODO: Document your project here
