@@ -1,15 +1,48 @@
-import { useState, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { talks, topics, years, Talk } from "@/data/mockData";
+import { fetchTalks } from "@/lib/api";
+import type { Talk } from "@/types/content";
 import TheatreMode from "./TheatreMode";
 
 const TalksSection = () => {
+  const [talks, setTalks] = useState<Talk[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
   const [search, setSearch] = useState("");
   const [topicFilter, setTopicFilter] = useState("");
   const [yearFilter, setYearFilter] = useState<number | "">("");
   const [selectedTalk, setSelectedTalk] = useState<Talk | null>(null);
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadTalks = async () => {
+      try {
+        const fetchedTalks = await fetchTalks();
+        if (isMounted) {
+          setTalks(fetchedTalks);
+        }
+      } catch {
+        if (isMounted) {
+          setErrorMessage("Unable to load talks right now.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadTalks();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const topics = useMemo(() => [...new Set(talks.map((t) => t.topic))], [talks]);
+  const years = useMemo(() => [...new Set(talks.map((t) => t.year))].sort((a, b) => b - a), [talks]);
 
   const filtered = useMemo(() => {
     return talks.filter((t) => {
@@ -21,12 +54,18 @@ const TalksSection = () => {
       const matchYear = !yearFilter || t.year === yearFilter;
       return matchSearch && matchTopic && matchYear;
     });
-  }, [search, topicFilter, yearFilter]);
+  }, [talks, search, topicFilter, yearFilter]);
 
   const toggleFav = (id: string) => {
     setFavorites((prev) => {
       const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
+
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+
       return next;
     });
   };
@@ -88,6 +127,15 @@ const TalksSection = () => {
         </div>
 
         {/* Video Grid */}
+        {isLoading && (
+          <p className="text-center text-muted-foreground py-16">Loading talks...</p>
+        )}
+
+        {errorMessage && (
+          <p className="text-center text-red-500 py-16">{errorMessage}</p>
+        )}
+
+        {!isLoading && !errorMessage && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filtered.map((talk, i) => (
             <motion.div
@@ -146,8 +194,9 @@ const TalksSection = () => {
             </motion.div>
           ))}
         </div>
+        )}
 
-        {filtered.length === 0 && (
+        {!isLoading && !errorMessage && filtered.length === 0 && (
           <p className="text-center text-muted-foreground py-16">
             No talks found matching your filters.
           </p>

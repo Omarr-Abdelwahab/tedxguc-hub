@@ -1,16 +1,68 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { orgTreesBySeason, OrgNode } from "@/data/mockData";
+import { fetchOrgTrees } from "@/lib/api";
+import type { OrgNode } from "@/types/content";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
-const currentTree = orgTreesBySeason[Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a))[0]];
-
 const OrgTreeSection = () => {
-  const [selectedNode, setSelectedNode] = useState<OrgNode | null>(currentTree);
+  const [orgTreesBySeason, setOrgTreesBySeason] = useState<Record<string, OrgNode>>({});
+  const [selectedNode, setSelectedNode] = useState<OrgNode | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
   const [imageDialogOpen, setImageDialogOpen] = useState(false);
 
-  const tree = currentTree;
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadOrgTrees = async () => {
+      try {
+        const trees = await fetchOrgTrees();
+        if (!isMounted) {
+          return;
+        }
+
+        setOrgTreesBySeason(trees);
+        const currentTree = trees[Object.keys(trees).sort((a, b) => Number(b) - Number(a))[0]] || null;
+        setSelectedNode(currentTree);
+      } catch {
+        if (isMounted) {
+          setErrorMessage("Unable to load organization tree right now.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadOrgTrees();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const tree = useMemo(() => {
+    const latestSeason = Object.keys(orgTreesBySeason).sort((a, b) => Number(b) - Number(a))[0];
+    return latestSeason ? orgTreesBySeason[latestSeason] : null;
+  }, [orgTreesBySeason]);
+
+  if (isLoading) {
+    return (
+      <section className="py-24 bg-secondary">
+        <div className="container mx-auto px-6 text-center text-muted-foreground">Loading organization tree...</div>
+      </section>
+    );
+  }
+
+  if (errorMessage || !tree) {
+    return (
+      <section className="py-24 bg-secondary">
+        <div className="container mx-auto px-6 text-center text-red-500">{errorMessage || "Organization tree is unavailable."}</div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-24 bg-secondary">
@@ -96,7 +148,7 @@ const OrgTreeSection = () => {
                       <Avatar className="h-20 w-20">
                         <AvatarImage src={selectedNode.imageUrl} alt={selectedNode.name} />
                         <AvatarFallback className="text-lg font-bold bg-muted text-muted-foreground">
-                          {selectedNode.name.split(" ").map(n => n[0]).join("")}
+                          {selectedNode.name.split(" ").map((n) => n[0]).join("")}
                         </AvatarFallback>
                       </Avatar>
                     </button>
@@ -182,7 +234,7 @@ const AvatarNode = ({ node, isSelected, onClick, size = "md" }: AvatarNodeProps)
       >
         <AvatarImage src={node.imageUrl} alt={node.name} />
         <AvatarFallback className="bg-muted text-muted-foreground font-bold text-xs">
-          {node.name.split(" ").map(n => n[0]).join("")}
+          {node.name.split(" ").map((n) => n[0]).join("")}
         </AvatarFallback>
       </Avatar>
       <div className="text-center">

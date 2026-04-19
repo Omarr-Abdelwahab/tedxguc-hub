@@ -1,16 +1,54 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, CalendarDays, MapPin, Mic, Users } from "lucide-react";
-import { talks, upcomingEvent, Talk } from "@/data/mockData";
+import { fetchTalks, fetchUpcoming } from "@/lib/api";
+import type { Talk, UpcomingEvent } from "@/types/content";
 import { AnimatePresence } from "framer-motion";
 import TheatreMode from "@/components/TheatreMode";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [talks, setTalks] = useState<Talk[]>([]);
+  const [upcomingEvent, setUpcomingEvent] = useState<UpcomingEvent | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
   const [selectedTalk, setSelectedTalk] = useState<Talk | null>(null);
-  const highlightTalks = talks.filter((t) => t.year === 2024).slice(0, 6);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadContent = async () => {
+      try {
+        const [talksData, upcomingData] = await Promise.all([fetchTalks(), fetchUpcoming()]);
+        if (!isMounted) {
+          return;
+        }
+
+        setTalks(talksData);
+        setUpcomingEvent(upcomingData.upcomingEvent);
+      } catch {
+        if (isMounted) {
+          setErrorMessage("Unable to load homepage content.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadContent();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const highlightTalks = useMemo(() => {
+    const recent = talks.filter((talk) => talk.year === 2024).slice(0, 6);
+    return recent.length > 0 ? recent : talks.slice(0, 6);
+  }, [talks]);
 
   return (
     <div className="min-h-screen">
@@ -77,19 +115,19 @@ const Index = () => {
               Next Event
             </p>
             <h2 className="text-4xl md:text-6xl font-black text-foreground tracking-tight mb-4">
-              {upcomingEvent.theme}
+              {upcomingEvent?.theme || "Upcoming"}
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
-              {upcomingEvent.description}
+              {upcomingEvent?.description || "Event details will be announced soon."}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 mb-8">
               <div className="flex items-center gap-3 text-foreground">
                 <CalendarDays size={20} className="text-primary" />
-                <span className="text-sm font-medium">{upcomingEvent.date}</span>
+                <span className="text-sm font-medium">{upcomingEvent?.date || "TBA"}</span>
               </div>
               <div className="flex items-center gap-3 text-foreground">
                 <MapPin size={20} className="text-primary" />
-                <span className="text-sm font-medium">{upcomingEvent.venue}</span>
+                <span className="text-sm font-medium">{upcomingEvent?.venue || "TBA"}</span>
               </div>
             </div>
             <Link
@@ -144,7 +182,10 @@ const Index = () => {
               Highlights
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {isLoading && <p className="text-center text-muted-foreground py-10">Loading highlights...</p>}
+          {errorMessage && <p className="text-center text-red-500 py-10">{errorMessage}</p>}
+
+          {!isLoading && !errorMessage && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {highlightTalks.map((talk, i) => (
               <motion.div
                 key={talk.id}
@@ -181,7 +222,7 @@ const Index = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div>}
           <div className="text-center mt-12">
             <Link
               to="/talks"

@@ -1,12 +1,59 @@
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { CalendarDays, MapPin, ArrowLeft } from "lucide-react";
-import { events } from "@/data/mockData";
+import { fetchEventById } from "@/lib/api";
+import type { TEDxEvent } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const EventDetail = () => {
   const { eventId } = useParams();
-  const event = events.find((e) => e.id === eventId);
+  const [event, setEvent] = useState<TEDxEvent | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadEvent = async () => {
+      if (!eventId) {
+        if (isMounted) {
+          setEvent(null);
+          setIsLoading(false);
+        }
+        return;
+      }
+
+      try {
+        const data = await fetchEventById(eventId);
+        if (isMounted) {
+          setEvent(data);
+        }
+      } catch {
+        if (isMounted) {
+          setEvent(null);
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadEvent();
+    return () => {
+      isMounted = false;
+    };
+  }, [eventId]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen">
+        <Navbar />
+        <div className="pt-32 pb-20 text-center text-muted-foreground">Loading event...</div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!event) {
     return (

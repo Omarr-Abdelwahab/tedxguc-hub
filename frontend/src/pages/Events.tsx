@@ -1,13 +1,49 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { CalendarDays, MapPin, ArrowRight } from "lucide-react";
-import { events, eventYears } from "@/data/mockData";
+import { fetchEvents } from "@/lib/api";
+import type { TEDxEvent } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Events = () => {
+  const [events, setEvents] = useState<TEDxEvent[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
   const [yearFilter, setYearFilter] = useState<number | "">("");
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadEvents = async () => {
+      try {
+        const data = await fetchEvents();
+        if (isMounted) {
+          setEvents(data);
+        }
+      } catch {
+        if (isMounted) {
+          setErrorMessage("Unable to load events right now.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadEvents();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const eventYears = useMemo(
+    () => [...new Set(events.map((event) => event.year))].sort((a, b) => b - a),
+    [events],
+  );
 
   const filtered = yearFilter
     ? events.filter((e) => e.year === yearFilter)
@@ -58,7 +94,10 @@ const Events = () => {
           </div>
 
           {/* Event cards */}
-          <div className="space-y-8 max-w-4xl">
+          {isLoading && <p className="text-center text-muted-foreground py-10">Loading events...</p>}
+          {errorMessage && <p className="text-center text-red-500 py-10">{errorMessage}</p>}
+
+          {!isLoading && !errorMessage && <div className="space-y-8 max-w-4xl">
             {filtered.map((event, i) => (
               <motion.div
                 key={event.id}
@@ -98,7 +137,7 @@ const Events = () => {
                 </Link>
               </motion.div>
             ))}
-          </div>
+          </div>}
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import { motion } from "framer-motion";
-import { Talk } from "@/data/mockData";
+import type { Talk } from "@/types/content";
 
 interface TheatreModeProps {
   talk: Talk;

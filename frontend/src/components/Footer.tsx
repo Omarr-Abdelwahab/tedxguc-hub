@@ -1,16 +1,48 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Instagram, Linkedin, Youtube, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (email) {
+
+    if (!email) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = (await response.json()) as {
+        ok: boolean;
+        message?: string;
+        error?: string;
+      };
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || "Unable to subscribe right now.");
+      }
+
       setSubscribed(true);
       setEmail("");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Unable to subscribe right now.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -29,22 +61,28 @@ const Footer = () => {
                 ✓ You're subscribed! We'll keep you posted.
               </p>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex gap-0">
-                <input
-                  type="email"
-                  required
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-accent-foreground/10 text-accent-foreground placeholder:text-accent-foreground/30 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary border-none"
-                />
-                <button
-                  type="submit"
-                  className="bg-primary text-primary-foreground px-6 py-3 font-semibold text-sm uppercase tracking-wider hover:bg-primary/85 transition-colors flex items-center gap-2"
-                >
-                  <Send size={16} />
-                </button>
-              </form>
+              <>
+                <form onSubmit={handleSubscribe} className="flex gap-0">
+                  <input
+                    type="email"
+                    required
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 bg-accent-foreground/10 text-accent-foreground placeholder:text-accent-foreground/30 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary border-none"
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-primary text-primary-foreground px-6 py-3 font-semibold text-sm uppercase tracking-wider hover:bg-primary/85 transition-colors flex items-center gap-2"
+                  >
+                    {isSubmitting ? "..." : <Send size={16} />}
+                  </button>
+                </form>
+                {errorMessage && (
+                  <p className="mt-3 text-sm text-red-400">{errorMessage}</p>
+                )}
+              </>
             )}
           </div>
 

@@ -1,17 +1,41 @@
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-
-const sponsors = [
-  { name: "TED", tier: "License Partner" },
-  { name: "GUC", tier: "Host University" },
-  { name: "Ameto", tier: "Gold Sponsor" },
-  { name: "V7", tier: "Gold Sponsor" },
-  { name: "Crepe 2000", tier: "Silver Sponsor" },
-  { name: "HagmaxLama", tier: "Silver Sponsor" },
-];
+import { fetchSponsors } from "@/lib/api";
+import type { Sponsor } from "@/types/content";
 
 const Sponsors = () => {
+  const [sponsors, setSponsors] = useState<Sponsor[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadSponsors = async () => {
+      try {
+        const data = await fetchSponsors();
+        if (isMounted) {
+          setSponsors(data);
+        }
+      } catch {
+        if (isMounted) {
+          setErrorMessage("Unable to load sponsors right now.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadSponsors();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -29,7 +53,10 @@ const Sponsors = () => {
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 max-w-4xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {isLoading && <p className="text-center text-muted-foreground py-10">Loading sponsors...</p>}
+          {errorMessage && <p className="text-center text-red-500 py-10">{errorMessage}</p>}
+
+          {!isLoading && !errorMessage && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sponsors.map((s) => (
               <div
                 key={s.name}
@@ -44,7 +71,7 @@ const Sponsors = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </div>}
 
           <div className="text-center mt-16">
             <p className="text-muted-foreground text-sm mb-4">

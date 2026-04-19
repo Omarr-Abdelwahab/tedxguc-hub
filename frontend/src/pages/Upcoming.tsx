@@ -1,12 +1,8 @@
-import { useState } from "react";
-import { CalendarDays, MapPin, ChevronDown, Clock, Mic, Coffee, Zap } from "lucide-react";
+import { useEffect, useState } from "react";
+import { CalendarDays, MapPin, Mic, Coffee, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import {
-  upcomingEvent,
-  upcomingSchedule,
-  upcomingFAQs,
-  upcomingSpeakers,
-} from "@/data/mockData";
+import { fetchUpcoming } from "@/lib/api";
+import type { FAQ, ScheduleItem, UpcomingEvent } from "@/types/content";
 import {
   Accordion,
   AccordionContent,
@@ -17,6 +13,64 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Upcoming = () => {
+  const [upcomingEvent, setUpcomingEvent] = useState<UpcomingEvent | null>(null);
+  const [upcomingSchedule, setUpcomingSchedule] = useState<ScheduleItem[]>([]);
+  const [upcomingFAQs, setUpcomingFAQs] = useState<FAQ[]>([]);
+  const [upcomingSpeakers, setUpcomingSpeakers] = useState<{ name: string; topic: string }[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadUpcoming = async () => {
+      try {
+        const data = await fetchUpcoming();
+        if (!isMounted) {
+          return;
+        }
+
+        setUpcomingEvent(data.upcomingEvent);
+        setUpcomingSchedule(data.upcomingSchedule || []);
+        setUpcomingFAQs(data.upcomingFAQs || []);
+        setUpcomingSpeakers(data.upcomingSpeakers || []);
+      } catch {
+        if (isMounted) {
+          setErrorMessage("Unable to load upcoming event details.");
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    void loadUpcoming();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen">
+        <Navbar />
+        <div className="pt-32 pb-20 text-center text-muted-foreground">Loading upcoming event...</div>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (errorMessage || !upcomingEvent) {
+    return (
+      <div className="min-h-screen">
+        <Navbar />
+        <div className="pt-32 pb-20 text-center text-red-500">{errorMessage || "Upcoming event data is unavailable."}</div>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen">
       <Navbar />
