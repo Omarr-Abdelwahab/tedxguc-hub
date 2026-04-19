@@ -11,6 +11,7 @@ import {
 import {
   addContactSubmission,
   addNewsletterSubscriber,
+  addSpeakerNomination,
   getContactSubmissions,
   getAllContent,
   getContactSubjects,
@@ -19,6 +20,7 @@ import {
   getHealthSummary,
   getNewsletterSubscribers,
   getOrgTreesBySeason,
+  getSpeakerNominations,
   getSponsors,
   getTalks,
   getUpcomingContent,
@@ -405,6 +407,67 @@ const requestHandler = async (req, res) => {
       return;
     }
 
+    if (req.method === "POST" && requestUrl.pathname === "/api/nominations/speaker") {
+      try {
+        const body = await readBody(req);
+        const nominatorName = String(body.nominatorName || "").trim();
+        const nominatorEmail = String(body.nominatorEmail || "").trim();
+        const speakerName = String(body.speakerName || "").trim();
+        const speakerEmail = String(body.speakerEmail || "").trim();
+        const speakerTopic = String(body.speakerTopic || "").trim();
+        const speakerBio = String(body.speakerBio || "").trim();
+        const whyNominate = String(body.whyNominate || "").trim();
+        const speakerSocialLinks = String(body.speakerSocialLinks || "").trim();
+
+        if (!nominatorName || !nominatorEmail || !speakerName || !speakerEmail || !speakerTopic || !speakerBio || !whyNominate) {
+          sendJson(res, 400, {
+            ok: false,
+            error: "All required fields must be provided.",
+          });
+          return;
+        }
+
+        if (!isValidEmail(nominatorEmail)) {
+          sendJson(res, 400, {
+            ok: false,
+            error: "Please provide a valid nominator email address.",
+          });
+          return;
+        }
+
+        if (!isValidEmail(speakerEmail)) {
+          sendJson(res, 400, {
+            ok: false,
+            error: "Please provide a valid speaker email address.",
+          });
+          return;
+        }
+
+        const nomination = addSpeakerNomination({
+          nominatorName,
+          nominatorEmail,
+          speakerName,
+          speakerEmail,
+          speakerTopic,
+          speakerBio,
+          whyNominate,
+          speakerSocialLinks: speakerSocialLinks || null,
+        });
+
+        sendJson(res, 201, {
+          ok: true,
+          message: "Thank you for nominating a speaker! We will review their profile and get back to you soon.",
+          nomination,
+        });
+      } catch (error) {
+        sendJson(res, 400, {
+          ok: false,
+          error: error instanceof Error ? error.message : "Unable to process nomination.",
+        });
+      }
+      return;
+    }
+
     if (req.method === "GET" && requestUrl.pathname === "/api/submissions/contact") {
       if (!requireAdmin(req, res)) {
         return;
@@ -420,6 +483,15 @@ const requestHandler = async (req, res) => {
       }
 
       sendJson(res, 200, { subscribers: getNewsletterSubscribers() });
+      return;
+    }
+
+    if (req.method === "GET" && requestUrl.pathname === "/api/submissions/nominations") {
+      if (!requireAdmin(req, res)) {
+        return;
+      }
+
+      sendJson(res, 200, { nominations: getSpeakerNominations() });
       return;
     }
 

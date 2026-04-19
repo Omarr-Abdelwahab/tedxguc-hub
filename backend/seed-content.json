@@ -37,7 +37,7 @@
       "id": "1",
       "title": "The Power of Vulnerability",
       "speaker": "Amira Hassan",
-      "speakerBio": "",
+      "speakerBio": "Amira Hassan is a clinical psychologist and mental health advocate with over 8 years of experience in helping individuals overcome emotional barriers. She specializes in trauma recovery and has worked with diverse populations across the Middle East, combining evidence-based therapeutic practices with culturally-sensitive approaches.",
       "topic": "Psychology",
       "year": 2024,
       "duration": "18:04",
@@ -46,11 +46,11 @@
       "socialLinks": [
         {
           "platform": "LinkedIn",
-          "url": "#"
+          "url": "https://linkedin.com/in/amira-hassan"
         },
         {
           "platform": "Twitter",
-          "url": "#"
+          "url": "https://twitter.com/amira_hassan_psych"
         }
       ]
     },
@@ -58,7 +58,7 @@
       "id": "2",
       "title": "Rethinking Education in the AI Era",
       "speaker": "Omar El-Sayed",
-      "speakerBio": "",
+      "speakerBio": "Omar El-Sayed is an EdTech innovator and founder of an AI-powered learning platform used by over 50,000 students across the MENA region. With a background in computer science and education, he focuses on bridging the gap between technology and personalized learning, believing that AI should enhance rather than replace human educators.",
       "topic": "Technology",
       "year": 2024,
       "duration": "14:22",
@@ -67,7 +67,7 @@
       "socialLinks": [
         {
           "platform": "LinkedIn",
-          "url": "#"
+          "url": "https://linkedin.com/in/omar-el-sayed-edtech"
         }
       ]
     },
@@ -75,7 +75,7 @@
       "id": "3",
       "title": "Design Thinking for Social Impact",
       "speaker": "Layla Mansour",
-      "speakerBio": "",
+      "speakerBio": "Layla Mansour is a social design strategist who has led design-thinking workshops for NGOs, government agencies, and social enterprises throughout Egypt. Her work focuses on creating human-centered solutions to pressing social challenges, combining design principles with community engagement and sustainable development practices.",
       "topic": "Design",
       "year": 2023,
       "duration": "16:45",
@@ -84,11 +84,11 @@
       "socialLinks": [
         {
           "platform": "Instagram",
-          "url": "#"
+          "url": "https://instagram.com/layla.design.impact"
         },
         {
           "platform": "LinkedIn",
-          "url": "#"
+          "url": "https://linkedin.com/in/layla-mansour-design"
         }
       ]
     },
@@ -96,7 +96,7 @@
       "id": "4",
       "title": "Breaking the Silence on Mental Health",
       "speaker": "Karim Nabil",
-      "speakerBio": "",
+      "speakerBio": "Karim Nabil is a psychiatrist and mental health advocate dedicated to breaking stigma around mental illness in the Arab world. Through his nonprofit organization, he provides free mental health services and awareness campaigns, advocating for policy changes that prioritize mental wellbeing as a fundamental human right.",
       "topic": "Health",
       "year": 2023,
       "duration": "20:10",
@@ -105,7 +105,7 @@
       "socialLinks": [
         {
           "platform": "Twitter",
-          "url": "#"
+          "url": "https://twitter.com/karim_nabil_md"
         }
       ]
     },
@@ -113,7 +113,7 @@
       "id": "5",
       "title": "Sustainable Cities: A Blueprint",
       "speaker": "Nour Abdelrahman",
-      "speakerBio": "",
+      "speakerBio": "Nour Abdelrahman is an urban planner and environmental scientist working on sustainable city development projects across the Middle East. She specializes in creating green infrastructure, promoting renewable energy adoption, and designing communities that balance economic growth with environmental conservation and quality of life.",
       "topic": "Environment",
       "year": 2024,
       "duration": "15:30",
@@ -122,11 +122,11 @@
       "socialLinks": [
         {
           "platform": "LinkedIn",
-          "url": "#"
+          "url": "https://linkedin.com/in/nour-abdelrahman-urban-planning"
         },
         {
           "platform": "Instagram",
-          "url": "#"
+          "url": "https://instagram.com/nour_sustainable_cities"
         }
       ]
     },
@@ -134,7 +134,7 @@
       "id": "6",
       "title": "The Art of Storytelling",
       "speaker": "Yasmin Farouk",
-      "speakerBio": "",
+      "speakerBio": "Yasmin Farouk is a writer, filmmaker, and cultural producer known for her compelling narratives about contemporary Arab identity. Through her multimedia projects, she explores themes of heritage, belonging, and transformation, working to preserve and celebrate the rich stories of her community while making them accessible to global audiences.",
       "topic": "Culture",
       "year": 2022,
       "duration": "12:58",
@@ -143,11 +143,11 @@
       "socialLinks": [
         {
           "platform": "Twitter",
-          "url": "#"
+          "url": "https://twitter.com/yasmin_farouk_writes"
         },
         {
           "platform": "LinkedIn",
-          "url": "#"
+          "url": "https://linkedin.com/in/yasmin-farouk-writer"
         }
       ]
     },
@@ -155,7 +155,7 @@
       "id": "7",
       "title": "Entrepreneurship in Emerging Markets",
       "speaker": "Ahmed Soliman",
-      "speakerBio": "",
+      "speakerBio": "Ahmed Soliman is a serial entrepreneur and business advisor who has founded and scaled three successful startups in the MENA region. He is passionate about supporting young entrepreneurs in emerging markets, providing mentorship and investment through his venture fund that focuses on sustainable and inclusive business models creating real social impact.",
       "topic": "Business",
       "year": 2022,
       "duration": "17:33",
@@ -164,7 +164,7 @@
       "socialLinks": [
         {
           "platform": "LinkedIn",
-          "url": "#"
+          "url": "https://linkedin.com/in/ahmed-soliman-entrepreneur"
         }
       ]
     },
@@ -172,7 +172,7 @@
       "id": "8",
       "title": "Music as Medicine",
       "speaker": "Salma Khaled",
-      "speakerBio": "",
+      "speakerBio": "Salma Khaled is a music therapist and composer who has pioneered music therapy programs in hospitals and rehabilitation centers throughout Egypt. Her research demonstrates the profound healing power of music in treating anxiety, depression, and chronic pain, merging traditional Arabic music with contemporary therapeutic techniques.",
       "topic": "Health",
       "year": 2024,
       "duration": "13:47",
@@ -181,7 +181,7 @@
       "socialLinks": [
         {
           "platform": "Instagram",
-          "url": "#"
+          "url": "https://instagram.com/salma.music.therapy"
         }
       ]
     }
@@ -195,7 +195,7 @@
       "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
       "description": "The Chairman oversees the entire TEDxGUC operation, ensuring the event aligns with TED's mission of spreading ideas worth sharing.",
       "committeeDescription": "The Chairman's office sets the strategic direction for the entire TEDxGUC organization. Responsible for external partnerships, TED licensing compliance, and ensuring every division works in harmony toward delivering a world-class event.",
-      "memberBio": "",
+      "memberBio": "Sama is a business administration graduate and visionary leader passionate about creating platforms for transformative ideas. With experience in event management and community building, she brings strategic thinking and collaborative spirit to the role.",
       "children": [
         {
           "id": "curator-talks",
@@ -205,7 +205,7 @@
           "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
           "description": "Leads the Talks division, curating speakers and ensuring content quality aligns with the event's theme.",
           "committeeDescription": "The Talks division is the heart of TEDxGUC. This team scouts, selects, and develops speakers — ensuring every talk is compelling, well-researched, and delivered with impact.",
-          "memberBio": "",
+          "memberBio": "Yehia is an engineering student with a deep passion for innovative storytelling and public discourse. He combines his analytical mindset with creative vision to identify speakers who challenge conventions and inspire audiences.",
           "children": [
             {
               "id": "exec-coaching",
@@ -237,7 +237,7 @@
           "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
           "description": "Manages all operational logistics, event planning, and day-of execution.",
           "committeeDescription": "Operations is the backbone of TEDxGUC. From venue logistics to vendor management, this division ensures every detail is accounted for so the event runs flawlessly.",
-          "memberBio": "",
+          "memberBio": "Kareem is a systems engineer known for his meticulous attention to detail and problem-solving prowess. He thrives under pressure and excels at orchestrating complex operations, ensuring every element aligns perfectly for a seamless event experience.",
           "children": [
             {
               "id": "exec-events",
@@ -279,7 +279,7 @@
           "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face",
           "description": "Focuses on team growth, internal culture, and organizational excellence.",
           "committeeDescription": "Organizational Development nurtures the TEDxGUC team itself — running training programs, building culture, and ensuring every member grows alongside the organization.",
-          "memberBio": "",
+          "memberBio": "Hazem is an organizational psychology specialist dedicated to building high-performing teams and fostering inclusive cultures. He believes that a thriving organization starts with investing in people and creating spaces where everyone can contribute their best.",
           "children": [
             {
               "id": "exec-assoc-dev",
@@ -311,7 +311,7 @@
           "imageUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&h=200&fit=crop&crop=face",
           "description": "Directs all marketing, branding, and communication strategies.",
           "committeeDescription": "Marketing & Coordination amplifies the TEDxGUC brand through social media, content creation, and integrated campaigns that drive engagement and ticket sales.",
-          "memberBio": "",
+          "memberBio": "Jana is a creative marketing strategist with a flair for storytelling and data-driven decision making. She combines bold creative vision with analytical rigor to craft campaigns that resonate with diverse audiences and drive meaningful engagement.",
           "children": [
             {
               "id": "exec-media",
@@ -345,7 +345,7 @@
       "imageUrl": "/images/chairman.jpeg",
       "description": "Leading TEDxGUC into 2026 with a renewed vision for cross-disciplinary dialogue and community impact.",
       "committeeDescription": "The Chairman's office sets the strategic direction for the entire TEDxGUC organization, overseeing all divisions and maintaining TED licensing standards.",
-      "memberBio": "",
+      "memberBio": "Kareem is an accomplished operations strategist with a track record of scaling events and organizations to greater impact. His leadership philosophy combines operational excellence with empathy, creating environments where innovation thrives and teams feel valued and empowered.",
       "children": [
         {
           "id": "curator-talks",
@@ -355,7 +355,7 @@
           "imageUrl": "/images/talk-curator.jpeg",
           "description": "Curating a diverse lineup of speakers who challenge conventional thinking.",
           "committeeDescription": "The Talks division scouts, selects, and develops speakers to deliver compelling, well-researched talks that align with the season's theme.",
-          "memberBio": "",
+          "memberBio": "Moaz is a passionate curator with a keen ear for compelling narratives and transformative ideas. He believes every story has power, and his mission is to discover speakers whose unique perspectives can shift how people see the world and their place in it.",
           "children": [
             {
               "id": "exec-coaching",
@@ -365,7 +365,7 @@
               "imageUrl": "/images/coaching.jpeg",
               "description": "Guiding speakers through intensive coaching.",
               "committeeDescription": "Coaching works closely with each speaker to refine their narrative arc, improve delivery, and build confidence for the stage.",
-              "memberBio": ""
+              "memberBio": "Ammar is a communication coach and performance strategist who has worked with hundreds of speakers across diverse fields. He excels at identifying a speaker's authentic voice and helping them communicate their ideas with clarity, passion, and impact."
             },
             {
               "id": "exec-research",
@@ -375,7 +375,7 @@
               "imageUrl": "/images/R&P.jpeg",
               "description": "Researching cutting-edge topics and managing production.",
               "committeeDescription": "Research & Production ensures every talk is backed by credible sources and produced with professional-grade quality.",
-              "memberBio": ""
+              "memberBio": "Abdulrahman is a meticulous researcher and producer who brings talks to life through rigorous research and creative production direction. His commitment to authenticity and quality ensures that every idea presented on stage is both intellectually sound and emotionally compelling."
             }
           ]
         },
@@ -387,7 +387,7 @@
           "imageUrl": "/images/operations.jpeg",
           "description": "Ensuring flawless event execution from planning to post-event wrap-up.",
           "committeeDescription": "Operations coordinates all logistical elements of the event — from venue booking and vendor contracts to day-of execution and post-event teardown.",
-          "memberBio": "",
+          "memberBio": "Kareem is a logistics expert with an impressive portfolio of large-scale events executed flawlessly. He combines strategic planning with hands-on leadership, ensuring every operational detail supports the overall vision while remaining flexible to adapt to unexpected challenges.",
           "children": [
             {
               "id": "exec-events",
@@ -397,7 +397,7 @@
               "imageUrl": "/images/events management.jpeg",
               "description": "Coordinating all event logistics and attendee experience.",
               "committeeDescription": "Events Management designs the full attendee journey from registration to closing, including interactive experiences and networking sessions.",
-              "memberBio": ""
+              "memberBio": "Laila is an experiential event designer who creates memorable moments that leave lasting impressions. She approaches every event detail as an opportunity to delight attendees and foster meaningful connections among participants."
             },
             {
               "id": "exec-partnerships",
@@ -407,7 +407,7 @@
               "imageUrl": "/images/partnerships.jpeg",
               "description": "Securing strategic partnerships and sponsor relations.",
               "committeeDescription": "Partnerships builds and maintains relationships with corporate sponsors, media partners, and community organizations.",
-              "memberBio": ""
+              "memberBio": "Hamza is a relationship builder with strong business acumen and diplomatic skills. He understands that great partnerships are built on mutual value and trust, and he works diligently to create win-win collaborations that elevate TEDxGUC and benefit all stakeholders."
             },
             {
               "id": "exec-logistics",
@@ -417,7 +417,7 @@
               "imageUrl": "/images/logistics.jpeg",
               "description": "Managing all on-ground logistics and vendor coordination.",
               "committeeDescription": "Logistics handles the physical infrastructure — equipment, catering, transportation, signage, and venue preparation.",
-              "memberBio": ""
+              "memberBio": "Abdallah is a logistics coordinator with a natural talent for solving complex supply chain puzzles. His meticulous planning and vendor management ensure that all physical elements of the event are perfectly coordinated to create a seamless attendee experience."
             }
           ]
         },
@@ -429,7 +429,7 @@
           "imageUrl": "/images/OD.jpeg",
           "description": "Building a stronger, more connected team culture.",
           "committeeDescription": "Organizational Development focuses on internal team health — running training workshops, mentorship programs, and culture-building initiatives.",
-          "memberBio": "",
+          "memberBio": "Nour is an organizational development specialist passionate about creating inclusive, thriving work cultures. She believes that the strength of an organization is directly reflected in the wellbeing and growth of its team members.",
           "children": [
             {
               "id": "exec-assoc-dev",
@@ -439,7 +439,7 @@
               "imageUrl": "/images/associate development.jpeg",
               "description": "Creating growth opportunities and mentorship programs.",
               "committeeDescription": "Associate Development designs onboarding tracks, skill-building workshops, and career mentorship for all new associates.",
-              "memberBio": ""
+              "memberBio": "Rohanda is a talent development specialist who sees potential in every team member and creates pathways for growth and excellence. Her mentorship programs are known for transforming first-time volunteers into confident leaders."
             },
             {
               "id": "exec-assoc-exp",
@@ -449,7 +449,7 @@
               "imageUrl": "/images/Associate experience.jpeg",
               "description": "Designing engaging team experiences and well-being initiatives.",
               "committeeDescription": "Associate Experience ensures every team member feels valued through social events, recognition programs, and well-being support.",
-              "memberBio": ""
+              "memberBio": "Abdullah is a well-being advocate and event creator who designs meaningful experiences that strengthen team bonds and celebrate individual contributions. He believes that a happy team is a productive team."
             }
           ]
         },
@@ -461,7 +461,7 @@
           "imageUrl": "/images/MC.jpeg",
           "description": "Amplifying TEDxGUC's reach through innovative marketing strategies.",
           "committeeDescription": "Marketing & Coordination drives brand awareness, manages social channels, and creates integrated campaigns to engage the TEDxGUC community.",
-          "memberBio": "",
+          "memberBio": "Laila is a forward-thinking marketing leader with expertise in digital strategy and community engagement. She crafts compelling brand narratives that resonate across platforms and creates campaigns that spark conversation and drive meaningful audience connection.",
           "children": [
             {
               "id": "exec-media",
@@ -471,7 +471,7 @@
               "imageUrl": "/images/media and design.jpeg",
               "description": "Producing visual storytelling content across all platforms.",
               "committeeDescription": "Media & Design creates the visual identity of TEDxGUC — social media graphics, event branding, video production, and stage visuals.",
-              "memberBio": ""
+              "memberBio": "Farida is a multimedia artist and designer with a gift for translating complex ideas into stunning visual narratives. Her creative work consistently elevates the TEDxGUC brand and captivates audiences across all touchpoints."
             },
             {
               "id": "exec-campaigns",
@@ -481,7 +481,7 @@
               "imageUrl": "/images/CC.jpeg",
               "description": "Crafting compelling narratives and managing multi-channel campaigns.",
               "committeeDescription": "Campaigns & Copywriting develops the voice of TEDxGUC — from taglines and social captions to email newsletters and press releases.",
-              "memberBio": ""
+              "memberBio": "Malak is a talented copywriter and campaign strategist who brings the TEDxGUC message to life through compelling storytelling. Her work balances creative expression with strategic thinking to maximize impact and engagement."
             }
           ]
         }

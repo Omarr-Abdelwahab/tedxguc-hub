@@ -12,6 +12,7 @@ import EventDetail from "./pages/EventDetail";
 import Upcoming from "./pages/Upcoming";
 import Partners from "./pages/Sponsors";
 import Contact from "./pages/Contact";
+import NominateSpeaker from "./pages/NominateSpeaker";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/upcoming" element={<Upcoming />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/nominate" element={<NominateSpeaker />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

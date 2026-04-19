@@ -36,6 +36,19 @@ db.exec(`
     email TEXT NOT NULL UNIQUE,
     created_at TEXT NOT NULL
   );
+
+  CREATE TABLE IF NOT EXISTS speaker_nominations (
+    id TEXT PRIMARY KEY,
+    nominator_name TEXT NOT NULL,
+    nominator_email TEXT NOT NULL,
+    speaker_name TEXT NOT NULL,
+    speaker_email TEXT NOT NULL,
+    speaker_topic TEXT NOT NULL,
+    speaker_bio TEXT NOT NULL,
+    why_nominate TEXT NOT NULL,
+    speaker_social_links TEXT,
+    created_at TEXT NOT NULL
+  );
 `);
 
 const siteContent = loadSiteContent();
@@ -82,6 +95,11 @@ const insertNewsletter = db.prepare(`
   VALUES (@id, @email, @createdAt)
 `);
 const getNewsletterByEmail = db.prepare("SELECT id, email, created_at FROM newsletter_subscribers WHERE email = ?");
+const listNominations = db.prepare("SELECT id, nominator_name, nominator_email, speaker_name, speaker_email, speaker_topic, speaker_bio, why_nominate, speaker_social_links, created_at FROM speaker_nominations ORDER BY created_at DESC");
+const insertNomination = db.prepare(`
+  INSERT INTO speaker_nominations (id, nominator_name, nominator_email, speaker_name, speaker_email, speaker_topic, speaker_bio, why_nominate, speaker_social_links, created_at)
+  VALUES (@id, @nominatorName, @nominatorEmail, @speakerName, @speakerEmail, @speakerTopic, @speakerBio, @whyNominate, @speakerSocialLinks, @createdAt)
+`);
 
 export const getContentItem = (key) => {
   const row = getContentRow.get(key);
@@ -149,6 +167,26 @@ export const getContactSubmissions = () => listContacts.all();
 
 export const getNewsletterSubscribers = () => listNewsletter.all();
 
+export const addSpeakerNomination = ({ nominatorName, nominatorEmail, speakerName, speakerEmail, speakerTopic, speakerBio, whyNominate, speakerSocialLinks }) => {
+  const nomination = {
+    id: `nomination-${randomUUID()}`,
+    nominatorName,
+    nominatorEmail,
+    speakerName,
+    speakerEmail,
+    speakerTopic,
+    speakerBio,
+    whyNominate,
+    speakerSocialLinks: speakerSocialLinks || null,
+    createdAt: new Date().toISOString(),
+  };
+
+  insertNomination.run(nomination);
+  return nomination;
+};
+
+export const getSpeakerNominations = () => listNominations.all();
+
 export const getHealthSummary = () => ({
   ok: true,
   service: "TEDxGUC Hub API",
@@ -158,5 +196,6 @@ export const getHealthSummary = () => ({
     events: getEvents().length,
     contacts: countRows("contact_submissions"),
     newsletterSubscribers: countRows("newsletter_subscribers"),
+    speakerNominations: countRows("speaker_nominations"),
   },
 });

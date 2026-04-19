@@ -28,9 +28,11 @@ This folder contains the Node.js + SQLite backend for TEDxGUC Hub.
 - `GET /api/upcoming`
 - `POST /api/contact`
 - `POST /api/newsletter`
+- `POST /api/nominations/speaker`
 - `POST /api/newsletter/broadcast`
 - `GET /api/submissions/contact`
 - `GET /api/submissions/newsletter`
+- `GET /api/submissions/nominations`
 
 `/api/submissions/*` endpoints require admin auth using one of:
 
@@ -53,6 +55,34 @@ To enable newsletter email delivery, configure SMTP environment variables:
 - `subject`: string
 - `message`: string
 
+`POST /api/nominations/speaker` body:
+
+- `nominatorName`: string (nominator's full name)
+- `nominatorEmail`: string (nominator's email address)
+- `speakerName`: string (speaker's full name)
+- `speakerEmail`: string (speaker's email address)
+- `speakerTopic`: string (speaker's topic/area of expertise)
+- `speakerBio`: string (speaker's background and achievements)
+- `whyNominate`: string (why this person should speak)
+- `speakerSocialLinks`: string (optional, social media profiles)
+
+Example speaker nomination request:
+
+```bash
+curl -X POST http://localhost:3001/api/nominations/speaker \
+	-H "Content-Type: application/json" \
+	-d '{
+		"nominatorName":"John Doe",
+		"nominatorEmail":"john@example.com",
+		"speakerName":"Jane Smith",
+		"speakerEmail":"jane@example.com",
+		"speakerTopic":"Social Impact",
+		"speakerBio":"Jane is a social entrepreneur with 10 years of experience",
+		"whyNominate":"Jane has a unique perspective on community-driven innovation",
+		"speakerSocialLinks":"linkedin.com/in/jane-smith"
+	}'
+```
+
 Example admin request:
 
 ```bash
@@ -65,4 +95,4 @@ curl -X POST http://localhost:3001/api/newsletter/broadcast \
 ## Notes
 
 - Content is seeded from `backend/seed-content.json`.
-- Contact submissions and newsletter subscriptions are persisted in SQLite.
+- Contact submissions, newsletter subscriptions, and speaker nominations are persisted in SQLite.

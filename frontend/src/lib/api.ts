@@ -43,3 +43,29 @@ export const fetchSponsors = async (): Promise<Sponsor[]> => {
   const data = await request<{ sponsors: Sponsor[] }>("/api/sponsors");
   return data.sponsors || [];
 };
+
+export const submitSpeakerNomination = async (nomination: {
+  nominatorName: string;
+  nominatorEmail: string;
+  speakerName: string;
+  speakerEmail: string;
+  speakerTopic: string;
+  speakerBio: string;
+  whyNominate: string;
+  speakerSocialLinks?: string;
+}): Promise<{ ok: boolean; message: string }> => {
+  const response = await fetch("/api/nominations/speaker", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(nomination),
+  });
+
+  if (!response.ok) {
+    const error = (await response.json()) as { error?: string };
+    throw new Error(error.error || `Request failed (${response.status})`);
+  }
+
+  return response.json() as Promise<{ ok: boolean; message: string }>;
+};
