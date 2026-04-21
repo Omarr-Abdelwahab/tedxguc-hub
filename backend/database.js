@@ -64,18 +64,16 @@ const contentEntries = {
   contactSubjects: siteContent.contactSubjects,
 };
 
-const upsertContent = db.prepare(`
+const insertContentIfMissing = db.prepare(`
   INSERT INTO content_items (key, payload, updated_at)
   VALUES (@key, @payload, @updatedAt)
-  ON CONFLICT(key) DO UPDATE SET
-    payload = excluded.payload,
-    updated_at = excluded.updated_at
+  ON CONFLICT(key) DO NOTHING
 `);
 
 const countRows = (tableName) => db.prepare(`SELECT COUNT(*) AS count FROM ${tableName}`).get().count;
 
 for (const [key, value] of Object.entries(contentEntries)) {
-  upsertContent.run({
+  insertContentIfMissing.run({
     key,
     payload: JSON.stringify(value),
     updatedAt: new Date().toISOString(),
