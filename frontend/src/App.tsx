@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Talks from "./pages/Talks";
+import TalkDetail from "./pages/TalkDetail";
 import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import Upcoming from "./pages/Upcoming";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
           <Route path="/talks" element={<Talks />} />
+          <Route path="/talks/:talkId" element={<TalkDetail />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:eventId" element={<EventDetail />} />
           <Route path="/upcoming" element={<Upcoming />} />

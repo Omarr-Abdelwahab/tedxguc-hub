@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Instagram, Linkedin, Youtube, Send } from "lucide-react";
+import { Instagram, Youtube, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -119,13 +119,22 @@ const Footer = () => {
             </p>
             <div className="flex gap-4 md:justify-end">
               {[
-                { icon: Instagram, label: "Instagram" },
-                { icon: Linkedin, label: "LinkedIn" },
-                { icon: Youtube, label: "YouTube" },
-              ].map(({ icon: Icon, label }) => (
+                {
+                  icon: Instagram,
+                  label: "Instagram",
+                  href: "https://www.instagram.com/tedxguc__/",
+                },
+                {
+                  icon: Youtube,
+                  label: "YouTube",
+                  href: "https://www.youtube.com/watch?v=OozzoqEeebs",
+                },
+              ].map(({ icon: Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label={label}
                   className="w-10 h-10 border border-accent-foreground/20 flex items-center justify-center text-accent-foreground/50 hover:text-primary hover:border-primary transition-colors duration-300"
                 >

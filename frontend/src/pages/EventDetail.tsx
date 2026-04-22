@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { CalendarDays, MapPin, ArrowLeft } from "lucide-react";
-import { fetchEventById } from "@/lib/api";
-import type { TEDxEvent } from "@/types/content";
+import { fetchEventById, fetchTalks } from "@/lib/api";
+import type { TEDxEvent, Talk } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const EventDetail = () => {
   const { eventId } = useParams();
   const [event, setEvent] = useState<TEDxEvent | null>(null);
+  const [talks, setTalks] = useState<Talk[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     let isMounted = true;
 
-    const loadEvent = async () => {
+    const loadData = async () => {
       if (!eventId) {
         if (isMounted) {
           setEvent(null);
@@ -24,9 +25,13 @@ const EventDetail = () => {
       }
 
       try {
-        const data = await fetchEventById(eventId);
+        const [eventData, talksData] = await Promise.all([
+          fetchEventById(eventId),
+          fetchTalks(),
+        ]);
         if (isMounted) {
-          setEvent(data);
+          setEvent(eventData);
+          setTalks(talksData);
         }
       } catch {
         if (isMounted) {
@@ -39,7 +44,7 @@ const EventDetail = () => {
       }
     };
 
-    void loadEvent();
+    void loadData();
     return () => {
       isMounted = false;
     };
@@ -115,20 +120,32 @@ const EventDetail = () => {
         <div className="container mx-auto px-6 max-w-3xl">
           <h2 className="text-2xl font-black text-foreground mb-8">Speakers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {event.speakers.map((speaker) => (
-              <div
-                key={speaker.name}
-                className="border-2 border-border bg-background p-5"
-              >
-                <p className="font-bold text-foreground">{speaker.name}</p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {speaker.talkTitle}
-                </p>
-                <p className="text-xs text-primary mt-1 uppercase tracking-wider">
-                  {speaker.topic}
-                </p>
-              </div>
-            ))}
+            {event.speakers.map((speaker) => {
+              const talk = talks.find((t) => t.title === speaker.talkTitle);
+              return (
+                <div
+                  key={speaker.name}
+                  className="border-2 border-border bg-background p-5"
+                >
+                  <p className="font-bold text-foreground">{speaker.name}</p>
+                  {talk ? (
+                    <Link
+                      to={`/talks/${talk.id}`}
+                      className="text-sm text-primary hover:underline mt-1 block"
+                    >
+                      {speaker.talkTitle}
+                    </Link>
+                  ) : (
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {speaker.talkTitle}
+                    </p>
+                  )}
+                  <p className="text-xs text-primary mt-1 uppercase tracking-wider">
+                    {speaker.topic}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

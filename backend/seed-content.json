@@ -34,156 +34,269 @@
   ],
   "talks": [
     {
-      "id": "1",
-      "title": "The Power of Vulnerability",
-      "speaker": "Amira Hassan",
-      "speakerBio": "Amira Hassan is a clinical psychologist and mental health advocate with over 8 years of experience in helping individuals overcome emotional barriers. She specializes in trauma recovery and has worked with diverse populations across the Middle East, combining evidence-based therapeutic practices with culturally-sensitive approaches.",
-      "topic": "Psychology",
-      "year": 2024,
-      "duration": "18:04",
-      "thumbnail": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/amira-hassan"
-        },
-        {
-          "platform": "Twitter",
-          "url": "https://twitter.com/amira_hassan_psych"
-        }
-      ]
+      "id": "9",
+      "title": "Civil Work: Putting Syrian refugees back on their feet",
+      "speaker": "Rasha Maaty",
+      "speakerBio": "Rasha Maaty is a social impact advocate focused on humanitarian work and refugee support. Her work centers on creating sustainable livelihoods and integration programs for displaced communities.",
+      "topic": "Social Impact",
+      "year": 2017,
+      "duration": "13:32",
+      "thumbnail": "https://i.ytimg.com/vi/yC2AWPsE_q8/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/yC2AWPsE_q8",
+      "socialLinks": []
     },
     {
-      "id": "2",
-      "title": "Rethinking Education in the AI Era",
-      "speaker": "Omar El-Sayed",
-      "speakerBio": "Omar El-Sayed is an EdTech innovator and founder of an AI-powered learning platform used by over 50,000 students across the MENA region. With a background in computer science and education, he focuses on bridging the gap between technology and personalized learning, believing that AI should enhance rather than replace human educators.",
-      "topic": "Technology",
-      "year": 2024,
-      "duration": "14:22",
-      "thumbnail": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/omar-el-sayed-edtech"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "title": "Design Thinking for Social Impact",
-      "speaker": "Layla Mansour",
-      "speakerBio": "Layla Mansour is a social design strategist who has led design-thinking workshops for NGOs, government agencies, and social enterprises throughout Egypt. Her work focuses on creating human-centered solutions to pressing social challenges, combining design principles with community engagement and sustainable development practices.",
+      "id": "10",
+      "title": "Restructuring our living spaces through container architecture",
+      "speaker": "Youssef Farag",
+      "speakerBio": "Youssef Farag is an architect and innovator exploring sustainable and affordable housing solutions through creative architectural design. His work utilizes recycled and unconventional materials to address housing challenges.",
       "topic": "Design",
-      "year": 2023,
-      "duration": "16:45",
-      "thumbnail": "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "Instagram",
-          "url": "https://instagram.com/layla.design.impact"
-        },
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/layla-mansour-design"
-        }
-      ]
+      "year": 2017,
+      "duration": "15:46",
+      "thumbnail": "https://i.ytimg.com/vi/d1SnSK3p6W0/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/d1SnSK3p6W0",
+      "socialLinks": []
     },
     {
-      "id": "4",
-      "title": "Breaking the Silence on Mental Health",
-      "speaker": "Karim Nabil",
-      "speakerBio": "Karim Nabil is a psychiatrist and mental health advocate dedicated to breaking stigma around mental illness in the Arab world. Through his nonprofit organization, he provides free mental health services and awareness campaigns, advocating for policy changes that prioritize mental wellbeing as a fundamental human right.",
-      "topic": "Health",
-      "year": 2023,
-      "duration": "20:10",
-      "thumbnail": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "Twitter",
-          "url": "https://twitter.com/karim_nabil_md"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "title": "Sustainable Cities: A Blueprint",
-      "speaker": "Nour Abdelrahman",
-      "speakerBio": "Nour Abdelrahman is an urban planner and environmental scientist working on sustainable city development projects across the Middle East. She specializes in creating green infrastructure, promoting renewable energy adoption, and designing communities that balance economic growth with environmental conservation and quality of life.",
+      "id": "11",
+      "title": "Can we still say that there are plenty of fish in the sea by 2050?",
+      "speaker": "Nada El Shanawany",
+      "speakerBio": "Nada El Shanawany is a marine biologist and environmental scientist dedicated to studying and protecting marine ecosystems. Her research addresses the critical challenges facing ocean sustainability and biodiversity.",
       "topic": "Environment",
-      "year": 2024,
-      "duration": "15:30",
-      "thumbnail": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/nour-abdelrahman-urban-planning"
-        },
-        {
-          "platform": "Instagram",
-          "url": "https://instagram.com/nour_sustainable_cities"
-        }
-      ]
+      "year": 2017,
+      "duration": "13:17",
+      "thumbnail": "https://i.ytimg.com/vi/TgyqQskprV0/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/TgyqQskprV0",
+      "socialLinks": []
     },
     {
-      "id": "6",
-      "title": "The Art of Storytelling",
-      "speaker": "Yasmin Farouk",
-      "speakerBio": "Yasmin Farouk is a writer, filmmaker, and cultural producer known for her compelling narratives about contemporary Arab identity. Through her multimedia projects, she explores themes of heritage, belonging, and transformation, working to preserve and celebrate the rich stories of her community while making them accessible to global audiences.",
-      "topic": "Culture",
-      "year": 2022,
-      "duration": "12:58",
-      "thumbnail": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "Twitter",
-          "url": "https://twitter.com/yasmin_farouk_writes"
-        },
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/yasmin-farouk-writer"
-        }
-      ]
+      "id": "12",
+      "title": "Drama Therapy: An unlikely solution to a common problem",
+      "speaker": "Reem Hashem",
+      "speakerBio": "Reem Hashem is a drama therapist and mental health professional who uses theatrical techniques and creative expression as therapeutic tools. She pioneered drama therapy programs addressing psychological and emotional challenges in diverse populations.",
+      "topic": "Psychology",
+      "year": 2017,
+      "duration": "17:22",
+      "thumbnail": "https://i.ytimg.com/vi/YjjvM4RIk8M/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/YjjvM4RIk8M",
+      "socialLinks": []
     },
     {
-      "id": "7",
-      "title": "Entrepreneurship in Emerging Markets",
-      "speaker": "Ahmed Soliman",
-      "speakerBio": "Ahmed Soliman is a serial entrepreneur and business advisor who has founded and scaled three successful startups in the MENA region. He is passionate about supporting young entrepreneurs in emerging markets, providing mentorship and investment through his venture fund that focuses on sustainable and inclusive business models creating real social impact.",
-      "topic": "Business",
-      "year": 2022,
-      "duration": "17:33",
-      "thumbnail": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "LinkedIn",
-          "url": "https://linkedin.com/in/ahmed-soliman-entrepreneur"
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "title": "Music as Medicine",
-      "speaker": "Salma Khaled",
-      "speakerBio": "Salma Khaled is a music therapist and composer who has pioneered music therapy programs in hospitals and rehabilitation centers throughout Egypt. Her research demonstrates the profound healing power of music in treating anxiety, depression, and chronic pain, merging traditional Arabic music with contemporary therapeutic techniques.",
+      "id": "13",
+      "title": "A biomarker saving lives",
+      "speaker": "Rasha Hanafi",
+      "speakerBio": "Rasha Hanafi is a biomedical researcher and healthcare innovator focused on developing diagnostic tools and biomarkers to improve patient outcomes. Her research bridges the gap between laboratory discovery and clinical application.",
       "topic": "Health",
-      "year": 2024,
-      "duration": "13:47",
-      "thumbnail": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=640&h=360&fit=crop",
-      "videoUrl": "https://www.youtube.com/embed/iCvmsMzlF7o",
-      "socialLinks": [
-        {
-          "platform": "Instagram",
-          "url": "https://instagram.com/salma.music.therapy"
-        }
-      ]
+      "year": 2017,
+      "duration": "9:40",
+      "thumbnail": "https://i.ytimg.com/vi/Fez9MXmHS80/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Fez9MXmHS80",
+      "socialLinks": []
+    },
+    {
+      "id": "14",
+      "title": "Mental illness representation in Egyptian movies",
+      "speaker": "Caroline Mitry",
+      "speakerBio": "Caroline Mitry is a media studies scholar and cultural critic examining the portrayal of mental health issues in film and television. Her work advocates for more accurate and stigma-reducing representation of mental illness in media.",
+      "topic": "Culture",
+      "year": 2017,
+      "duration": "17:40",
+      "thumbnail": "https://i.ytimg.com/vi/0ztPKONrfpM/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/0ztPKONrfpM",
+      "socialLinks": []
+    },
+    {
+      "id": "15",
+      "title": "A sustainable development model for red sea rural areas",
+      "speaker": "Omar Sabaa",
+      "speakerBio": "Omar Sabaa is a development expert and environmental consultant specializing in sustainable community development in rural and coastal regions. His work integrates economic growth with environmental conservation and social welfare.",
+      "topic": "Environment",
+      "year": 2017,
+      "duration": "7:56",
+      "thumbnail": "https://i.ytimg.com/vi/Mn33jdhT5kk/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Mn33jdhT5kk",
+      "socialLinks": []
+    },
+    {
+      "id": "16",
+      "title": "Post chemotherapy: Getting ovaries back to life",
+      "speaker": "Sara Abdel-Aziz",
+      "speakerBio": "Sara Abdel-Aziz is a reproductive health specialist and oncology advocate focused on fertility preservation and quality of life for cancer survivors. Her work addresses the overlooked intersection of cancer treatment and reproductive health.",
+      "topic": "Health",
+      "year": 2017,
+      "duration": "8:13",
+      "thumbnail": "https://i.ytimg.com/vi/c4ffFDT5WWs/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/c4ffFDT5WWs",
+      "socialLinks": []
+    },
+    {
+      "id": "17",
+      "title": "Research: The marginalized dimension in our fight against cancer",
+      "speaker": "Yehia Abugabal",
+      "speakerBio": "Yehia Abugabal is a cancer researcher and public health advocate emphasizing the importance of diverse and inclusive research in improving cancer treatment outcomes. His work highlights underrepresented populations in medical research.",
+      "topic": "Health",
+      "year": 2017,
+      "duration": "14:23",
+      "thumbnail": "https://i.ytimg.com/vi/onU-J44jY3A/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/onU-J44jY3A",
+      "socialLinks": []
+    },
+    {
+      "id": "18",
+      "title": "Beyond limits, different is beautiful",
+      "speaker": "Rania Abdelaziz & Alaa El Masry",
+      "speakerBio": "Rania Abdelaziz and Alaa El Masry are advocates for inclusion and accessibility. Their work focuses on challenging perceptions about disability and celebrating human diversity.",
+      "topic": "Social Impact",
+      "year": 2023,
+      "duration": "13:21",
+      "thumbnail": "https://i.ytimg.com/vi/mOudPoFxALk/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/mOudPoFxALk",
+      "socialLinks": []
+    },
+    {
+      "id": "19",
+      "title": "Reclaiming Egypt's narrative",
+      "speaker": "Mahmoud Hawary",
+      "speakerBio": "Mahmoud Hawary is a cultural historian and filmmaker dedicated to preserving and promoting Egypt's rich historical narratives.",
+      "topic": "Culture",
+      "year": 2023,
+      "duration": "12:45",
+      "thumbnail": "https://i.ytimg.com/vi/bq29u6RAp1k/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/bq29u6RAp1k",
+      "socialLinks": []
+    },
+    {
+      "id": "20",
+      "title": "From machines to bodies",
+      "speaker": "Yahya Hefnawi",
+      "speakerBio": "Yahya Hefnawi is an engineer and innovator exploring the intersection of technology and human physiology.",
+      "topic": "Technology",
+      "year": 2023,
+      "duration": "14:07",
+      "thumbnail": "https://i.ytimg.com/vi/for_-b3LyNI/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/for_-b3LyNI",
+      "socialLinks": []
+    },
+    {
+      "id": "21",
+      "title": "Getting companies racing to hire you",
+      "speaker": "Youssef El Akkari",
+      "speakerBio": "Youssef El Akkari is a career coach and talent development specialist helping young professionals stand out.",
+      "topic": "Business",
+      "year": 2023,
+      "duration": "13:52",
+      "thumbnail": "https://i.ytimg.com/vi/odX9FKx23lI/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/odX9FKx23lI",
+      "socialLinks": []
+    },
+    {
+      "id": "22",
+      "title": "Bridging the professional gap: The transformative power of network",
+      "speaker": "Ahmed El Helaly",
+      "speakerBio": "Ahmed El Helaly is a professional development coach emphasizing the transformative impact of strategic professional relationships.",
+      "topic": "Business",
+      "year": 2023,
+      "duration": "12:34",
+      "thumbnail": "https://i.ytimg.com/vi/Qbi4DUmDzcM/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Qbi4DUmDzcM",
+      "socialLinks": []
+    },
+    {
+      "id": "23",
+      "title": "It didn't start with you",
+      "speaker": "Shereen Rizk",
+      "speakerBio": "Shereen Rizk is a psychotherapist exploring generational trauma and healing.",
+      "topic": "Psychology",
+      "year": 2023,
+      "duration": "14:19",
+      "thumbnail": "https://i.ytimg.com/vi/Bx3yPK0YdJw/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Bx3yPK0YdJw",
+      "socialLinks": []
+    },
+    {
+      "id": "24",
+      "title": "Creating movie magic!",
+      "speaker": "Dibo",
+      "speakerBio": "Dibo is a filmmaker and visual effects artist passionate about bringing stories to life.",
+      "topic": "Arts, Media & Design",
+      "year": 2023,
+      "duration": "11:58",
+      "thumbnail": "https://i.ytimg.com/vi/hAVXYHQQyj8/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/hAVXYHQQyj8",
+      "socialLinks": []
+    },
+    {
+      "id": "25",
+      "title": "Bringing the past to life",
+      "speaker": "Rowan El Selmy",
+      "speakerBio": "Rowan El Selmy is an archaeologist dedicated to uncovering and preserving historical narratives.",
+      "topic": "Culture",
+      "year": 2023,
+      "duration": "13:16",
+      "thumbnail": "https://i.ytimg.com/vi/Po9XC1c06Mw/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Po9XC1c06Mw",
+      "socialLinks": []
+    }
+    ,
+    {
+      "id": "26",
+      "title": "Goal Of Equality",
+      "speaker": "Ali Aboulnasr",
+      "speakerBio": "Ali Aboulnasr is a social justice advocate focused on equality and civic impact.",
+      "topic": "Social Justice",
+      "year": 2015,
+      "duration": "11:00",
+      "thumbnail": "https://i.ytimg.com/vi/ou46JytZHVM/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/ou46JytZHVM",
+      "socialLinks": []
+    },
+    {
+      "id": "27",
+      "title": "STEM-ED",
+      "speaker": "Mohamed Rizkallah",
+      "speakerBio": "Mohamed Rizkallah is an education and technology speaker who explores the intersection of STEM and learning.",
+      "topic": "Education & Technology",
+      "year": 2015,
+      "duration": "18:30",
+      "thumbnail": "https://i.ytimg.com/vi/6hzR6ugto4Y/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/6hzR6ugto4Y",
+      "socialLinks": []
+    },
+    {
+      "id": "28",
+      "title": "Exposing hidden dimensions of Child Sexual Abuse.",
+      "speaker": "Sara Aziz",
+      "speakerBio": "Sara Aziz is a health advocate raising awareness about child safety and support systems.",
+      "topic": "Health",
+      "year": 2015,
+      "duration": "17:58",
+      "thumbnail": "https://i.ytimg.com/vi/CAsX_3Lmq3E/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/CAsX_3Lmq3E",
+      "socialLinks": []
+    },
+    {
+      "id": "29",
+      "title": "Criminals in Suits",
+      "speaker": "Sue Ellen Hassouna",
+      "speakerBio": "Sue Ellen Hassouna is a speaker exploring ethics, justice, and the hidden realities behind appearances.",
+      "topic": "Business Ethics",
+      "year": 2015,
+      "duration": "17:44",
+      "thumbnail": "https://i.ytimg.com/vi/Izpbg-BL50g/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Izpbg-BL50g",
+      "socialLinks": []
+    },
+    {
+      "id": "30",
+      "title": "Art therapy: a world beyond creative expression",
+      "speaker": "Carol Hammal",
+      "speakerBio": "Carol Hammal is an art therapy advocate who uses creativity as a path to healing and expression.",
+      "topic": "Health & Arts",
+      "year": 2015,
+      "duration": "20:30",
+      "thumbnail": "https://i.ytimg.com/vi/Ee9iRmGFyvA/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Ee9iRmGFyvA",
+      "socialLinks": []
     }
   ],
   "orgTreesBySeason": {
@@ -490,6 +603,342 @@
   },
   "events": [
     {
+      "id": "2015-back&forth",
+      "year": 2015,
+      "season": "Summer",
+      "theme": "Back & forth",
+      "date": "August 15, 2015",
+      "venue": "GUC Main Auditorium, New Cairo",
+      "recap": "Our world operates in a dynamic design of opposite yet complementary forces. TEDxGUC \"Back & Forth\" explores how life exists in constant motion between opposing yet complementary states.",
+      "speakers": [
+        {
+          "name": "Ali Aboulnasr",
+          "talkTitle": "Goal Of Equality",
+          "topic": "Social Justice"
+        },
+        {
+          "name": "Mohamed Rizkallah",
+          "talkTitle": "STEM-ED",
+          "topic": "Education & Technology"
+        },
+        {
+          "name": "Sue Ellen Hassouna",
+          "talkTitle": "Criminals in Suits",
+          "topic": "Business Ethics"
+        },
+        {
+          "name": "Carol Hammal",
+          "talkTitle": "Art therapy: a world beyond creative expression",
+          "topic": "Health & Arts"
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=500&fit=crop"
+      ],
+      "sponsors": [
+        "TED",
+        "GUC"
+      ]
+    },
+    {
+      "id": "2017-alloy",
+      "year": 2017,
+      "season": "Fall",
+      "theme": "ALLOY",
+      "date": "September 2017",
+      "venue": "GUC Conference Center, New Cairo",
+      "recap": "An alloy is a compound mixture or union of distinct parties that exchange characteristics to optimize a desired outcome. TEDxGUC ALLOY explored how diverse elements combine to create stronger solutions.",
+      "speakers": [
+        {
+          "name": "Rasha Maaty",
+          "talkTitle": "Civil Work: Putting Syrian refugees back on their feet",
+          "topic": "Social Impact"
+        },
+        {
+          "name": "Youssef Farag",
+          "talkTitle": "Restructuring our living spaces through container architecture",
+          "topic": "Design"
+        },
+        {
+          "name": "Nada El Shanawany",
+          "talkTitle": "Can we still say that there are plenty of fish in the sea by 2050?",
+          "topic": "Environment"
+        },
+        {
+          "name": "Reem Hashem",
+          "talkTitle": "Drama Therapy: An unlikely solution to a common problem",
+          "topic": "Psychology"
+        },
+        {
+          "name": "Rasha Hanafi",
+          "talkTitle": "A biomarker saving lives",
+          "topic": "Health"
+        },
+        {
+          "name": "Caroline Mitry",
+          "talkTitle": "Mental illness representation in Egyptian movies",
+          "topic": "Culture"
+        },
+        {
+          "name": "Omar Sabaa",
+          "talkTitle": "A sustainable development model for red sea rural areas",
+          "topic": "Environment"
+        },
+        {
+          "name": "Sara Abdel-Aziz",
+          "talkTitle": "Post chemotherapy: Getting ovaries back to life",
+          "topic": "Health"
+        },
+        {
+          "name": "Yehia Abugabal",
+          "talkTitle": "Research: The marginalized dimension in our fight against cancer",
+          "topic": "Health"
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=500&fit=crop"
+      ],
+      "sponsors": [
+        "TED",
+        "GUC"
+      ]
+    },
+    {
+      "id": "2021-allthatglitters",
+      "year": 2021,
+      "season": "Fall",
+      "theme": "All that glitters",
+      "date": "September 18, 2021",
+      "venue": "GUC Main Auditorium, New Cairo",
+      "recap": "All that glitters is not gold. This event challenged perspectives on appearances and true value, exploring the lessons learned from both shiny surfaces and overlooked treasures.",
+      "speakers": [
+        {
+          "name": "Carmine Cortolano",
+          "talkTitle": "Not All That Glitters: Seeing Through Illusions",
+          "topic": "Philosophy"
+        },
+        {
+          "name": "Youssef Mohsen",
+          "talkTitle": "The Hidden Value in Overlooked Things",
+          "topic": "Personal Development"
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=500&fit=crop"
+      ],
+      "sponsors": [
+        "TED",
+        "GUC"
+      ]
+    },
+    {
+      "id": "2023-whitespace",
+      "year": 2023,
+      "season": "Winter",
+      "theme": "Whitespace",
+      "date": "September 27, 2023",
+      "venue": "GUC Green Area, New Cairo",
+      "recap": "TEDxGUC 'Whitespace' explored hidden spaces where ideas grow. The event gathered speakers across culture, technology, psychology, and business to challenge assumptions and inspire practical action.",
+      "speakers": [
+        {
+          "name": "Rania Abdelaziz & Alaa El Masry",
+          "talkTitle": "Beyond limits, different is beautiful",
+          "topic": "Social Impact"
+        },
+        {
+          "name": "Mahmoud Hawary",
+          "talkTitle": "Reclaiming Egypt's narrative",
+          "topic": "Culture"
+        },
+        {
+          "name": "Yahya Hefnawi",
+          "talkTitle": "From machines to bodies",
+          "topic": "Technology"
+        },
+        {
+          "name": "Youssef El Akkari",
+          "talkTitle": "Getting companies racing to hire you",
+          "topic": "Business"
+        },
+        {
+          "name": "Ahmed El Helaly",
+          "talkTitle": "Bridging the professional gap: The transformative power of network",
+          "topic": "Business"
+        },
+        {
+          "name": "Shereen Rizk",
+          "talkTitle": "It didn't start with you",
+          "topic": "Psychology"
+        },
+        {
+          "name": "Dibo",
+          "talkTitle": "Creating movie magic!",
+          "topic": "Arts, Media & Design"
+        },
+        {
+          "name": "Rowan El Selmy",
+          "talkTitle": "Bringing the past to life",
+          "topic": "Culture"
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=500&fit=crop"
+      ],
+      "sponsors": [
+        "TED",
+        "GUC",
+        "Krispy Kreme"
+      ]
+    },
+    {
+      "id": "2024-echo",
+      "year": 2024,
+      "season": "Spring",
+      "theme": "ECHO",
+      "date": "May 17, 2024",
+      "venue": "GUC Main Auditorium, New Cairo",
+      "recap": "Beyond the echoes of faint whispers and symphonies of words lies a million untold narratives. TEDxGUC ECHO explores the impact of words and opinions, posing the question: Will we separate the souls, artists and personalities from the opinions or will cancel culture thrive?",
+      "speakers": [
+        {
+          "name": "Hanaa Medhat",
+          "talkTitle": "Words That Matter",
+          "topic": "Communication"
+        },
+        {
+          "name": "Menna Metwally",
+          "talkTitle": "The Echo of Our Choices",
+          "topic": "Philosophy"
+        },
+        {
+          "name": "Raghda Moataz",
+          "talkTitle": "Narratives That Shape Us",
+          "topic": "Culture"
+        },
+        {
+          "name": "Mamdouh Saud",
+          "talkTitle": "Resonance in a Noisy World",
+          "topic": "Human Connection"
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=500&fit=crop"
+      ],
+      "sponsors": [
+        "TED",
+        "GUC"
+      ]
+    },
+    {
+      "id": "2024-glitch",
+      "year": 2024,
+      "season": "Fall",
+      "theme": "Glitch",
+      "date": "September 28, 2024",
+      "venue": "GUC Conference Center, New Cairo",
+      "recap": "TEDxGUC \"Glitch\" explored unexpected disruptions in our digital and physical worlds. From technological malfunctions to societal upheavals, glitches can be both destructive and transformative.",
+      "speakers": [
+        {
+          "name": "Mohamed Mohab",
+          "talkTitle": "From 1 to 8 Billion: How a single idea evolved into a global tech ecosystem",
+          "topic": "Technology"
+        },
+        {
+          "name": "Amir Roushdy",
+          "talkTitle": "From skepticism to Reality",
+          "topic": "Science"
+        },
+        {
+          "name": "Yara Hesham",
+          "talkTitle": "The unspoken impact of our commuting choices",
+          "topic": "Environment & Society"
+        },
+        {
+          "name": "Sherif El-Sayed",
+          "talkTitle": "Not just words: Language and Emotions, a Complex Relationship that affects our daily life",
+          "topic": "Psychology"
+        },
+        {
+          "name": "Yassin Mahgoub",
+          "talkTitle": "Cracking the code: How technology is driving medical progress",
+          "topic": "Health & Technology"
+        },
+        {
+          "name": "Haitham Gheita",
+          "talkTitle": "Grow through what you go through",
+          "topic": "Personal Development"
+        },
+        {
+          "name": "Sohaila Omar",
+          "talkTitle": "Ancient Traditions in modern lives: A journey through time",
+          "topic": "Culture & Society"
+        },
+        {
+          "name": "Manal Olama",
+          "talkTitle": "The white T-shirt crisis: Exploring the fashion revolution",
+          "topic": "Sustainability & Fashion"
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1519915212116-7cfef71f1b0a?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop"
+      ],
+      "sponsors": [
+        "TED",
+        "GUC"
+      ]
+    },
+    {
+      "id": "2025-thepillarsofeverything",
+      "year": 2025,
+      "season": "Spring",
+      "theme": "The Pillars of Everything",
+      "date": "May 17, 2025",
+      "venue": "GUC Main Auditorium, New Cairo",
+      "recap": "TEDxGUC \"The Pillars of Everything\" explored the silent convictions, formative experiences, and moments that hold us together when everything else shifts. In a world obsessed with outcomes, we often overlook what lies beneath.",
+      "speakers": [
+        {
+          "name": "Menna El Naggar",
+          "talkTitle": "The Human Experience : Stories that heal, inspire and transform",
+          "topic": "Human Sciences"
+        },
+        {
+          "name": "Nancy Maher",
+          "talkTitle": "The pillars within : simulated connection, real disconnection",
+          "topic": "Psychology"
+        },
+        {
+          "name": "Moaz Akram",
+          "talkTitle": "The points you never knew you were scoring",
+          "topic": "Personal Development"
+        },
+        {
+          "name": "Gohar Said",
+          "talkTitle": "Entrepreneurship's silent battles: the unfiltered truth",
+          "topic": "Business"
+        },
+        {
+          "name": "Roberto Joseph",
+          "talkTitle": "Signed out to sign in",
+          "topic": "Technology & Society"
+        }
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=500&fit=crop"
+      ],
+      "sponsors": [
+        "TED",
+        "GUC"
+      ]
+    },
+    {
       "id": "2025-spring",
       "year": 2025,
       "season": "Winter",
@@ -524,66 +973,6 @@
         "TED",
         "GUC",
         "Krispy Kreme"
-      ]
-    },
-    {
-      "id": "2023-fall",
-      "year": 2023,
-      "season": "Fall",
-      "theme": "Uncharted",
-      "date": "November 18, 2023",
-      "venue": "GUC Conference Center, New Cairo",
-      "recap": "TEDxGUC 'Uncharted' explored the unknown territories of human potential. From design thinking to mental health advocacy, our speakers pushed audiences to venture beyond their comfort zones.",
-      "speakers": [
-        {
-          "name": "Layla Mansour",
-          "talkTitle": "Design Thinking for Social Impact",
-          "topic": "Design"
-        },
-        {
-          "name": "Karim Nabil",
-          "talkTitle": "Breaking the Silence on Mental Health",
-          "topic": "Health"
-        }
-      ],
-      "gallery": [
-        "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=800&h=500&fit=crop",
-        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop"
-      ],
-      "sponsors": [
-        "TED",
-        "GUC",
-        "Orange Egypt"
-      ]
-    },
-    {
-      "id": "2022-spring",
-      "year": 2022,
-      "season": "Spring",
-      "theme": "Mosaic",
-      "date": "March 25, 2022",
-      "venue": "GUC Main Auditorium, New Cairo",
-      "recap": "Our 'Mosaic' event celebrated the beauty of diverse perspectives coming together. Speakers shared stories of entrepreneurship, storytelling, and cultural preservation.",
-      "speakers": [
-        {
-          "name": "Yasmin Farouk",
-          "talkTitle": "The Art of Storytelling",
-          "topic": "Culture"
-        },
-        {
-          "name": "Ahmed Soliman",
-          "talkTitle": "Entrepreneurship in Emerging Markets",
-          "topic": "Business"
-        }
-      ],
-      "gallery": [
-        "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=500&fit=crop",
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=500&fit=crop"
-      ],
-      "sponsors": [
-        "TED",
-        "GUC",
-        "Etisalat Egypt"
       ]
     }
   ],

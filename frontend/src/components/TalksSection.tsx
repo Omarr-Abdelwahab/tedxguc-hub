@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, Heart } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { fetchTalks } from "@/lib/api";
 import type { Talk } from "@/types/content";
-import TheatreMode from "./TheatreMode";
 
 const TalksSection = () => {
   const [talks, setTalks] = useState<Talk[]>([]);
@@ -12,7 +12,6 @@ const TalksSection = () => {
   const [search, setSearch] = useState("");
   const [topicFilter, setTopicFilter] = useState("");
   const [yearFilter, setYearFilter] = useState<number | "">("");
-  const [selectedTalk, setSelectedTalk] = useState<Talk | null>(null);
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -138,60 +137,64 @@ const TalksSection = () => {
         {!isLoading && !errorMessage && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filtered.map((talk, i) => (
-            <motion.div
+            <Link
               key={talk.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group cursor-pointer"
-              onClick={() => setSelectedTalk(talk)}
+              to={`/talks/${talk.id}`}
             >
-              <div className="relative overflow-hidden bg-secondary">
-                <img
-                  src={talk.thumbnail}
-                  alt={talk.title}
-                  className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/40 transition-colors duration-300 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-primary-foreground text-xl ml-1">▶</span>
-                  </div>
-                </div>
-                <span className="absolute bottom-3 right-3 bg-accent/80 text-accent-foreground text-xs font-medium px-2 py-1">
-                  {talk.duration}
-                </span>
-              </div>
-              <div className="pt-4 flex gap-3">
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-bold text-foreground leading-snug truncate group-hover:text-primary transition-colors">
-                    {talk.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {talk.speaker}
-                  </p>
-                  <p className="text-xs text-muted-foreground/60 mt-0.5">
-                    {talk.topic} · {talk.year}
-                  </p>
-                </div>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleFav(talk.id);
-                  }}
-                  className="flex-shrink-0 mt-0.5"
-                >
-                  <Heart
-                    size={18}
-                    className={`transition-colors ${
-                      favorites.has(talk.id)
-                        ? "fill-primary text-primary"
-                        : "text-muted-foreground hover:text-primary"
-                    }`}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="group cursor-pointer h-full"
+              >
+                <div className="relative overflow-hidden bg-secondary">
+                  <img
+                    src={talk.thumbnail}
+                    alt={talk.title}
+                    className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
-                </button>
-              </div>
-            </motion.div>
+                  <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/40 transition-colors duration-300 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-primary-foreground text-xl ml-1">▶</span>
+                    </div>
+                  </div>
+                  <span className="absolute bottom-3 right-3 bg-accent/80 text-accent-foreground text-xs font-medium px-2 py-1">
+                    {talk.duration}
+                  </span>
+                </div>
+                <div className="pt-4 flex gap-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-bold text-foreground leading-snug truncate group-hover:text-primary transition-colors">
+                      {talk.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {talk.speaker}
+                    </p>
+                    <p className="text-xs text-muted-foreground/60 mt-0.5">
+                      {talk.topic} · {talk.year}
+                    </p>
+                  </div>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      toggleFav(talk.id);
+                    }}
+                    className="flex-shrink-0 mt-0.5"
+                  >
+                    <Heart
+                      size={18}
+                      className={`transition-colors ${
+                        favorites.has(talk.id)
+                          ? "fill-primary text-primary"
+                          : "text-muted-foreground hover:text-primary"
+                      }`}
+                    />
+                  </button>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
         )}
@@ -202,16 +205,6 @@ const TalksSection = () => {
           </p>
         )}
       </div>
-
-      {/* Theatre Mode */}
-      <AnimatePresence>
-        {selectedTalk && (
-          <TheatreMode
-            talk={selectedTalk}
-            onClose={() => setSelectedTalk(null)}
-          />
-        )}
-      </AnimatePresence>
     </section>
   );
 };

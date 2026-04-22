@@ -536,3 +536,4 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
     console.log(`TEDxGUC backend listening on http://${HOST}:${PORT}`);
   });
 }
+
