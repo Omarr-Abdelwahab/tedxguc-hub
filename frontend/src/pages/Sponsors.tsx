@@ -75,7 +75,7 @@ const Sponsors = () => {
 
           <div className="text-center mt-16">
             <p className="text-muted-foreground text-sm mb-4">
-              Interested in sponsoring TEDxGUC?
+              Interested in partnering with TEDxGUC?
             </p>
             <Link
               to="/contact"
