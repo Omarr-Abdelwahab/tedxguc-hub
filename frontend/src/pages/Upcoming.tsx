@@ -98,7 +98,7 @@ const Upcoming = () => {
             </span>
           </div>
           <button className="bg-primary text-primary-foreground px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-primary/85 transition-colors">
-            Join the Waitlist
+            View Full Schedule
           </button>
         </div>
       </section>
