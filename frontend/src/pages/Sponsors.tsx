@@ -43,10 +43,10 @@ const Sponsors = () => {
       <section className="pt-32 pb-20 bg-accent">
         <div className="container mx-auto px-6 text-center">
           <p className="text-primary font-semibold tracking-[0.3em] uppercase text-sm mb-4">
-            Our Partners
+            Our Supporters
           </p>
           <h1 className="text-5xl md:text-7xl font-black text-accent-foreground tracking-tight">
-            Sponsors
+            Partners
           </h1>
         </div>
       </section>
