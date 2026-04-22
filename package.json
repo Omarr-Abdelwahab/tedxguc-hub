@@ -5,8 +5,8 @@
     "dev": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend run dev\"",
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:backend": "npm --prefix backend run dev",
-    "build": "npm --prefix frontend run build",
-    "build:dev": "npm --prefix frontend run build:dev",
+    "build": "cd frontend && npm install && npm run build",
+    "build:dev": "cd frontend && npm install && npm run build:dev",
     "test:backend": "npm --prefix backend run test"
   },
   "devDependencies": {

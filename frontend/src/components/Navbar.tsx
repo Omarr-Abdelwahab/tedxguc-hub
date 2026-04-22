@@ -63,7 +63,7 @@ const Navbar = () => {
               to="/upcoming"
               className="bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:bg-primary/85"
             >
-              Join Waitlist
+              View Schedule
             </Link>
           </div>
 
@@ -105,7 +105,7 @@ const Navbar = () => {
                 onClick={() => setMobileOpen(false)}
                 className="bg-primary text-primary-foreground px-8 py-3 text-sm font-semibold uppercase tracking-wide"
               >
-                Join Waitlist
+                View Schedule
               </Link>
             </div>
           </motion.div>
