@@ -6,6 +6,7 @@
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:backend": "npm --prefix backend run dev",
     "build": "npm --prefix frontend run build",
+    "build:dev": "npm --prefix frontend run build:dev",
     "test:backend": "npm --prefix backend run test"
   },
   "devDependencies": {
