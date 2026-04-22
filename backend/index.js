@@ -180,7 +180,7 @@ const serveStatic = async (res, urlPath) => {
   createReadStream(filePath).pipe(res);
 };
 
-const requestHandler = async (req, res) => {
+export const requestHandler = async (req, res) => {
   const requestUrl = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
 
   if (requestUrl.pathname.startsWith("/api/")) {
@@ -536,4 +536,6 @@ if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
     console.log(`TEDxGUC backend listening on http://${HOST}:${PORT}`);
   });
 }
+
+export default requestHandler;
 

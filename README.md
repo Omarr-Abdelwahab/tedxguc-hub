@@ -24,3 +24,13 @@ The backend exposes:
 - `POST /api/newsletter`
 
 The SQLite database is created automatically at [backend/data/tedxguc.sqlite](backend/data/tedxguc.sqlite) the first time the backend starts.
+
+## Vercel Deployment
+
+The repository is configured for a single Vercel project from the repo root:
+
+- the frontend builds from [frontend](frontend) into `frontend/dist`
+- the API is exposed through the root [api/[...path].js](api/[...path].js) function
+- SPA routes fall back to `frontend/dist/index.html`
+
+The current backend uses SQLite on the local filesystem, so write-backed data such as contact submissions and nominations is not durable on Vercel's ephemeral filesystem. For persistent production storage, move those writes to an external database.

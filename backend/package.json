@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "db:reset": "node -e \"import('node:fs').then(fs=>{const p='data/tedxguc.sqlite'; if(fs.existsSync(p)){fs.unlinkSync(p); console.log('Deleted', p);} else {console.log('No database file found.');}})\"",
-    "dev": "node server.js",
-    "start": "node server.js",
+    "dev": "node index.js",
+    "start": "node index.js",
     "test": "node --test"
   },
   "dependencies": {

@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 
 process.env.ADMIN_TOKEN = "test-admin-token";
 
-const { startServer } = await import("../server.js");
+const { startServer } = await import("../index.js");
 
 const server = await startServer({ port: 0, host: "127.0.0.1" });
 const address = server.address();

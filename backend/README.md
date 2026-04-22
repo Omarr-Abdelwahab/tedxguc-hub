@@ -2,6 +2,8 @@
 
 This folder contains the Node.js + SQLite backend for TEDxGUC Hub.
 
+The runtime entrypoint is [index.js](index.js), which can be started locally or reused by the root Vercel API function.
+
 ## Stack
 
 - Runtime: Node.js (ES modules)
