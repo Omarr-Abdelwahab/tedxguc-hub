@@ -17,6 +17,7 @@ const Navbar = () => {
   const links = [
     { label: "Home", to: "/" },
     { label: "About", to: "/about" },
+    { label: "Team", to: "/team" },
     { label: "Events", to: "/events" },
     { label: "Talks", to: "/talks" },
     { label: "Partners", to: "/partners" },

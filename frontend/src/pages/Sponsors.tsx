@@ -43,18 +43,18 @@ const Sponsors = () => {
       <section className="pt-32 pb-20 bg-accent">
         <div className="container mx-auto px-6 text-center">
           <p className="text-primary font-semibold tracking-[0.3em] uppercase text-sm mb-4">
-            Our Partners
+            Our Supporters
           </p>
           <h1 className="text-5xl md:text-7xl font-black text-accent-foreground tracking-tight">
-            Sponsors
+            Partners
           </h1>
         </div>
       </section>
 
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 max-w-4xl">
-          {isLoading && <p className="text-center text-muted-foreground py-10">Loading sponsors...</p>}
-          {errorMessage && <p className="text-center text-red-500 py-10">{errorMessage}</p>}
+          {isLoading && <p className="text-center text-muted-foreground py-10">Loading partners...</p>}
+          {errorMessage && <p className="text-center text-destructive py-10">{errorMessage}</p>}
 
           {!isLoading && !errorMessage && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sponsors.map((s) => (
@@ -75,7 +75,7 @@ const Sponsors = () => {
 
           <div className="text-center mt-16">
             <p className="text-muted-foreground text-sm mb-4">
-              Interested in sponsoring TEDxGUC?
+              Interested in partnering with TEDxGUC?
             </p>
             <Link
               to="/contact"

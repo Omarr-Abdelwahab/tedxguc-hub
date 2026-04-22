@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import OrgTreeSection from "@/components/OrgTreeSection";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const About = () => {
   return (
@@ -53,8 +54,27 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <OrgTreeSection />
+      {/* Team CTA */}
+      <section className="py-24 bg-accent">
+        <div className="container mx-auto px-6 text-center max-w-2xl">
+          <p className="text-primary font-semibold tracking-[0.3em] uppercase text-sm mb-4">
+            The People
+          </p>
+          <h2 className="text-4xl md:text-5xl font-black text-accent-foreground tracking-tight mb-6">
+            Meet the team behind TEDxGUC
+          </h2>
+          <p className="text-accent-foreground/60 mb-8">
+            Discover the curators and executives bringing ideas worth spreading to life.
+          </p>
+          <Link
+            to="/team"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm font-semibold uppercase tracking-wider hover:bg-primary/85 transition-colors"
+          >
+            View Our Team
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
 
       <Footer />
     </div>
