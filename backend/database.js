@@ -1,4 +1,3 @@
-import Database from "better-sqlite3";
 import { existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -41,7 +40,9 @@ const parsePayload = (payload) => {
   return payload;
 };
 
-const createLocalStore = () => {
+const createLocalStore = async () => {
+  const { default: Database } = await import("better-sqlite3");
+
   mkdirSync(dataDir, { recursive: true });
 
   const db = new Database(dbPath);
@@ -409,8 +410,7 @@ const createSupabaseStore = async () => {
   return remoteStore;
 };
 
-const localStore = createLocalStore();
-const storePromise = useSupabase ? createSupabaseStore() : Promise.resolve(localStore);
+const storePromise = useSupabase ? createSupabaseStore() : createLocalStore();
 
 const getStore = async () => storePromise;
 
