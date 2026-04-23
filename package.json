@@ -5,9 +5,12 @@
     "dev": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend run dev\"",
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:backend": "npm --prefix backend run dev",
-    "build": "cd frontend && npm install && npm run build",
+    "build": "npm --prefix frontend run build",
     "build:dev": "cd frontend && npm install && npm run build:dev",
     "test:backend": "npm --prefix backend run test"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

@@ -34,3 +34,30 @@ The repository is configured for a single Vercel project from the repo root:
 - SPA routes fall back to `frontend/dist/index.html`
 
 For Vercel or any production deployment, point the backend at Supabase so write-backed data such as contact submissions and nominations persist outside the filesystem.
+
+### Required Environment Variables (Vercel)
+
+Set these in the Vercel project settings before redeploying:
+
+- `SUPABASE_URL` (or `SUPABASE_PROJECT_URL`)
+- `SUPABASE_SERVICE_ROLE_KEY` (recommended)
+- `ADMIN_TOKEN` (required for `/api/submissions/*` and newsletter broadcast)
+
+Optional SMTP variables (only needed for newsletter emails):
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `SMTP_FROM`
+
+### Redeploy Checklist
+
+1. Ensure Supabase tables exist: `content_items`, `contact_submissions`, `newsletter_subscribers`, `speaker_nominations`.
+2. Add the required environment variables in Vercel.
+3. Trigger a new deploy from the latest commit.
+4. Verify these endpoints after deploy:
+	- `/api/health`
+	- `/api/content`
+	- `/api/talks`
