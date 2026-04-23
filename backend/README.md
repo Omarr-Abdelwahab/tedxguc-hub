@@ -104,4 +104,5 @@ curl -X POST http://localhost:3001/api/newsletter/broadcast \
 ## Notes
 
 - Content is seeded from `backend/seed-content.json`.
+- Vercel is configured to include `backend/seed-content.json` in the API function bundle.
 - Contact submissions, newsletter subscriptions, and speaker nominations are persisted in Supabase when configured, otherwise they use the local SQLite fallback.

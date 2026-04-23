@@ -394,8 +394,8 @@ const createSupabaseStore = async () => {
       }, {});
     },
     getContactSubjects: async () => (await remoteStore.getContentItem("contactSubjects")) || siteContent.contactSubjects,
-    getTalks: async () => (await remoteStore.getContentItem("talks")) || [],
-    getEvents: async () => (await remoteStore.getContentItem("events")) || [],
+    getTalks: async () => (await remoteStore.getContentItem("talks")) || siteContent.talks || [],
+    getEvents: async () => (await remoteStore.getContentItem("events")) || siteContent.events || [],
     getEventById: async (eventId) => (await remoteStore.getEvents()).find((event) => event.id === eventId) || null,
     getOrgTreesBySeason: async () => (await remoteStore.getContentItem("orgTreesBySeason")) || {},
     getSponsors: async () => (await remoteStore.getContentItem("sponsors")) || [],

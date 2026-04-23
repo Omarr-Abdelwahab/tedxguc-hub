@@ -3,6 +3,11 @@
   "installCommand": "npm install && npm --prefix frontend install --include=dev && npm --prefix backend install --omit=optional",
   "buildCommand": "npm run build",
   "outputDirectory": "frontend/dist",
+  "functions": {
+    "api/[...path].js": {
+      "includeFiles": "backend/seed-content.json"
+    }
+  },
   "rewrites": [
     {
       "source": "/:path((?!api/).*)",
