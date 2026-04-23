@@ -1,5 +1,3 @@
-import nodemailer from "nodemailer";
-
 const SMTP_HOST = process.env.SMTP_HOST || "";
 const SMTP_PORT = Number(process.env.SMTP_PORT || 587);
 const SMTP_SECURE = String(process.env.SMTP_SECURE || "false").toLowerCase() === "true";
@@ -11,12 +9,14 @@ let transporter;
 
 export const isMailerConfigured = () => Boolean(SMTP_HOST && SMTP_PORT && SMTP_USER && SMTP_PASS && SMTP_FROM);
 
-const getTransporter = () => {
+const getTransporter = async () => {
   if (!isMailerConfigured()) {
     throw new Error("SMTP is not configured.");
   }
 
   if (!transporter) {
+    const nodemailerModule = await import("nodemailer");
+    const nodemailer = nodemailerModule.default || nodemailerModule;
     transporter = nodemailer.createTransport({
       host: SMTP_HOST,
       port: SMTP_PORT,
@@ -40,7 +40,7 @@ const escapeHtml = (value) =>
     .replace(/'/g, "&#39;");
 
 export const sendNewsletterWelcomeEmail = async (email) => {
-  const tx = getTransporter();
+  const tx = await getTransporter();
 
   await tx.sendMail({
     from: SMTP_FROM,
@@ -57,7 +57,7 @@ export const sendNewsletterWelcomeEmail = async (email) => {
 };
 
 export const sendNewsletterBroadcast = async ({ subscribers, subject, message }) => {
-  const tx = getTransporter();
+  const tx = await getTransporter();
   const htmlMessage = escapeHtml(message).replace(/\n/g, "<br/>");
 
   let sentCount = 0;

@@ -40,8 +40,99 @@ const parsePayload = (payload) => {
   return payload;
 };
 
+const createInMemoryStore = () => {
+  const content = Object.fromEntries(
+    Object.entries(contentEntries).map(([key, value]) => [key, JSON.parse(JSON.stringify(value))]),
+  );
+  const contactSubmissions = [];
+  const newsletterSubscribers = [];
+  const speakerNominations = [];
+
+  return {
+    kind: "memory",
+    databaseLabel: "in-memory",
+    getContentItem: async (key) => content[key] || null,
+    getAllContent: async () => ({ ...content }),
+    getContactSubjects: async () => content.contactSubjects || siteContent.contactSubjects,
+    getTalks: async () => content.talks || [],
+    getEvents: async () => content.events || [],
+    getEventById: async (eventId) => (content.events || []).find((event) => event.id === eventId) || null,
+    getOrgTreesBySeason: async () => content.orgTreesBySeason || {},
+    getSponsors: async () => content.sponsors || [],
+    getUpcomingContent: async () => ({
+      upcomingEvent: content.upcomingEvent,
+      upcomingSchedule: content.upcomingSchedule || [],
+      upcomingFAQs: content.upcomingFAQs || [],
+      upcomingSpeakers: content.upcomingSpeakers || [],
+    }),
+    addContactSubmission: async ({ name, email, subject, message }) => {
+      const submission = {
+        id: `contact-${randomUUID()}`,
+        name,
+        email,
+        subject,
+        message,
+        created_at: new Date().toISOString(),
+      };
+      contactSubmissions.unshift(submission);
+      return submission;
+    },
+    addNewsletterSubscriber: async (email) => {
+      const existing = newsletterSubscribers.find((subscriber) => subscriber.email === email);
+      if (existing) {
+        return { alreadySubscribed: true, subscriber: existing };
+      }
+
+      const subscriber = {
+        id: `newsletter-${randomUUID()}`,
+        email,
+        created_at: new Date().toISOString(),
+      };
+      newsletterSubscribers.unshift(subscriber);
+      return { alreadySubscribed: false, subscriber };
+    },
+    getContactSubmissions: async () => [...contactSubmissions],
+    getNewsletterSubscribers: async () => [...newsletterSubscribers],
+    addSpeakerNomination: async ({ nominatorName, nominatorEmail, speakerName, speakerEmail, speakerTopic, speakerBio, whyNominate, speakerSocialLinks }) => {
+      const nomination = {
+        id: `nomination-${randomUUID()}`,
+        nominator_name: nominatorName,
+        nominator_email: nominatorEmail,
+        speaker_name: speakerName,
+        speaker_email: speakerEmail,
+        speaker_topic: speakerTopic,
+        speaker_bio: speakerBio,
+        why_nominate: whyNominate,
+        speaker_social_links: speakerSocialLinks || null,
+        created_at: new Date().toISOString(),
+      };
+      speakerNominations.unshift(nomination);
+      return nomination;
+    },
+    getSpeakerNominations: async () => [...speakerNominations],
+    getHealthSummary: async () => ({
+      ok: true,
+      service: "TEDxGUC Hub API",
+      database: "in-memory",
+      counts: {
+        talks: (content.talks || []).length,
+        events: (content.events || []).length,
+        contacts: contactSubmissions.length,
+        newsletterSubscribers: newsletterSubscribers.length,
+        speakerNominations: speakerNominations.length,
+      },
+    }),
+  };
+};
+
 const createLocalStore = async () => {
-  const { default: Database } = await import("better-sqlite3");
+  let Database;
+  try {
+    ({ default: Database } = await import("better-sqlite3"));
+  } catch (error) {
+    console.warn("better-sqlite3 unavailable, falling back to in-memory store.", error);
+    return createInMemoryStore();
+  }
 
   mkdirSync(dataDir, { recursive: true });
 
