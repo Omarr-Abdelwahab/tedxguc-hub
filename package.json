@@ -1,6 +1,7 @@
 {
   "name": "tedxguc-hub",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend run dev\"",
     "dev:frontend": "npm --prefix frontend run dev",
@@ -10,7 +11,7 @@
     "test:backend": "npm --prefix backend run test"
   },
   "engines": {
-    "node": ">=20"
+    "node": "20.x"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
