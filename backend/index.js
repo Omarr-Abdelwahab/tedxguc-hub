@@ -8,6 +8,7 @@ import {
   sendNewsletterBroadcast,
   sendNewsletterWelcomeEmail,
 } from "./mailer.js";
+import { loadRawSeedContent } from "./seedData.js";
 import {
   addContactSubmission,
   addNewsletterSubscriber,
@@ -55,6 +56,10 @@ const sendText = (res, statusCode, body, contentType = "text/plain; charset=utf-
     "Access-Control-Allow-Headers": CORS_ALLOW_HEADERS,
   });
   res.end(body);
+};
+
+const sendPrettyJson = (res, statusCode, payload) => {
+  sendText(res, statusCode, JSON.stringify(payload, null, 2), "application/json; charset=utf-8");
 };
 
 const readBody = async (req) => {
@@ -213,6 +218,24 @@ export const requestHandler = async (req, res) => {
 
     if (req.method === "GET" && requestUrl.pathname === "/api/content") {
       sendJson(res, 200, await getAllContent());
+      return;
+    }
+
+    if (req.method === "GET" && requestUrl.pathname === "/api/seed-content") {
+      sendPrettyJson(res, 200, loadRawSeedContent());
+      return;
+    }
+
+    if (req.method === "GET" && requestUrl.pathname.startsWith("/api/seed-content/")) {
+      const contentKey = decodeURIComponent(requestUrl.pathname.replace("/api/seed-content/", "")).trim();
+      const content = loadRawSeedContent()[contentKey];
+
+      if (content === undefined) {
+        sendJson(res, 404, { ok: false, error: "Seed content item not found." });
+        return;
+      }
+
+      sendPrettyJson(res, 200, content);
       return;
     }
 

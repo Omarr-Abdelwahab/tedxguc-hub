@@ -39,3 +39,8 @@ export const loadSiteContent = () => {
     upcomingSpeakers: data.upcomingSpeakers,
   };
 };
+
+export const loadRawSeedContent = () => {
+  const sourceText = fs.readFileSync(seedContentPath, "utf8");
+  return JSON.parse(sourceText);
+};

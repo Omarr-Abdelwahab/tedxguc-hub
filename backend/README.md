@@ -22,6 +22,8 @@ The runtime entrypoint is [index.js](index.js), which can be started locally or 
 - `GET /api/config`
 - `GET /api/content`
 - `GET /api/content/:key`
+- `GET /api/seed-content` (raw `seed-content.json` as readable JSON)
+- `GET /api/seed-content/:key` (raw section from `seed-content.json`)
 - `GET /api/talks`
 - `GET /api/events`
 - `GET /api/events/:eventId`
