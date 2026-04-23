@@ -4,7 +4,31 @@ import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const seedContentPath = path.join(__dirname, "seed-content.json");
+
+const resolveSeedContentPath = () => {
+  const envPath = process.env.SEED_CONTENT_PATH;
+  const candidatePaths = [
+    envPath,
+    path.join(__dirname, "seed-content.json"),
+    path.join(process.cwd(), "backend", "seed-content.json"),
+    path.join(process.cwd(), "seed-content.json"),
+  ].filter(Boolean);
+
+  for (const candidatePath of candidatePaths) {
+    if (fs.existsSync(candidatePath)) {
+      return candidatePath;
+    }
+  }
+
+  throw new Error(
+    `Unable to locate seed-content.json. Checked: ${candidatePaths.join(", ")}`,
+  );
+};
+
+const readSeedContent = () => {
+  const sourceText = fs.readFileSync(resolveSeedContentPath(), "utf8");
+  return JSON.parse(sourceText);
+};
 
 export const contactSubjects = [
   "General Inquiry",
@@ -24,8 +48,7 @@ export const sponsors = [
 ];
 
 export const loadSiteContent = () => {
-  const sourceText = fs.readFileSync(seedContentPath, "utf8");
-  const data = JSON.parse(sourceText);
+  const data = readSeedContent();
 
   return {
     contactSubjects: data.contactSubjects || contactSubjects,
@@ -40,7 +63,4 @@ export const loadSiteContent = () => {
   };
 };
 
-export const loadRawSeedContent = () => {
-  const sourceText = fs.readFileSync(seedContentPath, "utf8");
-  return JSON.parse(sourceText);
-};
+export const loadRawSeedContent = () => readSeedContent();
