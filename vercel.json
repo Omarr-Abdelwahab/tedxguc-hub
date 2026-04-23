@@ -5,9 +5,7 @@
   "outputDirectory": "frontend/dist",
   "functions": {
     "api/[...path].js": {
-      "includeFiles": [
-        "backend/seed-content.json"
-      ]
+      "includeFiles": "backend/seed-content.json"
     }
   },
   "rewrites": [

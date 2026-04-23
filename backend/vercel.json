@@ -5,9 +5,7 @@
       "src": "./index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": [
-          "seed-content.json"
-        ]
+        "includeFiles": "seed-content.json"
       }
     }
   ],
