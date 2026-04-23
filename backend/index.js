@@ -195,13 +195,15 @@ export const requestHandler = async (req, res) => {
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/health") {
-      sendJson(res, 200, getHealthSummary());
+      sendJson(res, 200, await getHealthSummary());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/config") {
+      const contactSubjects = await getContactSubjects();
+
       sendJson(res, 200, {
-        contactSubjects: getContactSubjects(),
+        contactSubjects,
         brand: "TEDxGUC",
         waitlistLabel: "Join Waitlist",
         newsletterEmailEnabled: isMailerConfigured(),
@@ -210,13 +212,13 @@ export const requestHandler = async (req, res) => {
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/content") {
-      sendJson(res, 200, getAllContent());
+      sendJson(res, 200, await getAllContent());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname.startsWith("/api/content/")) {
       const contentKey = requestUrl.pathname.replace("/api/content/", "");
-      const content = getAllContent()[contentKey];
+      const content = (await getAllContent())[contentKey];
 
       if (!content) {
         sendJson(res, 404, { ok: false, error: "Content item not found." });
@@ -228,23 +230,23 @@ export const requestHandler = async (req, res) => {
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/talks") {
-      sendJson(res, 200, { talks: getTalks() });
+      sendJson(res, 200, { talks: await getTalks() });
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/events") {
-      sendJson(res, 200, { events: getEvents() });
+      sendJson(res, 200, { events: await getEvents() });
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/sponsors") {
-      sendJson(res, 200, { sponsors: getSponsors() });
+      sendJson(res, 200, { sponsors: await getSponsors() });
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname.startsWith("/api/events/")) {
       const eventId = requestUrl.pathname.replace("/api/events/", "");
-      const event = getEventById(eventId);
+      const event = await getEventById(eventId);
 
       if (!event) {
         sendJson(res, 404, { ok: false, error: "Event not found." });
@@ -256,12 +258,12 @@ export const requestHandler = async (req, res) => {
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/org-trees") {
-      sendJson(res, 200, { orgTreesBySeason: getOrgTreesBySeason() });
+      sendJson(res, 200, { orgTreesBySeason: await getOrgTreesBySeason() });
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/upcoming") {
-      sendJson(res, 200, getUpcomingContent());
+      sendJson(res, 200, await getUpcomingContent());
       return;
     }
 
@@ -289,10 +291,10 @@ export const requestHandler = async (req, res) => {
           return;
         }
 
-        const submission = addContactSubmission({
+        const submission = await addContactSubmission({
           name,
           email,
-          subject: subject || getContactSubjects()[0],
+          subject: subject || (await getContactSubjects())[0],
           message,
         });
 
@@ -325,7 +327,7 @@ export const requestHandler = async (req, res) => {
           return;
         }
 
-        const { alreadySubscribed } = addNewsletterSubscriber(email);
+        const { alreadySubscribed } = await addNewsletterSubscriber(email);
 
         if (!alreadySubscribed && isMailerConfigured()) {
           try {
@@ -376,7 +378,7 @@ export const requestHandler = async (req, res) => {
           return;
         }
 
-        const subscribers = getNewsletterSubscribers();
+        const subscribers = await getNewsletterSubscribers();
         if (subscribers.length === 0) {
           sendJson(res, 200, {
             ok: true,
@@ -443,7 +445,7 @@ export const requestHandler = async (req, res) => {
           return;
         }
 
-        const nomination = addSpeakerNomination({
+        const nomination = await addSpeakerNomination({
           nominatorName,
           nominatorEmail,
           speakerName,
@@ -473,7 +475,7 @@ export const requestHandler = async (req, res) => {
         return;
       }
 
-      sendJson(res, 200, { submissions: getContactSubmissions() });
+      sendJson(res, 200, { submissions: await getContactSubmissions() });
       return;
     }
 
@@ -482,7 +484,7 @@ export const requestHandler = async (req, res) => {
         return;
       }
 
-      sendJson(res, 200, { subscribers: getNewsletterSubscribers() });
+      sendJson(res, 200, { subscribers: await getNewsletterSubscribers() });
       return;
     }
 
@@ -491,7 +493,7 @@ export const requestHandler = async (req, res) => {
         return;
       }
 
-      sendJson(res, 200, { nominations: getSpeakerNominations() });
+      sendJson(res, 200, { nominations: await getSpeakerNominations() });
       return;
     }
 

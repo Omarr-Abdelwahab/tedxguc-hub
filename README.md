@@ -23,7 +23,7 @@ The backend exposes:
 - `POST /api/contact`
 - `POST /api/newsletter`
 
-The SQLite database is created automatically at [backend/data/tedxguc.sqlite](backend/data/tedxguc.sqlite) the first time the backend starts.
+The backend uses Supabase when `SUPABASE_URL` and a Supabase key are configured. Otherwise it falls back to the local SQLite database at [backend/data/tedxguc.sqlite](backend/data/tedxguc.sqlite).
 
 ## Vercel Deployment
 
@@ -33,4 +33,4 @@ The repository is configured for a single Vercel project from the repo root:
 - the API is exposed through the root [api/[...path].js](api/[...path].js) function
 - SPA routes fall back to `frontend/dist/index.html`
 
-The current backend uses SQLite on the local filesystem, so write-backed data such as contact submissions and nominations is not durable on Vercel's ephemeral filesystem. For persistent production storage, move those writes to an external database.
+For Vercel or any production deployment, point the backend at Supabase so write-backed data such as contact submissions and nominations persist outside the filesystem.

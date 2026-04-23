@@ -1,20 +1,20 @@
 # Backend
 
-This folder contains the Node.js + SQLite backend for TEDxGUC Hub.
+This folder contains the Node.js API backend for TEDxGUC Hub.
 
 The runtime entrypoint is [index.js](index.js), which can be started locally or reused by the root Vercel API function.
 
 ## Stack
 
 - Runtime: Node.js (ES modules)
-- Database: SQLite via `better-sqlite3`
-- DB path: `backend/data/tedxguc.sqlite`
+- Database: Supabase REST when configured, with SQLite fallback for local development and tests
+- Local DB path: `backend/data/tedxguc.sqlite`
 
 ## Scripts
 
 - `npm run dev` starts the API server.
 - `npm run start` starts the API server.
-- `npm run db:reset` removes the SQLite file so it can be recreated and reseeded.
+- `npm run db:reset` removes the local SQLite file so it can be recreated and reseeded.
 
 ## API Endpoints
 
@@ -42,6 +42,11 @@ The runtime entrypoint is [index.js](index.js), which can be started locally or 
 - `Authorization: Bearer <token>` header
 
 Set `ADMIN_TOKEN` in your environment before starting the server.
+
+To use Supabase in production, configure:
+
+- `SUPABASE_URL` or `SUPABASE_PROJECT_URL`
+- `SUPABASE_SERVICE_ROLE_KEY` recommended, or `SUPABASE_ANON_KEY` if your Supabase policies allow the required reads and writes
 
 To enable newsletter email delivery, configure SMTP environment variables:
 
@@ -97,4 +102,4 @@ curl -X POST http://localhost:3001/api/newsletter/broadcast \
 ## Notes
 
 - Content is seeded from `backend/seed-content.json`.
-- Contact submissions, newsletter subscriptions, and speaker nominations are persisted in SQLite.
+- Contact submissions, newsletter subscriptions, and speaker nominations are persisted in Supabase when configured, otherwise they use the local SQLite fallback.
