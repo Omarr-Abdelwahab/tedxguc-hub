@@ -15,10 +15,7 @@
       "name": "GUC",
       "tier": "Host University"
     },
-    {
-      "name": "Ameto",
-      "tier": "Gold Sponsor"
-    },
+   
     {
       "name": "V7",
       "tier": "Gold Sponsor"
@@ -26,11 +23,8 @@
     {
       "name": "Crepe 2000",
       "tier": "Silver Sponsor"
-    },
-    {
-      "name": "HagmaxLama",
-      "tier": "Silver Sponsor"
     }
+ 
   ],
   "talks": [
     {
@@ -300,156 +294,6 @@
     }
   ],
   "orgTreesBySeason": {
-    "2025": {
-      "id": "chairman",
-      "title": "Chairwoman",
-      "name": "Sama El-Badrawy",
-      "level": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
-      "description": "The Chairman oversees the entire TEDxGUC operation, ensuring the event aligns with TED's mission of spreading ideas worth sharing.",
-      "committeeDescription": "The Chairman's office sets the strategic direction for the entire TEDxGUC organization. Responsible for external partnerships, TED licensing compliance, and ensuring every division works in harmony toward delivering a world-class event.",
-      "memberBio": "Sama is a business administration graduate and visionary leader passionate about creating platforms for transformative ideas. With experience in event management and community building, she brings strategic thinking and collaborative spirit to the role.",
-      "children": [
-        {
-          "id": "curator-talks",
-          "title": "Curator — Talks",
-          "name": "Yehia Amr",
-          "level": 2,
-          "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
-          "description": "Leads the Talks division, curating speakers and ensuring content quality aligns with the event's theme.",
-          "committeeDescription": "The Talks division is the heart of TEDxGUC. This team scouts, selects, and develops speakers — ensuring every talk is compelling, well-researched, and delivered with impact.",
-          "memberBio": "Yehia is an engineering student with a deep passion for innovative storytelling and public discourse. He combines his analytical mindset with creative vision to identify speakers who challenge conventions and inspire audiences.",
-          "children": [
-            {
-              "id": "exec-coaching",
-              "title": "Coaching",
-              "name": "Mariam Adel",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
-              "description": "Coaches speakers through rehearsals and presentation skills workshops.",
-              "committeeDescription": "The Coaching committee works one-on-one with speakers to refine their narratives, improve delivery, and ensure every talk resonates with the audience.",
-              "memberBio": "Mariam is a psychology student with experience in public speaking coaching and debate."
-            },
-            {
-              "id": "exec-research",
-              "title": "Research & Production",
-              "name": "Hassan Tarek",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
-              "description": "Conducts research to support speakers and manages the production pipeline.",
-              "committeeDescription": "Research & Production ensures every talk is backed by solid research and produced to the highest standards — from script development to stage design.",
-              "memberBio": "Hassan is a political science student with a keen eye for detail and a love for investigative research."
-            }
-          ]
-        },
-        {
-          "id": "curator-operations",
-          "title": "Curator — Operations",
-          "name": "Kareem Shawish",
-          "level": 2,
-          "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
-          "description": "Manages all operational logistics, event planning, and day-of execution.",
-          "committeeDescription": "Operations is the backbone of TEDxGUC. From venue logistics to vendor management, this division ensures every detail is accounted for so the event runs flawlessly.",
-          "memberBio": "Kareem is a systems engineer known for his meticulous attention to detail and problem-solving prowess. He thrives under pressure and excels at orchestrating complex operations, ensuring every element aligns perfectly for a seamless event experience.",
-          "children": [
-            {
-              "id": "exec-events",
-              "title": "Events Management",
-              "name": "Dina Sherif",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face",
-              "description": "Plans and executes all event activities.",
-              "committeeDescription": "Events Management handles venue coordination, scheduling, and on-site attendee experience from doors-open to closing remarks.",
-              "memberBio": "Dina is an architecture student who brings her spatial awareness and creativity to event design."
-            },
-            {
-              "id": "exec-partnerships",
-              "title": "Partnerships",
-              "name": "Ali Mahmoud",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face",
-              "description": "Builds relationships with sponsors and stakeholders.",
-              "committeeDescription": "Partnerships secures sponsorships and strategic alliances that fund and elevate the TEDxGUC experience.",
-              "memberBio": "Ali is a finance student with strong networking skills and a talent for negotiation."
-            },
-            {
-              "id": "exec-logistics",
-              "title": "Logistics",
-              "name": "Rana Hossam",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
-              "description": "Handles transportation, equipment, catering, and venue setup.",
-              "committeeDescription": "Logistics manages the physical infrastructure of the event — from equipment rental and catering to transportation and setup.",
-              "memberBio": "Rana is an industrial engineering student who thrives on solving complex logistical puzzles."
-            }
-          ]
-        },
-        {
-          "id": "curator-od",
-          "title": "Curator — OD",
-          "name": "Hazem Talhawy",
-          "level": 2,
-          "imageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face",
-          "description": "Focuses on team growth, internal culture, and organizational excellence.",
-          "committeeDescription": "Organizational Development nurtures the TEDxGUC team itself — running training programs, building culture, and ensuring every member grows alongside the organization.",
-          "memberBio": "Hazem is an organizational psychology specialist dedicated to building high-performing teams and fostering inclusive cultures. He believes that a thriving organization starts with investing in people and creating spaces where everyone can contribute their best.",
-          "children": [
-            {
-              "id": "exec-assoc-dev",
-              "title": "Associate Development",
-              "name": "Youssef Gamal",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1463453091185-61582044d556?w=200&h=200&fit=crop&crop=face",
-              "description": "Develops training programs for new associates.",
-              "committeeDescription": "Associate Development creates onboarding programs, workshops, and mentorship tracks for new team members.",
-              "memberBio": "Youssef is an HR management student who believes in investing in people as the key to organizational success."
-            },
-            {
-              "id": "exec-assoc-exp",
-              "title": "Associate Experience",
-              "name": "Farida Nasser",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=face",
-              "description": "Ensures a positive experience for all team members.",
-              "committeeDescription": "Associate Experience designs team-bonding activities, feedback systems, and wellness initiatives to keep morale high.",
-              "memberBio": "Farida is a psychology student dedicated to creating inclusive and supportive team environments."
-            }
-          ]
-        },
-        {
-          "id": "curator-marketing",
-          "title": "Curator — Marketing",
-          "name": "Jana Nader",
-          "level": 2,
-          "imageUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&h=200&fit=crop&crop=face",
-          "description": "Directs all marketing, branding, and communication strategies.",
-          "committeeDescription": "Marketing & Coordination amplifies the TEDxGUC brand through social media, content creation, and integrated campaigns that drive engagement and ticket sales.",
-          "memberBio": "Jana is a creative marketing strategist with a flair for storytelling and data-driven decision making. She combines bold creative vision with analytical rigor to craft campaigns that resonate with diverse audiences and drive meaningful engagement.",
-          "children": [
-            {
-              "id": "exec-media",
-              "title": "Media & Design",
-              "name": "Nada Emad",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&h=200&fit=crop&crop=face",
-              "description": "Creates all visual content and social media assets.",
-              "committeeDescription": "Media & Design produces the visual identity of TEDxGUC — from social posts and event branding to video content and stage graphics.",
-              "memberBio": "Nada is a digital media student with a portfolio spanning photography, motion graphics, and UI design."
-            },
-            {
-              "id": "exec-campaigns",
-              "title": "Campaigns & Copy",
-              "name": "Ziad Ayman",
-              "level": 3,
-              "imageUrl": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&h=200&fit=crop&crop=face",
-              "description": "Develops marketing campaigns and writes compelling copy.",
-              "committeeDescription": "Campaigns & Copywriting crafts the voice of TEDxGUC — writing copy, planning content calendars, and executing multi-channel marketing campaigns.",
-              "memberBio": "Ziad is a journalism student who combines data-driven strategy with creative storytelling."
-            }
-          ]
-        }
-      ]
-    },
     "2026": {
       "id": "chairman",
       "title": "Chairman",
@@ -588,7 +432,7 @@
             },
             {
               "id": "exec-campaigns",
-              "title": "Campaigns & Copy",
+              "title": "Campaigns & Copywriting",
               "name": "Malak Hatem",
               "level": 3,
               "imageUrl": "/images/CC.jpeg",
@@ -984,52 +828,10 @@
   },
   "upcomingSchedule": [
     {
-      "time": "09:00",
-      "title": "Doors Open & Registration",
-      "description": "Check-in, grab your badge, and enjoy coffee.",
-      "type": "activity"
-    },
-    {
-      "time": "10:00",
-      "title": "Opening Remarks",
-      "description": "Welcome by the TEDxGUC Chairman.",
-      "type": "talk"
-    },
-    {
-      "time": "10:15",
-      "title": "Session 1 — Spark",
-      "description": "Three talks exploring the origins of transformative ideas.",
-      "type": "talk"
-    },
-    {
-      "time": "11:30",
-      "title": "Networking Break",
-      "description": "Connect with fellow attendees over refreshments.",
-      "type": "break"
-    },
-    {
-      "time": "12:00",
-      "title": "Session 2 — Ignite",
-      "description": "Three talks on turning ideas into action.",
-      "type": "talk"
-    },
-    {
-      "time": "13:15",
-      "title": "Lunch Break",
-      "description": "Catered lunch and interactive experience booths.",
-      "type": "break"
-    },
-    {
-      "time": "14:30",
-      "title": "Session 3 — Transform",
-      "description": "Three closing talks on lasting impact and legacy.",
-      "type": "talk"
-    },
-    {
-      "time": "16:00",
-      "title": "Closing & Networking",
-      "description": "Closing remarks followed by open networking.",
-      "type": "activity"
+      "time": "",
+      "title": "to be announced soon",
+      "description": "",
+      "type": "info"
     }
   ],
   "upcomingFAQs": [
@@ -1038,8 +840,8 @@
       "answer": "Smart casual is recommended. Please dress comfortably as the event runs for a full day. Avoid overly casual attire like shorts or flip-flops."
     },
     {
-      "question": "Are refunds available?",
-      "answer": "Tickets are non-refundable but transferable. If you can't attend, you may transfer your ticket to someone else by contacting us at least 48 hours before the event."
+      "question": "Is this a paid event?",
+      "answer": "No, this event is free of charge. Attendance does not require any payment; however, registration may still be required to secure your spot."
     },
     {
       "question": "What is the filming policy?",
@@ -1048,11 +850,8 @@
     {
       "question": "Is parking available?",
       "answer": "Free parking is available at the GUC campus. We recommend arriving early as spaces fill up quickly."
-    },
-    {
-      "question": "Can I bring a guest?",
-      "answer": "Each ticket admits one person. If you'd like to bring a guest, they will need their own ticket."
     }
+
   ],
   "upcomingSpeakers": [
     {

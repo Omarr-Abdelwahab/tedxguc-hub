@@ -14,6 +14,9 @@ From the repository root, you can also run:
 - `npm run dev` to start frontend and backend together.
 - `npm run dev:frontend` to run only frontend.
 - `npm run dev:backend` to run only backend.
+- `npm run lint:frontend` to lint the frontend.
+- `npm run test:frontend` to run frontend tests.
+- `npm run typecheck:frontend` to run the frontend TypeScript check.
 - `npm run test:backend` to run backend tests.
 
 The backend exposes:

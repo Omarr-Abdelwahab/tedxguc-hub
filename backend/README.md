@@ -16,6 +16,10 @@ The runtime entrypoint is [index.js](index.js), which can be started locally or 
 - `npm run start` starts the API server.
 - `npm run db:reset` removes the local SQLite file so it can be recreated and reseeded.
 
+## Maintenance Tasks
+
+Ad-hoc seed and data cleanup logic now lives in [adminTasks.js](adminTasks.js). It exports reusable functions for tasks that used to be separate one-off scripts, including talk cleanup, event cleanup, event sorting, verification, and database sync helpers.
+
 ## API Endpoints
 
 - `GET /api/health`
