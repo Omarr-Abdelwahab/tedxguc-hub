@@ -42,7 +42,7 @@ export const fetchEvents = async (): Promise<TEDxEvent[]> => {
 };
 
 export const fetchEventById = async (eventId: string): Promise<TEDxEvent> => {
-  const data = await request<{ event: TEDxEvent }>(`/api/events/${eventId}`);
+  const data = await request<{ event: TEDxEvent }>(`/api/events/${encodeURIComponent(eventId)}`);
   return data.event;
 };
 
