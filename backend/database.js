@@ -14,6 +14,7 @@ const isProduction = Boolean(process.env.NODE_ENV === "production" || process.en
 // Use /tmp for Vercel (read-only filesystem), local data dir for localhost
 const dataDir = isVercel ? "/tmp" : path.join(__dirname, "data");
 const dbPath = path.join(dataDir, "tedxguc.sqlite");
+const SEED_DATA_PATH = path.join(process.cwd(), 'backend', 'seed-content.json');
 
 if (!isVercel) {
   // Only create local data directory when not on Vercel

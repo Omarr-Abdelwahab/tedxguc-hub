@@ -1,21 +1,18 @@
 {
   "version": 2,
-  "builds": [
+  "functions": {
+    "backend/index.js": {
+      "includeFiles": "backend/seed-content.json"
+    }
+  },
+  "rewrites": [
     {
-      "src": "backend/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["backend/seed-content.json"]
-      }
+      "source": "/api/(.*)",
+      "destination": "backend/index.js"
     },
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "backend/index.js" },
-    { "source": "/(.*)", "destination": "frontend/index.html" }
   ]
 }
