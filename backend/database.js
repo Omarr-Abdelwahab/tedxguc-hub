@@ -444,19 +444,23 @@ const createSupabaseStore = async () => {
 
   const getRows = (tableName, query = {}) => request(tableName, { query });
   const insertRows = (tableName, rows) => request(tableName, { method: "POST", body: rows, prefer: "return=representation" });
+  const upsertRows = (tableName, rows, conflictTarget) => request(tableName, {
+    method: "POST",
+    body: rows,
+    query: conflictTarget ? { on_conflict: conflictTarget } : {},
+    prefer: "resolution=merge-duplicates,return=representation",
+  });
 
-  const existingContentRows = await getRows("content_items", { select: "key" });
-  const existingKeys = new Set(existingContentRows.map((row) => row.key));
-  const missingContentRows = Object.entries(contentEntries)
-    .filter(([key]) => !existingKeys.has(key))
+  const contentItems = Object.entries(loadRawSeedContent())
+    .filter(([key]) => contentEntries[key] !== undefined)
     .map(([key, value]) => ({
       key,
       payload: JSON.stringify(value),
       updated_at: new Date().toISOString(),
     }));
 
-  if (missingContentRows.length > 0) {
-    await insertRows("content_items", missingContentRows);
+  if (contentItems.length > 0) {
+    await upsertRows("content_items", contentItems, "key");
   }
 
   const remoteStore = {
