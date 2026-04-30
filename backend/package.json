@@ -16,5 +16,9 @@
   },
   "engines": {
     "node": "20.x"
-  }
+  },
+
+    "refresh-data": "npm run db:reset && npm run dev"
+  
+ 
 }
