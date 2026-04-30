@@ -1,7 +1,7 @@
-import { existsSync, mkdirSync, statSync } from "node:fs";
+import { existsSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { loadSiteContent, loadRawSeedContent } from "./seedData.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -52,6 +52,8 @@ const parsePayload = (payload) => {
   return payload;
 };
 
+const getSeedContentSignature = () => createHash("sha256").update(JSON.stringify(loadRawSeedContent())).digest("hex");
+
 /**
  * Check if the SQLite database is empty (contains no content_items)
  * Returns true if the database doesn't exist or is empty
@@ -67,25 +69,31 @@ const isDatabaseEmpty = (db) => {
 };
 
 /**
- * Auto-seed the database from seed-content.json if it's empty
- * This ensures fresh data on every Vercel deployment since /tmp is ephemeral
+ * Seed or refresh the content_items table from seed-content.json.
+ * On Vercel, this is used both for empty databases and for stale /tmp files.
  */
-const autoSeedDatabase = (db, insertContentIfMissing) => {
+const seedDatabaseFromContent = (db, upsertContentItem, clearContentItems, setSeedSignature) => {
   try {
     const seedData = loadRawSeedContent();
-    const contentKeys = ["talks", "orgTreesBySeason", "events", "sponsors", "upcomingEvent", "upcomingSchedule", "upcomingFAQs", "upcomingSpeakers", "contactSubjects"];
+    const seedSignature = getSeedContentSignature();
+    const updatedAt = new Date().toISOString();
+
+    clearContentItems.run();
 
     let seededCount = 0;
-    for (const key of contentKeys) {
-      if (seedData[key] !== undefined) {
-        insertContentIfMissing.run({
-          key,
-          payload: JSON.stringify(seedData[key]),
-          updatedAt: new Date().toISOString(),
-        });
-        seededCount++;
-      }
+    for (const [key, value] of Object.entries(seedData)) {
+      upsertContentItem.run({
+        key,
+        payload: JSON.stringify(value),
+        updatedAt,
+      });
+      seededCount++;
     }
+
+    setSeedSignature.run({
+      signature: seedSignature,
+      updatedAt,
+    });
 
     console.log(`[Database] Auto-seeded ${seededCount} content items from seed-content.json`);
   } catch (error) {
@@ -206,6 +214,12 @@ const createLocalStore = async () => {
       updated_at TEXT NOT NULL
     );
 
+    CREATE TABLE IF NOT EXISTS seed_state (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      signature TEXT NOT NULL,
+      updated_at TEXT NOT NULL
+    );
+
     CREATE TABLE IF NOT EXISTS contact_submissions (
       id TEXT PRIMARY KEY,
       name TEXT NOT NULL,
@@ -235,18 +249,33 @@ const createLocalStore = async () => {
     );
   `);
 
-  const insertContentIfMissing = db.prepare(`
+  const upsertContentItem = db.prepare(`
     INSERT INTO content_items (key, payload, updated_at)
     VALUES (@key, @payload, @updatedAt)
-    ON CONFLICT(key) DO NOTHING
+    ON CONFLICT(key) DO UPDATE SET
+      payload = excluded.payload,
+      updated_at = excluded.updated_at
   `);
 
-  // Auto-seed if database is empty
-  if (isDatabaseEmpty(db)) {
-    console.log("[Database] Database is empty, auto-seeding from seed-content.json...");
-    autoSeedDatabase(db, insertContentIfMissing);
+  const clearContentItems = db.prepare("DELETE FROM content_items");
+  const getSeedSignature = db.prepare("SELECT signature FROM seed_state WHERE id = 1");
+  const setSeedSignature = db.prepare(`
+    INSERT INTO seed_state (id, signature, updated_at)
+    VALUES (1, @signature, @updatedAt)
+    ON CONFLICT(id) DO UPDATE SET
+      signature = excluded.signature,
+      updated_at = excluded.updated_at
+  `);
+
+  const currentSeedSignature = getSeedContentSignature();
+  const storedSeedSignature = getSeedSignature.get()?.signature || null;
+  const shouldRefreshSeed = isDatabaseEmpty(db) || storedSeedSignature !== currentSeedSignature;
+
+  if (shouldRefreshSeed) {
+    console.log("[Database] Refreshing content_items from seed-content.json...");
+    seedDatabaseFromContent(db, upsertContentItem, clearContentItems, setSeedSignature);
   } else {
-    console.log("[Database] Database already contains data, skipping auto-seed");
+    console.log("[Database] Seed signature matches, skipping content refresh");
   }
 
   const getContentRow = db.prepare("SELECT payload FROM content_items WHERE key = ?");
