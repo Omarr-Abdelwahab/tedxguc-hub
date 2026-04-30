@@ -15,13 +15,16 @@ export const useFormField = () => {
     throw new Error("useFormField should be used within <FormItem>");
   }
 
-  const fieldState = getFieldState(fieldContext.name, formState);
+  const fieldState = getFieldState(
+    (fieldContext as { name: string }).name,
+    formState
+  );
 
-  const { id } = itemContext;
+  const { id } = itemContext as { id: string };
 
   return {
     id,
-    name: fieldContext.name,
+    name: (fieldContext as { name: string }).name,
     formItemId: `${id}-form-item`,
     formDescriptionId: `${id}-form-item-description`,
     formMessageId: `${id}-form-item-message`,
