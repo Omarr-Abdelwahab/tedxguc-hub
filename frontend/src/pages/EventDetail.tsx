@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { CalendarDays, MapPin, ArrowLeft } from "lucide-react";
-import { fetchEventById, fetchTalks } from "@/lib/api";
+import { fetchEvents, fetchTalks } from "@/lib/api";
 import type { TEDxEvent, Talk } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -25,12 +25,13 @@ const EventDetail = () => {
       }
 
       try {
-        const [eventData, talksData] = await Promise.all([
-          fetchEventById(eventId),
+        const [eventsData, talksData] = await Promise.all([
+          fetchEvents(),
           fetchTalks(),
         ]);
         if (isMounted) {
-          setEvent(eventData);
+          const matchedEvent = eventsData.find((candidate) => candidate.id === eventId) || null;
+          setEvent(matchedEvent);
           setTalks(talksData);
         }
       } catch {
