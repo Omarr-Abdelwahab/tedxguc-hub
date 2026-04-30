@@ -6,445 +6,6 @@
     "Partnership",
     "Media & Press"
   ],
-  "sponsors": [
-    {
-      "name": "TED",
-      "tier": "License Partner"
-    },
-    {
-      "name": "GUC",
-      "tier": "Host University"
-    },
-   
-    {
-      "name": "V7",
-      "tier": "Gold Sponsor"
-    },
-    {
-      "name": "Crepe 2000",
-      "tier": "Silver Sponsor"
-    }
- 
-  ],
-  "talks": [
-    {
-      "id": "9",
-      "title": "Civil Work: Putting Syrian refugees back on their feet",
-      "speaker": "Rasha Maaty",
-      "speakerBio": "Rasha Maaty is a social impact advocate focused on humanitarian work and refugee support. Her work centers on creating sustainable livelihoods and integration programs for displaced communities.",
-      "topic": "Social Impact",
-      "year": 2017,
-      "duration": "13:32",
-      "thumbnail": "https://i.ytimg.com/vi/yC2AWPsE_q8/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/yC2AWPsE_q8",
-      "socialLinks": []
-    },
-    {
-      "id": "10",
-      "title": "Restructuring our living spaces through container architecture",
-      "speaker": "Youssef Farag",
-      "speakerBio": "Youssef Farag is an architect and innovator exploring sustainable and affordable housing solutions through creative architectural design. His work utilizes recycled and unconventional materials to address housing challenges.",
-      "topic": "Design",
-      "year": 2017,
-      "duration": "15:46",
-      "thumbnail": "https://i.ytimg.com/vi/d1SnSK3p6W0/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/d1SnSK3p6W0",
-      "socialLinks": []
-    },
-    {
-      "id": "11",
-      "title": "Can we still say that there are plenty of fish in the sea by 2050?",
-      "speaker": "Nada El Shanawany",
-      "speakerBio": "Nada El Shanawany is a marine biologist and environmental scientist dedicated to studying and protecting marine ecosystems. Her research addresses the critical challenges facing ocean sustainability and biodiversity.",
-      "topic": "Environment",
-      "year": 2017,
-      "duration": "13:17",
-      "thumbnail": "https://i.ytimg.com/vi/TgyqQskprV0/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/TgyqQskprV0",
-      "socialLinks": []
-    },
-    {
-      "id": "12",
-      "title": "Drama Therapy: An unlikely solution to a common problem",
-      "speaker": "Reem Hashem",
-      "speakerBio": "Reem Hashem is a drama therapist and mental health professional who uses theatrical techniques and creative expression as therapeutic tools. She pioneered drama therapy programs addressing psychological and emotional challenges in diverse populations.",
-      "topic": "Psychology",
-      "year": 2017,
-      "duration": "17:22",
-      "thumbnail": "https://i.ytimg.com/vi/YjjvM4RIk8M/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/YjjvM4RIk8M",
-      "socialLinks": []
-    },
-    {
-      "id": "13",
-      "title": "A biomarker saving lives",
-      "speaker": "Rasha Hanafi",
-      "speakerBio": "Rasha Hanafi is a biomedical researcher and healthcare innovator focused on developing diagnostic tools and biomarkers to improve patient outcomes. Her research bridges the gap between laboratory discovery and clinical application.",
-      "topic": "Health",
-      "year": 2017,
-      "duration": "9:40",
-      "thumbnail": "https://i.ytimg.com/vi/Fez9MXmHS80/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Fez9MXmHS80",
-      "socialLinks": []
-    },
-    {
-      "id": "14",
-      "title": "Mental illness representation in Egyptian movies",
-      "speaker": "Caroline Mitry",
-      "speakerBio": "Caroline Mitry is a media studies scholar and cultural critic examining the portrayal of mental health issues in film and television. Her work advocates for more accurate and stigma-reducing representation of mental illness in media.",
-      "topic": "Culture",
-      "year": 2017,
-      "duration": "17:40",
-      "thumbnail": "https://i.ytimg.com/vi/0ztPKONrfpM/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/0ztPKONrfpM",
-      "socialLinks": []
-    },
-    {
-      "id": "15",
-      "title": "A sustainable development model for red sea rural areas",
-      "speaker": "Omar Sabaa",
-      "speakerBio": "Omar Sabaa is a development expert and environmental consultant specializing in sustainable community development in rural and coastal regions. His work integrates economic growth with environmental conservation and social welfare.",
-      "topic": "Environment",
-      "year": 2017,
-      "duration": "7:56",
-      "thumbnail": "https://i.ytimg.com/vi/Mn33jdhT5kk/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Mn33jdhT5kk",
-      "socialLinks": []
-    },
-    {
-      "id": "16",
-      "title": "Post chemotherapy: Getting ovaries back to life",
-      "speaker": "Sara Abdel-Aziz",
-      "speakerBio": "Sara Abdel-Aziz is a reproductive health specialist and oncology advocate focused on fertility preservation and quality of life for cancer survivors. Her work addresses the overlooked intersection of cancer treatment and reproductive health.",
-      "topic": "Health",
-      "year": 2017,
-      "duration": "8:13",
-      "thumbnail": "https://i.ytimg.com/vi/c4ffFDT5WWs/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/c4ffFDT5WWs",
-      "socialLinks": []
-    },
-    {
-      "id": "17",
-      "title": "Research: The marginalized dimension in our fight against cancer",
-      "speaker": "Yehia Abugabal",
-      "speakerBio": "Yehia Abugabal is a cancer researcher and public health advocate emphasizing the importance of diverse and inclusive research in improving cancer treatment outcomes. His work highlights underrepresented populations in medical research.",
-      "topic": "Health",
-      "year": 2017,
-      "duration": "14:23",
-      "thumbnail": "https://i.ytimg.com/vi/onU-J44jY3A/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/onU-J44jY3A",
-      "socialLinks": []
-    },
-    {
-      "id": "18",
-      "title": "Beyond limits, different is beautiful",
-      "speaker": "Rania Abdelaziz & Alaa El Masry",
-      "speakerBio": "Rania Abdelaziz and Alaa El Masry are advocates for inclusion and accessibility. Their work focuses on challenging perceptions about disability and celebrating human diversity.",
-      "topic": "Social Impact",
-      "year": 2023,
-      "duration": "13:21",
-      "thumbnail": "https://i.ytimg.com/vi/mOudPoFxALk/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/mOudPoFxALk",
-      "socialLinks": []
-    },
-    {
-      "id": "19",
-      "title": "Reclaiming Egypt's narrative",
-      "speaker": "Mahmoud Hawary",
-      "speakerBio": "Mahmoud Hawary is a cultural historian and filmmaker dedicated to preserving and promoting Egypt's rich historical narratives.",
-      "topic": "Culture",
-      "year": 2023,
-      "duration": "12:45",
-      "thumbnail": "https://i.ytimg.com/vi/bq29u6RAp1k/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/bq29u6RAp1k",
-      "socialLinks": []
-    },
-    {
-      "id": "20",
-      "title": "From machines to bodies",
-      "speaker": "Yahya Hefnawi",
-      "speakerBio": "Yahya Hefnawi is an engineer and innovator exploring the intersection of technology and human physiology.",
-      "topic": "Technology",
-      "year": 2023,
-      "duration": "14:07",
-      "thumbnail": "https://i.ytimg.com/vi/for_-b3LyNI/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/for_-b3LyNI",
-      "socialLinks": []
-    },
-    {
-      "id": "21",
-      "title": "Getting companies racing to hire you",
-      "speaker": "Youssef El Akkari",
-      "speakerBio": "Youssef El Akkari is a career coach and talent development specialist helping young professionals stand out.",
-      "topic": "Business",
-      "year": 2023,
-      "duration": "13:52",
-      "thumbnail": "https://i.ytimg.com/vi/odX9FKx23lI/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/odX9FKx23lI",
-      "socialLinks": []
-    },
-    {
-      "id": "22",
-      "title": "Bridging the professional gap: The transformative power of network",
-      "speaker": "Ahmed El Helaly",
-      "speakerBio": "Ahmed El Helaly is a professional development coach emphasizing the transformative impact of strategic professional relationships.",
-      "topic": "Business",
-      "year": 2023,
-      "duration": "12:34",
-      "thumbnail": "https://i.ytimg.com/vi/Qbi4DUmDzcM/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Qbi4DUmDzcM",
-      "socialLinks": []
-    },
-    {
-      "id": "23",
-      "title": "It didn't start with you",
-      "speaker": "Shereen Rizk",
-      "speakerBio": "Shereen Rizk is a psychotherapist exploring generational trauma and healing.",
-      "topic": "Psychology",
-      "year": 2023,
-      "duration": "14:19",
-      "thumbnail": "https://i.ytimg.com/vi/Bx3yPK0YdJw/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Bx3yPK0YdJw",
-      "socialLinks": []
-    },
-    {
-      "id": "24",
-      "title": "Creating movie magic!",
-      "speaker": "Dibo",
-      "speakerBio": "Dibo is a filmmaker and visual effects artist passionate about bringing stories to life.",
-      "topic": "Arts, Media & Design",
-      "year": 2023,
-      "duration": "11:58",
-      "thumbnail": "https://i.ytimg.com/vi/hAVXYHQQyj8/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/hAVXYHQQyj8",
-      "socialLinks": []
-    },
-    {
-      "id": "25",
-      "title": "Bringing the past to life",
-      "speaker": "Rowan El Selmy",
-      "speakerBio": "Rowan El Selmy is an archaeologist dedicated to uncovering and preserving historical narratives.",
-      "topic": "Culture",
-      "year": 2023,
-      "duration": "13:16",
-      "thumbnail": "https://i.ytimg.com/vi/Po9XC1c06Mw/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Po9XC1c06Mw",
-      "socialLinks": []
-    }
-    ,
-    {
-      "id": "26",
-      "title": "Goal Of Equality",
-      "speaker": "Ali Aboulnasr",
-      "speakerBio": "Ali Aboulnasr is a social justice advocate focused on equality and civic impact.",
-      "topic": "Social Justice",
-      "year": 2015,
-      "duration": "11:00",
-      "thumbnail": "https://i.ytimg.com/vi/ou46JytZHVM/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/ou46JytZHVM",
-      "socialLinks": []
-    },
-    {
-      "id": "27",
-      "title": "STEM-ED",
-      "speaker": "Mohamed Rizkallah",
-      "speakerBio": "Mohamed Rizkallah is an education and technology speaker who explores the intersection of STEM and learning.",
-      "topic": "Education & Technology",
-      "year": 2015,
-      "duration": "18:30",
-      "thumbnail": "https://i.ytimg.com/vi/6hzR6ugto4Y/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/6hzR6ugto4Y",
-      "socialLinks": []
-    },
-    {
-      "id": "28",
-      "title": "Exposing hidden dimensions of Child Sexual Abuse.",
-      "speaker": "Sara Aziz",
-      "speakerBio": "Sara Aziz is a health advocate raising awareness about child safety and support systems.",
-      "topic": "Health",
-      "year": 2015,
-      "duration": "17:58",
-      "thumbnail": "https://i.ytimg.com/vi/CAsX_3Lmq3E/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/CAsX_3Lmq3E",
-      "socialLinks": []
-    },
-    {
-      "id": "29",
-      "title": "Criminals in Suits",
-      "speaker": "Sue Ellen Hassouna",
-      "speakerBio": "Sue Ellen Hassouna is a speaker exploring ethics, justice, and the hidden realities behind appearances.",
-      "topic": "Business Ethics",
-      "year": 2015,
-      "duration": "17:44",
-      "thumbnail": "https://i.ytimg.com/vi/Izpbg-BL50g/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Izpbg-BL50g",
-      "socialLinks": []
-    },
-    {
-      "id": "30",
-      "title": "Art therapy: a world beyond creative expression",
-      "speaker": "Carol Hammal",
-      "speakerBio": "Carol Hammal is an art therapy advocate who uses creativity as a path to healing and expression.",
-      "topic": "Health & Arts",
-      "year": 2015,
-      "duration": "20:30",
-      "thumbnail": "https://i.ytimg.com/vi/Ee9iRmGFyvA/maxresdefault.jpg",
-      "videoUrl": "https://www.youtube.com/embed/Ee9iRmGFyvA",
-      "socialLinks": []
-    }
-  ],
-  "orgTreesBySeason": {
-    "2026": {
-      "id": "chairman",
-      "title": "Chairman",
-      "name": "Kareem Shawish",
-      "level": 1,
-      "imageUrl": "/images/chairman.jpeg",
-      "description": "Leading TEDxGUC into 2026 with a renewed vision for cross-disciplinary dialogue and community impact.",
-      "committeeDescription": "The Chairman's office sets the strategic direction for the entire TEDxGUC organization, overseeing all divisions and maintaining TED licensing standards.",
-      "memberBio": "Kareem is an accomplished operations strategist with a track record of scaling events and organizations to greater impact. His leadership philosophy combines operational excellence with empathy, creating environments where innovation thrives and teams feel valued and empowered.",
-      "children": [
-        {
-          "id": "curator-talks",
-          "title": "Curator — Talks",
-          "name": "Moaz Akram",
-          "level": 2,
-          "imageUrl": "/images/talk-curator.jpeg",
-          "description": "Curating a diverse lineup of speakers who challenge conventional thinking.",
-          "committeeDescription": "The Talks division scouts, selects, and develops speakers to deliver compelling, well-researched talks that align with the season's theme.",
-          "memberBio": "Moaz is a passionate curator with a keen ear for compelling narratives and transformative ideas. He believes every story has power, and his mission is to discover speakers whose unique perspectives can shift how people see the world and their place in it.",
-          "children": [
-            {
-              "id": "exec-coaching",
-              "title": "Coaching",
-              "name": "Ammar Ibrahim",
-              "level": 3,
-              "imageUrl": "/images/coaching.jpeg",
-              "description": "Guiding speakers through intensive coaching.",
-              "committeeDescription": "Coaching works closely with each speaker to refine their narrative arc, improve delivery, and build confidence for the stage.",
-              "memberBio": "Ammar is a communication coach and performance strategist who has worked with hundreds of speakers across diverse fields. He excels at identifying a speaker's authentic voice and helping them communicate their ideas with clarity, passion, and impact."
-            },
-            {
-              "id": "exec-research",
-              "title": "Research & Production",
-              "name": "Abdulrahman Waleed",
-              "level": 3,
-              "imageUrl": "/images/R&P.jpeg",
-              "description": "Researching cutting-edge topics and managing production.",
-              "committeeDescription": "Research & Production ensures every talk is backed by credible sources and produced with professional-grade quality.",
-              "memberBio": "Abdulrahman is a meticulous researcher and producer who brings talks to life through rigorous research and creative production direction. His commitment to authenticity and quality ensures that every idea presented on stage is both intellectually sound and emotionally compelling."
-            }
-          ]
-        },
-        {
-          "id": "curator-operations",
-          "title": "Curator — Operations",
-          "name": "Kareem Roshdy",
-          "level": 2,
-          "imageUrl": "/images/operations.jpeg",
-          "description": "Ensuring flawless event execution from planning to post-event wrap-up.",
-          "committeeDescription": "Operations coordinates all logistical elements of the event — from venue booking and vendor contracts to day-of execution and post-event teardown.",
-          "memberBio": "Kareem is a logistics expert with an impressive portfolio of large-scale events executed flawlessly. He combines strategic planning with hands-on leadership, ensuring every operational detail supports the overall vision while remaining flexible to adapt to unexpected challenges.",
-          "children": [
-            {
-              "id": "exec-events",
-              "title": "Events Management",
-              "name": "Laila El-Hadidy",
-              "level": 3,
-              "imageUrl": "/images/events management.jpeg",
-              "description": "Coordinating all event logistics and attendee experience.",
-              "committeeDescription": "Events Management designs the full attendee journey from registration to closing, including interactive experiences and networking sessions.",
-              "memberBio": "Laila is an experiential event designer who creates memorable moments that leave lasting impressions. She approaches every event detail as an opportunity to delight attendees and foster meaningful connections among participants."
-            },
-            {
-              "id": "exec-partnerships",
-              "title": "Partnerships",
-              "name": "Hamza El-Khobby",
-              "level": 3,
-              "imageUrl": "/images/partnerships.jpeg",
-              "description": "Securing strategic partnerships and sponsor relations.",
-              "committeeDescription": "Partnerships builds and maintains relationships with corporate sponsors, media partners, and community organizations.",
-              "memberBio": "Hamza is a relationship builder with strong business acumen and diplomatic skills. He understands that great partnerships are built on mutual value and trust, and he works diligently to create win-win collaborations that elevate TEDxGUC and benefit all stakeholders."
-            },
-            {
-              "id": "exec-logistics",
-              "title": "Logistics",
-              "name": "Abdallah Nazih",
-              "level": 3,
-              "imageUrl": "/images/logistics.jpeg",
-              "description": "Managing all on-ground logistics and vendor coordination.",
-              "committeeDescription": "Logistics handles the physical infrastructure — equipment, catering, transportation, signage, and venue preparation.",
-              "memberBio": "Abdallah is a logistics coordinator with a natural talent for solving complex supply chain puzzles. His meticulous planning and vendor management ensure that all physical elements of the event are perfectly coordinated to create a seamless attendee experience."
-            }
-          ]
-        },
-        {
-          "id": "curator-od",
-          "title": "Curator — OD",
-          "name": "Nour Ayman",
-          "level": 2,
-          "imageUrl": "/images/OD.jpeg",
-          "description": "Building a stronger, more connected team culture.",
-          "committeeDescription": "Organizational Development focuses on internal team health — running training workshops, mentorship programs, and culture-building initiatives.",
-          "memberBio": "Nour is an organizational development specialist passionate about creating inclusive, thriving work cultures. She believes that the strength of an organization is directly reflected in the wellbeing and growth of its team members.",
-          "children": [
-            {
-              "id": "exec-assoc-dev",
-              "title": "Associate Development",
-              "name": "Rohanda Ahmed",
-              "level": 3,
-              "imageUrl": "/images/associate development.jpeg",
-              "description": "Creating growth opportunities and mentorship programs.",
-              "committeeDescription": "Associate Development designs onboarding tracks, skill-building workshops, and career mentorship for all new associates.",
-              "memberBio": "Rohanda is a talent development specialist who sees potential in every team member and creates pathways for growth and excellence. Her mentorship programs are known for transforming first-time volunteers into confident leaders."
-            },
-            {
-              "id": "exec-assoc-exp",
-              "title": "Associate Experience",
-              "name": "Abdullah Abosamra",
-              "level": 3,
-              "imageUrl": "/images/Associate experience.jpeg",
-              "description": "Designing engaging team experiences and well-being initiatives.",
-              "committeeDescription": "Associate Experience ensures every team member feels valued through social events, recognition programs, and well-being support.",
-              "memberBio": "Abdullah is a well-being advocate and event creator who designs meaningful experiences that strengthen team bonds and celebrate individual contributions. He believes that a happy team is a productive team."
-            }
-          ]
-        },
-        {
-          "id": "curator-marketing",
-          "title": "Curator — Marketing",
-          "name": "Laila Eid",
-          "level": 2,
-          "imageUrl": "/images/MC.jpeg",
-          "description": "Amplifying TEDxGUC's reach through innovative marketing strategies.",
-          "committeeDescription": "Marketing & Coordination drives brand awareness, manages social channels, and creates integrated campaigns to engage the TEDxGUC community.",
-          "memberBio": "Laila is a forward-thinking marketing leader with expertise in digital strategy and community engagement. She crafts compelling brand narratives that resonate across platforms and creates campaigns that spark conversation and drive meaningful audience connection.",
-          "children": [
-            {
-              "id": "exec-media",
-              "title": "Media & Design",
-              "name": "Farida Sabrah",
-              "level": 3,
-              "imageUrl": "/images/media and design.jpeg",
-              "description": "Producing visual storytelling content across all platforms.",
-              "committeeDescription": "Media & Design creates the visual identity of TEDxGUC — social media graphics, event branding, video production, and stage visuals.",
-              "memberBio": "Farida is a multimedia artist and designer with a gift for translating complex ideas into stunning visual narratives. Her creative work consistently elevates the TEDxGUC brand and captivates audiences across all touchpoints."
-            },
-            {
-              "id": "exec-campaigns",
-              "title": "Campaigns & Copywriting",
-              "name": "Malak Hatem",
-              "level": 3,
-              "imageUrl": "/images/CC.jpeg",
-              "description": "Crafting compelling narratives and managing multi-channel campaigns.",
-              "committeeDescription": "Campaigns & Copywriting develops the voice of TEDxGUC — from taglines and social captions to email newsletters and press releases.",
-              "memberBio": "Malak is a talented copywriter and campaign strategist who brings the TEDxGUC message to life through compelling storytelling. Her work balances creative expression with strategic thinking to maximize impact and engagement."
-            }
-          ]
-        }
-      ]
-    }
-  },
   "events": [
     {
       "id": "2015-back&forth",
@@ -820,20 +381,448 @@
       ]
     }
   ],
+  "orgTreesBySeason": {
+    "2026": {
+      "id": "chairman",
+      "title": "Chairman",
+      "name": "Kareem Shawish",
+      "level": 1,
+      "imageUrl": "/images/chairman.jpeg",
+      "description": "Leading TEDxGUC into 2026 with a renewed vision for cross-disciplinary dialogue and community impact.",
+      "committeeDescription": "The Chairman's office sets the strategic direction for the entire TEDxGUC organization, overseeing all divisions and maintaining TED licensing standards.",
+      "memberBio": "Kareem is an accomplished operations strategist with a track record of scaling events and organizations to greater impact. His leadership philosophy combines operational excellence with empathy, creating environments where innovation thrives and teams feel valued and empowered.",
+      "children": [
+        {
+          "id": "curator-talks",
+          "title": "Curator — Talks",
+          "name": "Moaz Akram",
+          "level": 2,
+          "imageUrl": "/images/talk-curator.jpeg",
+          "description": "Curating a diverse lineup of speakers who challenge conventional thinking.",
+          "committeeDescription": "The Talks division scouts, selects, and develops speakers to deliver compelling, well-researched talks that align with the season's theme.",
+          "memberBio": "Moaz is a passionate curator with a keen ear for compelling narratives and transformative ideas. He believes every story has power, and his mission is to discover speakers whose unique perspectives can shift how people see the world and their place in it.",
+          "children": [
+            {
+              "id": "exec-coaching",
+              "title": "Coaching",
+              "name": "Ammar Ibrahim",
+              "level": 3,
+              "imageUrl": "/images/coaching.jpeg",
+              "description": "Guiding speakers through intensive coaching.",
+              "committeeDescription": "Coaching works closely with each speaker to refine their narrative arc, improve delivery, and build confidence for the stage.",
+              "memberBio": "Ammar is a communication coach and performance strategist who has worked with hundreds of speakers across diverse fields. He excels at identifying a speaker's authentic voice and helping them communicate their ideas with clarity, passion, and impact."
+            },
+            {
+              "id": "exec-research",
+              "title": "Research & Production",
+              "name": "Abdulrahman Waleed",
+              "level": 3,
+              "imageUrl": "/images/R&P.jpeg",
+              "description": "Researching cutting-edge topics and managing production.",
+              "committeeDescription": "Research & Production ensures every talk is backed by credible sources and produced with professional-grade quality.",
+              "memberBio": "Abdulrahman is a meticulous researcher and producer who brings talks to life through rigorous research and creative production direction. His commitment to authenticity and quality ensures that every idea presented on stage is both intellectually sound and emotionally compelling."
+            }
+          ]
+        },
+        {
+          "id": "curator-operations",
+          "title": "Curator — Operations",
+          "name": "Kareem Roshdy",
+          "level": 2,
+          "imageUrl": "/images/operations.jpeg",
+          "description": "Ensuring flawless event execution from planning to post-event wrap-up.",
+          "committeeDescription": "Operations coordinates all logistical elements of the event — from venue booking and vendor contracts to day-of execution and post-event teardown.",
+          "memberBio": "Kareem is a logistics expert with an impressive portfolio of large-scale events executed flawlessly. He combines strategic planning with hands-on leadership, ensuring every operational detail supports the overall vision while remaining flexible to adapt to unexpected challenges.",
+          "children": [
+            {
+              "id": "exec-events",
+              "title": "Events Management",
+              "name": "Laila El-Hadidy",
+              "level": 3,
+              "imageUrl": "/images/events management.jpeg",
+              "description": "Coordinating all event logistics and attendee experience.",
+              "committeeDescription": "Events Management designs the full attendee journey from registration to closing, including interactive experiences and networking sessions.",
+              "memberBio": "Laila is an experiential event designer who creates memorable moments that leave lasting impressions. She approaches every event detail as an opportunity to delight attendees and foster meaningful connections among participants."
+            },
+            {
+              "id": "exec-partnerships",
+              "title": "Partnerships",
+              "name": "Hamza El-Khobby",
+              "level": 3,
+              "imageUrl": "/images/partnerships.jpeg",
+              "description": "Securing strategic partnerships and sponsor relations.",
+              "committeeDescription": "Partnerships builds and maintains relationships with corporate sponsors, media partners, and community organizations.",
+              "memberBio": "Hamza is a relationship builder with strong business acumen and diplomatic skills. He understands that great partnerships are built on mutual value and trust, and he works diligently to create win-win collaborations that elevate TEDxGUC and benefit all stakeholders."
+            },
+            {
+              "id": "exec-logistics",
+              "title": "Logistics",
+              "name": "Abdallah Nazih",
+              "level": 3,
+              "imageUrl": "/images/logistics.jpeg",
+              "description": "Managing all on-ground logistics and vendor coordination.",
+              "committeeDescription": "Logistics handles the physical infrastructure — equipment, catering, transportation, signage, and venue preparation.",
+              "memberBio": "Abdallah is a logistics coordinator with a natural talent for solving complex supply chain puzzles. His meticulous planning and vendor management ensure that all physical elements of the event are perfectly coordinated to create a seamless attendee experience."
+            }
+          ]
+        },
+        {
+          "id": "curator-od",
+          "title": "Curator — OD",
+          "name": "Nour Ayman",
+          "level": 2,
+          "imageUrl": "/images/OD.jpeg",
+          "description": "Building a stronger, more connected team culture.",
+          "committeeDescription": "Organizational Development focuses on internal team health — running training workshops, mentorship programs, and culture-building initiatives.",
+          "memberBio": "Nour is an organizational development specialist passionate about creating inclusive, thriving work cultures. She believes that the strength of an organization is directly reflected in the wellbeing and growth of its team members.",
+          "children": [
+            {
+              "id": "exec-assoc-dev",
+              "title": "Associate Development",
+              "name": "Rohanda Ahmed",
+              "level": 3,
+              "imageUrl": "/images/associate development.jpeg",
+              "description": "Creating growth opportunities and mentorship programs.",
+              "committeeDescription": "Associate Development designs onboarding tracks, skill-building workshops, and career mentorship for all new associates.",
+              "memberBio": "Rohanda is a talent development specialist who sees potential in every team member and creates pathways for growth and excellence. Her mentorship programs are known for transforming first-time volunteers into confident leaders."
+            },
+            {
+              "id": "exec-assoc-exp",
+              "title": "Associate Experience",
+              "name": "Abdullah Abosamra",
+              "level": 3,
+              "imageUrl": "/images/Associate experience.jpeg",
+              "description": "Designing engaging team experiences and well-being initiatives.",
+              "committeeDescription": "Associate Experience ensures every team member feels valued through social events, recognition programs, and well-being support.",
+              "memberBio": "Abdullah is a well-being advocate and event creator who designs meaningful experiences that strengthen team bonds and celebrate individual contributions. He believes that a happy team is a productive team."
+            }
+          ]
+        },
+        {
+          "id": "curator-marketing",
+          "title": "Curator — Marketing",
+          "name": "Laila Eid",
+          "level": 2,
+          "imageUrl": "/images/MC.jpeg",
+          "description": "Amplifying TEDxGUC's reach through innovative marketing strategies.",
+          "committeeDescription": "Marketing & Coordination drives brand awareness, manages social channels, and creates integrated campaigns to engage the TEDxGUC community.",
+          "memberBio": "Laila is a forward-thinking marketing leader with expertise in digital strategy and community engagement. She crafts compelling brand narratives that resonate across platforms and creates campaigns that spark conversation and drive meaningful audience connection.",
+          "children": [
+            {
+              "id": "exec-media",
+              "title": "Media & Design",
+              "name": "Farida Sabrah",
+              "level": 3,
+              "imageUrl": "/images/media and design.jpeg",
+              "description": "Producing visual storytelling content across all platforms.",
+              "committeeDescription": "Media & Design creates the visual identity of TEDxGUC — social media graphics, event branding, video production, and stage visuals.",
+              "memberBio": "Farida is a multimedia artist and designer with a gift for translating complex ideas into stunning visual narratives. Her creative work consistently elevates the TEDxGUC brand and captivates audiences across all touchpoints."
+            },
+            {
+              "id": "exec-campaigns",
+              "title": "Campaigns & Copywriting",
+              "name": "Malak Hatem",
+              "level": 3,
+              "imageUrl": "/images/CC.jpeg",
+              "description": "Crafting compelling narratives and managing multi-channel campaigns.",
+              "committeeDescription": "Campaigns & Copywriting develops the voice of TEDxGUC — from taglines and social captions to email newsletters and press releases.",
+              "memberBio": "Malak is a talented copywriter and campaign strategist who brings the TEDxGUC message to life through compelling storytelling. Her work balances creative expression with strategic thinking to maximize impact and engagement."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "sponsors": [
+    {
+      "name": "TED",
+      "tier": "License Partner"
+    },
+    {
+      "name": "GUC",
+      "tier": "Host University"
+    },
+    {
+      "name": "V7",
+      "tier": "Gold Sponsor"
+    },
+    {
+      "name": "Crepe 2000",
+      "tier": "Silver Sponsor"
+    }
+  ],
+  "talks": [
+    {
+      "id": "9",
+      "title": "Civil Work: Putting Syrian refugees back on their feet",
+      "speaker": "Rasha Maaty",
+      "speakerBio": "Rasha Maaty is a social impact advocate focused on humanitarian work and refugee support. Her work centers on creating sustainable livelihoods and integration programs for displaced communities.",
+      "topic": "Social Impact",
+      "year": 2017,
+      "duration": "13:32",
+      "thumbnail": "https://i.ytimg.com/vi/yC2AWPsE_q8/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/yC2AWPsE_q8",
+      "socialLinks": []
+    },
+    {
+      "id": "10",
+      "title": "Restructuring our living spaces through container architecture",
+      "speaker": "Youssef Farag",
+      "speakerBio": "Youssef Farag is an architect and innovator exploring sustainable and affordable housing solutions through creative architectural design. His work utilizes recycled and unconventional materials to address housing challenges.",
+      "topic": "Design",
+      "year": 2017,
+      "duration": "15:46",
+      "thumbnail": "https://i.ytimg.com/vi/d1SnSK3p6W0/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/d1SnSK3p6W0",
+      "socialLinks": []
+    },
+    {
+      "id": "11",
+      "title": "Can we still say that there are plenty of fish in the sea by 2050?",
+      "speaker": "Nada El Shanawany",
+      "speakerBio": "Nada El Shanawany is a marine biologist and environmental scientist dedicated to studying and protecting marine ecosystems. Her research addresses the critical challenges facing ocean sustainability and biodiversity.",
+      "topic": "Environment",
+      "year": 2017,
+      "duration": "13:17",
+      "thumbnail": "https://i.ytimg.com/vi/TgyqQskprV0/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/TgyqQskprV0",
+      "socialLinks": []
+    },
+    {
+      "id": "12",
+      "title": "Drama Therapy: An unlikely solution to a common problem",
+      "speaker": "Reem Hashem",
+      "speakerBio": "Reem Hashem is a drama therapist and mental health professional who uses theatrical techniques and creative expression as therapeutic tools. She pioneered drama therapy programs addressing psychological and emotional challenges in diverse populations.",
+      "topic": "Psychology",
+      "year": 2017,
+      "duration": "17:22",
+      "thumbnail": "https://i.ytimg.com/vi/YjjvM4RIk8M/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/YjjvM4RIk8M",
+      "socialLinks": []
+    },
+    {
+      "id": "13",
+      "title": "A biomarker saving lives",
+      "speaker": "Rasha Hanafi",
+      "speakerBio": "Rasha Hanafi is a biomedical researcher and healthcare innovator focused on developing diagnostic tools and biomarkers to improve patient outcomes. Her research bridges the gap between laboratory discovery and clinical application.",
+      "topic": "Health",
+      "year": 2017,
+      "duration": "9:40",
+      "thumbnail": "https://i.ytimg.com/vi/Fez9MXmHS80/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Fez9MXmHS80",
+      "socialLinks": []
+    },
+    {
+      "id": "14",
+      "title": "Mental illness representation in Egyptian movies",
+      "speaker": "Caroline Mitry",
+      "speakerBio": "Caroline Mitry is a media studies scholar and cultural critic examining the portrayal of mental health issues in film and television. Her work advocates for more accurate and stigma-reducing representation of mental illness in media.",
+      "topic": "Culture",
+      "year": 2017,
+      "duration": "17:40",
+      "thumbnail": "https://i.ytimg.com/vi/0ztPKONrfpM/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/0ztPKONrfpM",
+      "socialLinks": []
+    },
+    {
+      "id": "15",
+      "title": "A sustainable development model for red sea rural areas",
+      "speaker": "Omar Sabaa",
+      "speakerBio": "Omar Sabaa is a development expert and environmental consultant specializing in sustainable community development in rural and coastal regions. His work integrates economic growth with environmental conservation and social welfare.",
+      "topic": "Environment",
+      "year": 2017,
+      "duration": "7:56",
+      "thumbnail": "https://i.ytimg.com/vi/Mn33jdhT5kk/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Mn33jdhT5kk",
+      "socialLinks": []
+    },
+    {
+      "id": "16",
+      "title": "Post chemotherapy: Getting ovaries back to life",
+      "speaker": "Sara Abdel-Aziz",
+      "speakerBio": "Sara Abdel-Aziz is a reproductive health specialist and oncology advocate focused on fertility preservation and quality of life for cancer survivors. Her work addresses the overlooked intersection of cancer treatment and reproductive health.",
+      "topic": "Health",
+      "year": 2017,
+      "duration": "8:13",
+      "thumbnail": "https://i.ytimg.com/vi/c4ffFDT5WWs/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/c4ffFDT5WWs",
+      "socialLinks": []
+    },
+    {
+      "id": "17",
+      "title": "Research: The marginalized dimension in our fight against cancer",
+      "speaker": "Yehia Abugabal",
+      "speakerBio": "Yehia Abugabal is a cancer researcher and public health advocate emphasizing the importance of diverse and inclusive research in improving cancer treatment outcomes. His work highlights underrepresented populations in medical research.",
+      "topic": "Health",
+      "year": 2017,
+      "duration": "14:23",
+      "thumbnail": "https://i.ytimg.com/vi/onU-J44jY3A/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/onU-J44jY3A",
+      "socialLinks": []
+    },
+    {
+      "id": "18",
+      "title": "Beyond limits, different is beautiful",
+      "speaker": "Rania Abdelaziz & Alaa El Masry",
+      "speakerBio": "Rania Abdelaziz and Alaa El Masry are advocates for inclusion and accessibility. Their work focuses on challenging perceptions about disability and celebrating human diversity.",
+      "topic": "Social Impact",
+      "year": 2023,
+      "duration": "13:21",
+      "thumbnail": "https://i.ytimg.com/vi/mOudPoFxALk/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/mOudPoFxALk",
+      "socialLinks": []
+    },
+    {
+      "id": "19",
+      "title": "Reclaiming Egypt's narrative",
+      "speaker": "Mahmoud Hawary",
+      "speakerBio": "Mahmoud Hawary is a cultural historian and filmmaker dedicated to preserving and promoting Egypt's rich historical narratives.",
+      "topic": "Culture",
+      "year": 2023,
+      "duration": "12:45",
+      "thumbnail": "https://i.ytimg.com/vi/bq29u6RAp1k/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/bq29u6RAp1k",
+      "socialLinks": []
+    },
+    {
+      "id": "20",
+      "title": "From machines to bodies",
+      "speaker": "Yahya Hefnawi",
+      "speakerBio": "Yahya Hefnawi is an engineer and innovator exploring the intersection of technology and human physiology.",
+      "topic": "Technology",
+      "year": 2023,
+      "duration": "14:07",
+      "thumbnail": "https://i.ytimg.com/vi/for_-b3LyNI/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/for_-b3LyNI",
+      "socialLinks": []
+    },
+    {
+      "id": "21",
+      "title": "Getting companies racing to hire you",
+      "speaker": "Youssef El Akkari",
+      "speakerBio": "Youssef El Akkari is a career coach and talent development specialist helping young professionals stand out.",
+      "topic": "Business",
+      "year": 2023,
+      "duration": "13:52",
+      "thumbnail": "https://i.ytimg.com/vi/odX9FKx23lI/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/odX9FKx23lI",
+      "socialLinks": []
+    },
+    {
+      "id": "22",
+      "title": "Bridging the professional gap: The transformative power of network",
+      "speaker": "Ahmed El Helaly",
+      "speakerBio": "Ahmed El Helaly is a professional development coach emphasizing the transformative impact of strategic professional relationships.",
+      "topic": "Business",
+      "year": 2023,
+      "duration": "12:34",
+      "thumbnail": "https://i.ytimg.com/vi/Qbi4DUmDzcM/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Qbi4DUmDzcM",
+      "socialLinks": []
+    },
+    {
+      "id": "23",
+      "title": "It didn't start with you",
+      "speaker": "Shereen Rizk",
+      "speakerBio": "Shereen Rizk is a psychotherapist exploring generational trauma and healing.",
+      "topic": "Psychology",
+      "year": 2023,
+      "duration": "14:19",
+      "thumbnail": "https://i.ytimg.com/vi/Bx3yPK0YdJw/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Bx3yPK0YdJw",
+      "socialLinks": []
+    },
+    {
+      "id": "24",
+      "title": "Creating movie magic!",
+      "speaker": "Dibo",
+      "speakerBio": "Dibo is a filmmaker and visual effects artist passionate about bringing stories to life.",
+      "topic": "Arts, Media & Design",
+      "year": 2023,
+      "duration": "11:58",
+      "thumbnail": "https://i.ytimg.com/vi/hAVXYHQQyj8/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/hAVXYHQQyj8",
+      "socialLinks": []
+    },
+    {
+      "id": "25",
+      "title": "Bringing the past to life",
+      "speaker": "Rowan El Selmy",
+      "speakerBio": "Rowan El Selmy is an archaeologist dedicated to uncovering and preserving historical narratives.",
+      "topic": "Culture",
+      "year": 2023,
+      "duration": "13:16",
+      "thumbnail": "https://i.ytimg.com/vi/Po9XC1c06Mw/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Po9XC1c06Mw",
+      "socialLinks": []
+    },
+    {
+      "id": "26",
+      "title": "Goal Of Equality",
+      "speaker": "Ali Aboulnasr",
+      "speakerBio": "Ali Aboulnasr is a social justice advocate focused on equality and civic impact.",
+      "topic": "Social Justice",
+      "year": 2015,
+      "duration": "11:00",
+      "thumbnail": "https://i.ytimg.com/vi/ou46JytZHVM/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/ou46JytZHVM",
+      "socialLinks": []
+    },
+    {
+      "id": "27",
+      "title": "STEM-ED",
+      "speaker": "Mohamed Rizkallah",
+      "speakerBio": "Mohamed Rizkallah is an education and technology speaker who explores the intersection of STEM and learning.",
+      "topic": "Education & Technology",
+      "year": 2015,
+      "duration": "18:30",
+      "thumbnail": "https://i.ytimg.com/vi/6hzR6ugto4Y/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/6hzR6ugto4Y",
+      "socialLinks": []
+    },
+    {
+      "id": "28",
+      "title": "Exposing hidden dimensions of Child Sexual Abuse.",
+      "speaker": "Sara Aziz",
+      "speakerBio": "Sara Aziz is a health advocate raising awareness about child safety and support systems.",
+      "topic": "Health",
+      "year": 2015,
+      "duration": "17:58",
+      "thumbnail": "https://i.ytimg.com/vi/CAsX_3Lmq3E/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/CAsX_3Lmq3E",
+      "socialLinks": []
+    },
+    {
+      "id": "29",
+      "title": "Criminals in Suits",
+      "speaker": "Sue Ellen Hassouna",
+      "speakerBio": "Sue Ellen Hassouna is a speaker exploring ethics, justice, and the hidden realities behind appearances.",
+      "topic": "Business Ethics",
+      "year": 2015,
+      "duration": "17:44",
+      "thumbnail": "https://i.ytimg.com/vi/Izpbg-BL50g/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Izpbg-BL50g",
+      "socialLinks": []
+    },
+    {
+      "id": "30",
+      "title": "Art therapy: a world beyond creative expression",
+      "speaker": "Carol Hammal",
+      "speakerBio": "Carol Hammal is an art therapy advocate who uses creativity as a path to healing and expression.",
+      "topic": "Health & Arts",
+      "year": 2015,
+      "duration": "20:30",
+      "thumbnail": "https://i.ytimg.com/vi/Ee9iRmGFyvA/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/Ee9iRmGFyvA",
+      "socialLinks": []
+    }
+  ],
   "upcomingEvent": {
     "theme": "UPSIDEDOWN",
     "date": "May 9, 2026",
     "venue": "GUC Platform, New Cairo",
     "description": "Ideas that ignite change. TEDxGUC 'upsidedown' will bring together innovators, artists, and thinkers who spark transformation in their communities."
   },
-  "upcomingSchedule": [
-    {
-      "time": "",
-      "title": "to be announced soon",
-      "description": "",
-      "type": "info"
-    }
-  ],
   "upcomingFAQs": [
     {
       "question": "What is the dress code?",
@@ -851,7 +840,14 @@
       "question": "Is parking available?",
       "answer": "Free parking is available at the GUC campus. We recommend arriving early as spaces fill up quickly."
     }
-
+  ],
+  "upcomingSchedule": [
+    {
+      "time": "",
+      "title": "to be announced soon",
+      "description": "",
+      "type": "info"
+    }
   ],
   "upcomingSpeakers": [
     {
