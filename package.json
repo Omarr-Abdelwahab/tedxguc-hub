@@ -11,7 +11,9 @@
     "lint:frontend": "npm --prefix frontend run lint",
     "test:frontend": "npm --prefix frontend run test",
     "typecheck:frontend": "npm --prefix frontend run typecheck",
-    "test:backend": "npm --prefix backend run test"
+    "test:backend": "npm --prefix backend run test",
+    "db:export": "npm --prefix backend run db:export",
+    "db:reset": "npm --prefix backend run db:reset"
   },
   "engines": {
     "node": "20.x"
