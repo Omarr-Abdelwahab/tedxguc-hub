@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "allowJs": true,
     "jsx": "react-jsx",
+    "ignoreDeprecations": "5.0",
     "noImplicitAny": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,

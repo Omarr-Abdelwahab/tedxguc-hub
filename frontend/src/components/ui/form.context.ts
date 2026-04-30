@@ -8,10 +8,10 @@ export type FormFieldContextValue<
   name: TName;
 };
 
-export const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);
+export const FormFieldContext = React.createContext<FormFieldContextValue | null>(null);
 
 export type FormItemContextValue = {
   id: string;
 };
 
-export const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
+export const FormItemContext = React.createContext<FormItemContextValue | null>(null);
