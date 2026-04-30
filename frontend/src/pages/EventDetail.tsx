@@ -6,6 +6,18 @@ import type { TEDxEvent, Talk } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+const normalizeRouteParam = (value?: string) => {
+  if (!value) {
+    return "";
+  }
+
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+};
+
 const EventDetail = () => {
   const { eventId } = useParams();
   const [event, setEvent] = useState<TEDxEvent | null>(null);
@@ -25,12 +37,15 @@ const EventDetail = () => {
       }
 
       try {
+        const normalizedEventId = normalizeRouteParam(eventId);
         const [eventsData, talksData] = await Promise.all([
           fetchEvents(),
           fetchTalks(),
         ]);
         if (isMounted) {
-          const matchedEvent = eventsData.find((candidate) => candidate.id === eventId) || null;
+          const matchedEvent = eventsData.find((candidate) => {
+            return candidate.id === normalizedEventId || encodeURIComponent(candidate.id) === eventId;
+          }) || null;
           setEvent(matchedEvent);
           setTalks(talksData);
         }
