@@ -1,13 +1,24 @@
-import { existsSync, mkdirSync } from "node:fs";
+import { existsSync, mkdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { randomUUID } from "node:crypto";
-import { loadSiteContent } from "./seedData.js";
+import { loadSiteContent, loadRawSeedContent } from "./seedData.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const dataDir = path.join(__dirname, "data");
+
+// Detect environment and set database path accordingly
+const isVercel = Boolean(process.env.VERCEL);
+const isProduction = Boolean(process.env.NODE_ENV === "production" || process.env.VERCEL);
+
+// Use /tmp for Vercel (read-only filesystem), local data dir for localhost
+const dataDir = isVercel ? "/tmp" : path.join(__dirname, "data");
 const dbPath = path.join(dataDir, "tedxguc.sqlite");
+
+if (!isVercel) {
+  // Only create local data directory when not on Vercel
+  mkdirSync(dataDir, { recursive: true });
+}
 
 const normalizeSupabaseUrl = (value) => value.replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "");
 
@@ -38,6 +49,48 @@ const parsePayload = (payload) => {
   }
 
   return payload;
+};
+
+/**
+ * Check if the SQLite database is empty (contains no content_items)
+ * Returns true if the database doesn't exist or is empty
+ */
+const isDatabaseEmpty = (db) => {
+  try {
+    const result = db.prepare("SELECT COUNT(*) AS count FROM content_items").get();
+    return result.count === 0;
+  } catch (error) {
+    // Table doesn't exist yet
+    return true;
+  }
+};
+
+/**
+ * Auto-seed the database from seed-content.json if it's empty
+ * This ensures fresh data on every Vercel deployment since /tmp is ephemeral
+ */
+const autoSeedDatabase = (db, insertContentIfMissing) => {
+  try {
+    const seedData = loadRawSeedContent();
+    const contentKeys = ["talks", "orgTreesBySeason", "events", "sponsors", "upcomingEvent", "upcomingSchedule", "upcomingFAQs", "upcomingSpeakers", "contactSubjects"];
+
+    let seededCount = 0;
+    for (const key of contentKeys) {
+      if (seedData[key] !== undefined) {
+        insertContentIfMissing.run({
+          key,
+          payload: JSON.stringify(seedData[key]),
+          updatedAt: new Date().toISOString(),
+        });
+        seededCount++;
+      }
+    }
+
+    console.log(`[Database] Auto-seeded ${seededCount} content items from seed-content.json`);
+  } catch (error) {
+    console.error("[Database] Auto-seeding failed:", error.message);
+    // Fall back to in-memory defaults
+  }
 };
 
 const createInMemoryStore = () => {
@@ -134,10 +187,16 @@ const createLocalStore = async () => {
     return createInMemoryStore();
   }
 
-  mkdirSync(dataDir, { recursive: true });
+  // Only create directory if not on Vercel
+  if (!isVercel) {
+    mkdirSync(dataDir, { recursive: true });
+  }
 
   const db = new Database(dbPath);
   db.pragma("journal_mode = WAL");
+
+  // Log database location for debugging
+  console.log(`[Database] Using SQLite at: ${dbPath} (Vercel: ${isVercel})`);
 
   db.exec(`
     CREATE TABLE IF NOT EXISTS content_items (
@@ -181,12 +240,12 @@ const createLocalStore = async () => {
     ON CONFLICT(key) DO NOTHING
   `);
 
-  for (const [key, value] of Object.entries(contentEntries)) {
-    insertContentIfMissing.run({
-      key,
-      payload: JSON.stringify(value),
-      updatedAt: new Date().toISOString(),
-    });
+  // Auto-seed if database is empty
+  if (isDatabaseEmpty(db)) {
+    console.log("[Database] Database is empty, auto-seeding from seed-content.json...");
+    autoSeedDatabase(db, insertContentIfMissing);
+  } else {
+    console.log("[Database] Database already contains data, skipping auto-seed");
   }
 
   const getContentRow = db.prepare("SELECT payload FROM content_items WHERE key = ?");
@@ -211,7 +270,7 @@ const createLocalStore = async () => {
 
   const localStore = {
     kind: "local",
-    databaseLabel: existsSync(dbPath) ? dbPath : null,
+    databaseLabel: isVercel ? "/tmp/database.sqlite (ephemeral)" : (existsSync(dbPath) ? dbPath : null),
     getContentItem: async (key) => {
       const row = getContentRow.get(key);
       return row ? parsePayload(row.payload) : null;
