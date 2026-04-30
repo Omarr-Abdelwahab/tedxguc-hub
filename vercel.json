@@ -1,17 +1,21 @@
 {
   "version": 2,
-  "installCommand": "npm install && npm --prefix frontend install --include=dev && npm --prefix backend install --omit=optional",
-  "buildCommand": "npm run build",
-  "outputDirectory": "frontend/dist",
-  "functions": {
-    "api/[...path].js": {
-      "includeFiles": "backend/seed-content.json"
-    }
-  },
-  "rewrites": [
+  "builds": [
     {
-      "source": "/:path((?!api/).*)",
-      "destination": "/index.html"
+      "src": "backend/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["backend/seed-content.json"]
+      }
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
     }
+  ],
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "backend/index.js" },
+    { "source": "/(.*)", "destination": "frontend/index.html" }
   ]
 }
