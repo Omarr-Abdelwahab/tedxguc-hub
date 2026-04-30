@@ -90,12 +90,14 @@ const Index = () => {
                 Previous Events
                 <ArrowRight size={18} />
               </Link>
-              <Link
-                to="/upcoming"
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdf4TKM5s-i-NsBayxs-TPuhKyeOd2TlaZb1uH7xaytUzRpIQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 border-2 border-accent-foreground/30 text-accent-foreground px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:border-primary hover:text-primary"
               >
                 Join Waitlist
-              </Link>
+              </a>
             </div>
           </motion.div>
           <motion.div

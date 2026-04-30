@@ -598,6 +598,23 @@ export const inspectWhitespaceEvent = async () => {
   };
 };
 
+export const reloadSeedContent = async () => {
+  const seedContent = readSeedContent();
+  const allKeys = [
+    "talks",
+    "events",
+    "sponsors",
+    "orgTreesBySeason",
+    "upcomingEvent",
+    "upcomingSchedule",
+    "upcomingFAQs",
+    "upcomingSpeakers",
+    "contactSubjects",
+  ];
+  await syncLocalDatabase(seedContent, allKeys);
+  return { ok: true, message: "Seed content reloaded successfully from seed-content.json" };
+};
+
 export default {
   addWhitespaceVideos,
   addMissingEvents,
@@ -613,4 +630,5 @@ export default {
   checkTalks,
   cleanPlaceholderVideos,
   inspectWhitespaceEvent,
+  reloadSeedContent,
 };

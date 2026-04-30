@@ -8,6 +8,7 @@ import {
   sendNewsletterBroadcast,
   sendNewsletterWelcomeEmail,
 } from "./mailer.js";
+import { reloadSeedContent } from "./adminTasks.js";
 import { loadRawSeedContent } from "./seedData.js";
 import {
   addContactSubmission,
@@ -501,7 +502,22 @@ export const requestHandler = async (req, res) => {
       sendJson(res, 200, { submissions: await getContactSubmissions() });
       return;
     }
+    if (req.method === "POST" && requestUrl.pathname === "/api/admin/reload-seed-content") {
+      if (!requireAdmin(req, res)) {
+        return;
+      }
 
+      try {
+        const result = await reloadSeedContent();
+        sendJson(res, 200, result);
+      } catch (error) {
+        sendJson(res, 500, {
+          ok: false,
+          error: error instanceof Error ? error.message : "Failed to reload seed content.",
+        });
+      }
+      return;
+    }
     if (req.method === "GET" && requestUrl.pathname === "/api/submissions/newsletter") {
       if (!requireAdmin(req, res)) {
         return;
