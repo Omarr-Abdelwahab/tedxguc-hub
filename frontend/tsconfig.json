@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,
+    "jsx": "react-jsx",
     "noImplicitAny": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
