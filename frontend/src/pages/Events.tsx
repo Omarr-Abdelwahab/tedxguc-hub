@@ -107,7 +107,7 @@ const Events = () => {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <Link
-                  to={`/events/${event.id}`}
+                  to={`/events/${encodeURIComponent(event.id)}`}
                   className="block border-2 border-border bg-card p-6 md:p-8 hover:border-primary transition-colors duration-300 group"
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

@@ -269,7 +269,7 @@ export const requestHandler = async (req, res) => {
     }
 
     if (req.method === "GET" && requestUrl.pathname.startsWith("/api/events/")) {
-      const eventId = requestUrl.pathname.replace("/api/events/", "");
+      const eventId = decodeURIComponent(requestUrl.pathname.replace("/api/events/", ""));
       const event = await getEventById(eventId);
 
       if (!event) {
