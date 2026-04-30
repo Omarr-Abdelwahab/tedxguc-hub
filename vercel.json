@@ -1,17 +1,15 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "frontend/dist",
   "functions": {
-    "backend/index.js": {
+    "api/[...path].js": {
       "includeFiles": "backend/seed-content.json"
     }
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/backend/index.js"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/:path((?!api/).*)",
       "destination": "/index.html"
     }
   ]
