@@ -8,7 +8,7 @@ TEDxGUC Hub is a production-style web application built to streamline how TEDxGU
 
 🛠 Tech Stack
 
-Frontend: React, Tailwind CSS /n
+Frontend: React, Tailwind CSS \n
 Backend: Node.js /n
 Database: MySQL
 Deployment: Vercel
