@@ -7,9 +7,13 @@ A full-stack platform for managing TEDxGUC events, talks, and content in a centr
 TEDxGUC Hub is a production-style web application designed to streamline how TEDxGUC events and talks are organized and presented. It connects event data, recorded talks, and admin tools into a single structured platform.
 
 🛠 Tech Stack
+
 Frontend: React, Tailwind CSS
+
 Backend: Node.js (REST APIs)
+
 Database: MySQL
+
 Deployment: Vercel
 
 ✨ Key Features
@@ -22,23 +26,29 @@ Fully responsive design across all devices
 ⚙️ System Design
 
 Frontend handles UI rendering and user interaction
+
 Backend exposes REST APIs for events, talks, and admin operations
+
 MySQL stores structured data for events, talks, and administrative records
+
 Seeder script initializes database with development data
+
 CI/CD pipeline ensures consistent deployment and updates
 
 🚀 Setup Instructions
+Clone Repository
 git clone <repository-url>
 cd tedxguc-hub-main
-Frontend
+Frontend Setup
 cd frontend
 bun install
 bun run dev
-Backend
+Backend Setup
 cd backend
 npm install
 node seedData.js
 npm run dev
+
 👀 Preview
 
 
