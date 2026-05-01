@@ -1,5 +1,7 @@
 TEDxGUC Hub
 
+https://tedxguc-hub.vercel.app/
+
 A full-stack platform for managing TEDxGUC events, talks, and content in a centralized system.
 
 🚀 Overview
