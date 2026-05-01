@@ -17,12 +17,19 @@ Database: MySQL
 Deployment: Vercel
 
 ✨ Key Features
+
 Event dashboard displaying TEDxGUC updates and information
+
 Dedicated section for TEDx talks and recorded content
+
 Admin functionality for managing events and content data
+
 Automated email notifications for system updates
+
 Structured data management with initial seeded content
+
 Fully responsive design across all devices
+
 ⚙️ System Design
 
 Frontend handles UI rendering and user interaction
@@ -36,17 +43,29 @@ Seeder script initializes database with development data
 CI/CD pipeline ensures consistent deployment and updates
 
 🚀 Setup Instructions
+
 Clone Repository
+
 git clone <repository-url>
+
 cd tedxguc-hub-main
+
 Frontend Setup
+
 cd frontend
+
 bun install
+
 bun run dev
+
 Backend Setup
+
 cd backend
+
 npm install
+
 node seedData.js
+
 npm run dev
 
 👀 Preview
