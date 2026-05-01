@@ -54,17 +54,15 @@ Frontend Setup
 
 cd frontend
 
-bun install
+npm install
 
-bun run dev
+npm run dev
 
 Backend Setup
 
 cd backend
 
 npm install
-
-node seedData.js
 
 npm run dev
 
