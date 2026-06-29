@@ -82,26 +82,53 @@ const Sponsors = () => {
           )}
 
           {!isLoading && !errorMessage && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-border">
-              {sponsors.map((s, i) => (
-                <motion.div
-                  key={s.name}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.04 }}
-                  className="group relative bg-background aspect-square flex flex-col items-center justify-center p-6 hover:bg-accent transition-colors duration-300"
-                >
-                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500" />
-                  <div className="w-20 h-20 flex items-center justify-center text-4xl font-black text-foreground group-hover:text-primary transition-colors mb-3">
-                    {s.name[0]}
-                  </div>
-                  <p className="text-sm font-bold text-foreground group-hover:text-accent-foreground text-center transition-colors">
-                    {s.name}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+            <>
+              {/* Marquee strip */}
+              <div className="relative overflow-hidden border-y-2 border-accent bg-accent mb-20">
+                <div className="flex gap-12 py-5 animate-[marquee_30s_linear_infinite] whitespace-nowrap">
+                  {[...sponsors, ...sponsors].map((s, i) => (
+                    <span
+                      key={`${s.name}-${i}`}
+                      className="text-accent-foreground/70 text-sm font-bold uppercase tracking-[0.3em] flex items-center gap-12"
+                    >
+                      {s.name}
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+                {sponsors.map((s, i) => (
+                  <motion.div
+                    key={s.name}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.04 }}
+                    className="group relative bg-card border-2 border-border aspect-[4/3] flex flex-col items-center justify-center p-6 overflow-hidden transition-all duration-300 hover:border-primary hover:-translate-y-1"
+                  >
+                    {/* Corner ticks */}
+                    <span className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                    <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
+                      <span className="absolute inset-0 border-2 border-primary/20 rotate-45 group-hover:rotate-[55deg] transition-transform duration-500" />
+                      <span className="relative text-3xl font-black text-primary">
+                        {s.name[0]}
+                      </span>
+                    </div>
+                    <p className="text-sm font-bold text-foreground text-center leading-tight tracking-wide">
+                      {s.name}
+                    </p>
+                    <span className="mt-3 h-[2px] w-6 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                  </motion.div>
+                ))}
+              </div>
+            </>
           )}
         </div>
       </section>

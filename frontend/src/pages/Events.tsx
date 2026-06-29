@@ -45,9 +45,12 @@ const Events = () => {
     [events],
   );
 
-  const filtered = yearFilter
+  const filtered = (yearFilter
     ? events.filter((e) => e.year === yearFilter)
-    : events;
+    : events
+  )
+    .slice()
+    .sort((a, b) => b.year - a.year);
 
   return (
     <div className="min-h-screen">

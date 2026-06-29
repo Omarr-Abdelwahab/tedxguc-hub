@@ -27,7 +27,15 @@ const Index = () => {
         }
 
         setTalks(talksData);
-        setUpcomingEvent(upcomingData.upcomingEvent);
+        setUpcomingEvent(
+          upcomingData.upcomingEvent ?? {
+            theme: "UPSIDEDOWN",
+            date: "May 9, 2026",
+            venue: "GUC Platform, New Cairo",
+            description:
+              "Ideas that ignite change. TEDxGUC 'upsidedown' will bring together innovators, artists, and thinkers who spark transformation in their communities.",
+          },
+        );
       } catch {
         if (isMounted) {
           setErrorMessage("Unable to load homepage content.");
