@@ -44,15 +44,17 @@ const TalksSection = () => {
   const years = useMemo(() => [...new Set(talks.map((t) => t.year))].sort((a, b) => b - a), [talks]);
 
   const filtered = useMemo(() => {
-    return talks.filter((t) => {
-      const matchSearch =
-        !search ||
-        t.title.toLowerCase().includes(search.toLowerCase()) ||
-        t.speaker.toLowerCase().includes(search.toLowerCase());
-      const matchTopic = !topicFilter || t.topic === topicFilter;
-      const matchYear = !yearFilter || t.year === yearFilter;
-      return matchSearch && matchTopic && matchYear;
-    });
+    return talks
+      .filter((t) => {
+        const matchSearch =
+          !search ||
+          t.title.toLowerCase().includes(search.toLowerCase()) ||
+          t.speaker.toLowerCase().includes(search.toLowerCase());
+        const matchTopic = !topicFilter || t.topic === topicFilter;
+        const matchYear = !yearFilter || t.year === yearFilter;
+        return matchSearch && matchTopic && matchYear;
+      })
+      .sort((a, b) => b.year - a.year);
   }, [talks, search, topicFilter, yearFilter]);
 
   const toggleFav = (id: string) => {

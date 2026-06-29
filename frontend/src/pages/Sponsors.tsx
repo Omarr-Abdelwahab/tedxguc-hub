@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Handshake, ArrowRight } from "lucide-react";
 import { fetchSponsors } from "@/lib/api";
 import type { Sponsor } from "@/types/content";
 
@@ -21,7 +23,7 @@ const Sponsors = () => {
         }
       } catch {
         if (isMounted) {
-          setErrorMessage("Unable to load sponsors right now.");
+          setErrorMessage("Unable to load partners right now.");
         }
       } finally {
         if (isMounted) {
@@ -40,50 +42,91 @@ const Sponsors = () => {
     <div className="min-h-screen">
       <Navbar />
 
-      <section className="pt-32 pb-20 bg-accent">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-primary font-semibold tracking-[0.3em] uppercase text-sm mb-4">
-            Our Supporters
+      {/* Hero */}
+      <section className="relative pt-32 pb-24 bg-accent overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.07]">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, hsl(var(--accent-foreground)) 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+        </div>
+        <div className="absolute -left-20 top-1/2 w-1 h-32 bg-primary" />
+        <div className="container mx-auto px-6 relative">
+          <p className="text-primary font-semibold tracking-[0.3em] uppercase text-xs mb-4">
+            Ideas worth supporting
           </p>
-          <h1 className="text-5xl md:text-7xl font-black text-accent-foreground tracking-tight">
-            Partners
+          <h1 className="text-5xl md:text-7xl font-black text-accent-foreground tracking-tight leading-[0.95]">
+            Our <span className="text-primary">Partners</span>
           </h1>
+          <p className="text-accent-foreground/60 mt-6 max-w-xl text-base md:text-lg leading-relaxed">
+            The organizations that make TEDxGUC possible — standing alongside us
+            to amplify ideas worth spreading.
+          </p>
         </div>
       </section>
 
+      {/* Grid */}
       <section className="py-24 bg-background">
-        <div className="container mx-auto px-6 max-w-4xl">
-          {isLoading && <p className="text-center text-muted-foreground py-10">Loading partners...</p>}
-          {errorMessage && <p className="text-center text-destructive py-10">{errorMessage}</p>}
-
-          {!isLoading && !errorMessage && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sponsors.map((s) => (
-              <div
-                key={s.name}
-                className="border-2 border-border bg-card p-8 text-center hover:border-primary transition-colors duration-300"
-              >
-                <div className="w-16 h-16 bg-secondary mx-auto mb-4 flex items-center justify-center text-2xl font-black text-primary">
-                  {s.name[0]}
-                </div>
-                <p className="font-bold text-foreground">{s.name}</p>
-                <p className="text-xs text-primary uppercase tracking-wider mt-1">
-                  {s.tier}
-                </p>
-              </div>
-            ))}
-          </div>}
-
-          <div className="text-center mt-16">
-            <p className="text-muted-foreground text-sm mb-4">
-              Interested in partnering with TEDxGUC?
+        <div className="container mx-auto px-6 max-w-6xl">
+          {isLoading && (
+            <p className="text-center text-muted-foreground py-10">
+              Loading partners...
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-semibold uppercase tracking-wider hover:bg-primary/85 transition-colors"
-            >
-              Get in Touch
-            </Link>
-          </div>
+          )}
+          {errorMessage && (
+            <p className="text-center text-destructive py-10">{errorMessage}</p>
+          )}
+
+          {!isLoading && !errorMessage && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-border">
+              {sponsors.map((s, i) => (
+                <motion.div
+                  key={s.name}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  className="group relative bg-background aspect-square flex flex-col items-center justify-center p-6 hover:bg-accent transition-colors duration-300"
+                >
+                  <div className="absolute top-0 left-0 w-0 h-[2px] bg-primary group-hover:w-full transition-all duration-500" />
+                  <div className="w-20 h-20 flex items-center justify-center text-4xl font-black text-foreground group-hover:text-primary transition-colors mb-3">
+                    {s.name[0]}
+                  </div>
+                  <p className="text-sm font-bold text-foreground group-hover:text-accent-foreground text-center transition-colors">
+                    {s.name}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-accent">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <Handshake size={40} className="text-primary mx-auto mb-6" />
+          <h2 className="text-3xl md:text-4xl font-black text-accent-foreground tracking-tight mb-4">
+            Partner with TEDxGUC
+          </h2>
+          <p className="text-accent-foreground/60 mb-8 max-w-xl mx-auto">
+            Help us bring bold ideas to the stage. Join a community that believes
+            in the power of conversation to spark change.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 text-sm font-semibold uppercase tracking-wider hover:bg-primary/85 transition-colors group"
+          >
+            Get in Touch
+            <ArrowRight
+              size={16}
+              className="group-hover:translate-x-1 transition-transform"
+            />
+          </Link>
         </div>
       </section>
 
