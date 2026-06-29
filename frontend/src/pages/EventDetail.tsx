@@ -166,41 +166,6 @@ const EventDetail = () => {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <h2 className="text-2xl font-black text-foreground mb-8">Photo Gallery</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {event.gallery.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={`${event.theme} photo ${i + 1}`}
-                className="w-full aspect-video object-cover"
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sponsors */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <h2 className="text-2xl font-black text-foreground mb-8">Partners</h2>
-          <div className="flex flex-wrap gap-4">
-            {event.sponsors.map((sponsor) => (
-              <div
-                key={sponsor}
-                className="border-2 border-border bg-background px-6 py-3 text-sm font-semibold text-foreground"
-              >
-                {sponsor}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
