@@ -83,21 +83,6 @@ const Sponsors = () => {
 
           {!isLoading && !errorMessage && (
             <>
-              {/* Marquee strip */}
-              <div className="relative overflow-hidden border-y-2 border-accent bg-accent mb-20">
-                <div className="flex gap-12 py-5 animate-[marquee_30s_linear_infinite] whitespace-nowrap">
-                  {[...sponsors, ...sponsors].map((s, i) => (
-                    <span
-                      key={`${s.name}-${i}`}
-                      className="text-accent-foreground/70 text-sm font-bold uppercase tracking-[0.3em] flex items-center gap-12"
-                    >
-                      {s.name}
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
-                    </span>
-                  ))}
-                </div>
-              </div>
-
               {/* Card grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
                 {sponsors.map((s, i) => (

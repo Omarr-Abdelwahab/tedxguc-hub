@@ -156,9 +156,6 @@ const EventDetail = () => {
                       {speaker.talkTitle}
                     </p>
                   )}
-                  <p className="text-xs text-primary mt-1 uppercase tracking-wider">
-                    {speaker.topic}
-                  </p>
                 </div>
               );
             })}

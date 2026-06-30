@@ -354,18 +354,43 @@
       "speakers": [
         {
           "name": "Abdelrahman Ghareeb",
-          "talkTitle": "The Game Of Numbers",
-          "topic": "Engineering & Technology"
+          "talkTitle": "The Game of Numbers",
+          "topic": "Engineer & Data Scientist"
+        },
+        {
+          "name": "Bassem Abdelmalek",
+          "talkTitle": "More Than A Roof: What Children Really Need",
+          "topic": "Development Advocate"
+        },
+        {
+          "name": "Mostafa Kamel",
+          "talkTitle": "The Narrative We Live In",
+          "topic": "Storyteller & Cultural Commentator"
+        },
+        {
+          "name": "Ahmed Samy",
+          "talkTitle": "The Illusion Of One Road And 51 That Prove Otherwise",
+          "topic": "Urban Planner & Visionary Thinker"
         },
         {
           "name": "Aida Shaaban",
-          "talkTitle": "Reading Our Relationship With Food",
-          "topic": "Human Sciences"
+          "talkTitle": "Redefining Our Relationship With Food",
+          "topic": "Nutritionist & Food Culture Advocate"
         },
         {
           "name": "Rami Hamdi",
           "talkTitle": "A Story Called Beauty",
-          "topic": "Arts, Media & Design"
+          "topic": "Artist & Creative Thinker"
+        },
+        {
+          "name": "Mostafa Adel",
+          "talkTitle": "Off Key…On Path",
+          "topic": "Musician & Life Coach"
+        },
+        {
+          "name": "Mostafa Salem",
+          "talkTitle": "من عقدة الخواجة ل عقدة للخواجة",
+          "topic": "Cultural Psychologist"
         }
       ],
       "gallery": [
@@ -815,13 +840,109 @@
       "thumbnail": "https://i.ytimg.com/vi/Ee9iRmGFyvA/maxresdefault.jpg",
       "videoUrl": "https://www.youtube.com/embed/Ee9iRmGFyvA",
       "socialLinks": []
+    },
+    {
+      "id": "31",
+      "title": "The Game of Numbers",
+      "speaker": "Abdelrahman Ghareeb",
+      "speakerBio": "Abdelrahman Ghareeb is an engineer and data scientist passionate about the intersection of mathematics and human behavior. His work explores how numerical patterns shape our decisions and transform industries through technology and innovation.",
+      "topic": "Innovation & Technology",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/wHLcr2Re5pY/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/wHLcr2Re5pY",
+      "socialLinks": []
+    },
+    {
+      "id": "32",
+      "title": "More Than A Roof: What Children Really Need",
+      "speaker": "Bassem Abdelmalek",
+      "speakerBio": "Bassem Abdelmalek is a development advocate and housing specialist dedicated to improving living conditions for vulnerable communities. He believes that beyond physical shelter, children need safe, nurturing environments that support their growth, education, and well-being.",
+      "topic": "Social Impact",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/fgjhVou6-Nc/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/fgjhVou6-Nc",
+      "socialLinks": []
+    },
+    {
+      "id": "33",
+      "title": "The Narrative We Live In",
+      "speaker": "Mostafa Kamel",
+      "speakerBio": "Mostafa Kamel is a storyteller and cultural commentator exploring how the narratives we tell ourselves shape our reality. Through his work, he examines the power of language, perspective, and shared stories in building communities and challenging conventional thinking.",
+      "topic": "Arts & Design",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/m_t4YJrhD-s/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/m_t4YJrhD-s",
+      "socialLinks": []
+    },
+    {
+      "id": "34",
+      "title": "The Illusion Of One Road And 51 That Prove Otherwise",
+      "speaker": "Ahmed Samy",
+      "speakerBio": "Ahmed Samy is a visionary thinker and urban planner challenging conventional approaches to infrastructure and development. He advocates for diverse pathways and inclusive solutions, demonstrating how flexibility and alternative perspectives can unlock new possibilities in modern cities.",
+      "topic": "Science & Health",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/3AE_DOJHgsI/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/3AE_DOJHgsI",
+      "socialLinks": []
+    },
+    {
+      "id": "35",
+      "title": "Redefining Our Relationship With Food",
+      "speaker": "Aida Shaaban",
+      "speakerBio": "Aida Shaaban is a nutritionist and food culture advocate transforming how we think about eating and wellness. She explores the deep connections between food, identity, health, and society, advocating for a more mindful and sustainable relationship with what we consume.",
+      "topic": "Entrepreneurship",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/3bBhxUqmE1g/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/3bBhxUqmE1g",
+      "socialLinks": []
+    },
+    {
+      "id": "36",
+      "title": "A Story Called Beauty",
+      "speaker": "Rami Hamdi",
+      "speakerBio": "Rami Hamdi is an artist and creative thinker who believes beauty is more than aesthetics—it's a language that connects us to meaning, emotion, and our humanity. Through his work, he explores how art and design can inspire transformation and touch hearts.",
+      "topic": "Education",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/L_B1dnoIb_A/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/L_B1dnoIb_A",
+      "socialLinks": []
+    },
+    {
+      "id": "37",
+      "title": "Off Key…On Path",
+      "speaker": "Mostafa Adel",
+      "speakerBio": "Mostafa Adel is a musician and life coach demonstrating that apparent failures and detours can lead to profound personal growth. He believes that being 'off key' doesn't mean you're off course—sometimes the unconventional path is exactly where you need to be.",
+      "topic": "Culture & Society",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/4BDcRS0hM-c/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/4BDcRS0hM-c",
+      "socialLinks": []
+    },
+    {
+      "id": "38",
+      "title": "من عقدة الخواجة ل عقدة للخواجة",
+      "speaker": "Mostafa Salem",
+      "speakerBio": "Mostafa Salem is a cultural psychologist and social commentator exploring identity, heritage, and the psychological patterns that shape societies. His work examines how we break free from limiting beliefs and create new narratives for personal and collective transformation.",
+      "topic": "Innovation & Technology",
+      "year": 2025,
+      "duration": "TBA",
+      "thumbnail": "https://i.ytimg.com/vi/NG1hmuoGW9U/maxresdefault.jpg",
+      "videoUrl": "https://www.youtube.com/embed/NG1hmuoGW9U",
+      "socialLinks": []
     }
   ],
   "upcomingEvent": {
-    "theme": "UPSIDEDOWN",
-    "date": "May 9, 2026",
-    "venue": "GUC Platform, New Cairo",
-    "description": "Ideas that ignite change. TEDxGUC 'upsidedown' will bring together innovators, artists, and thinkers who spark transformation in their communities."
+    "theme": "Coming Soon",
+    "date": "To Be Announced",
+    "venue": "To Be Announced",
+    "description": "Our next event is in the works. Stay tuned for more details as we continue to bring ideas worth spreading to the TEDx stage."
   },
   "upcomingFAQs": [
     {

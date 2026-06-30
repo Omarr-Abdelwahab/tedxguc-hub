@@ -50,7 +50,14 @@ const Events = () => {
     : events
   )
     .slice()
-    .sort((a, b) => b.year - a.year);
+    .sort((a, b) => {
+      // First sort by year descending
+      if (b.year !== a.year) return b.year - a.year;
+      // Then sort by date descending (most recent first)
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    });
 
   return (
     <div className="min-h-screen">
@@ -115,9 +122,7 @@ const Events = () => {
                 >
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     <div>
-                      <p className="text-primary font-semibold text-xs uppercase tracking-[0.2em] mb-2">
-                        {event.season} {event.year}
-                      </p>
+                      
                       <h3 className="text-2xl md:text-3xl font-black text-foreground group-hover:text-primary transition-colors mb-3">
                         {event.theme}
                       </h3>

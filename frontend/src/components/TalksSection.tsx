@@ -161,9 +161,6 @@ const TalksSection = () => {
                       <span className="text-primary-foreground text-xl ml-1">▶</span>
                     </div>
                   </div>
-                  <span className="absolute bottom-3 right-3 bg-accent/80 text-accent-foreground text-xs font-medium px-2 py-1">
-                    {talk.duration}
-                  </span>
                 </div>
                 <div className="pt-4 flex gap-3">
                   <div className="flex-1 min-w-0">
@@ -172,9 +169,6 @@ const TalksSection = () => {
                     </h3>
                     <p className="text-xs text-muted-foreground mt-1">
                       {talk.speaker}
-                    </p>
-                    <p className="text-xs text-muted-foreground/60 mt-0.5">
-                      {talk.topic} · {talk.year}
                     </p>
                   </div>
                   <button
