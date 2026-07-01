@@ -1,10 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TalksSection from "@/components/TalksSection";
+import Seo from "@/components/Seo";
 
 const Talks = () => {
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="Talks"
+        description="Watch TEDxGUC talks from our library of speakers, stories, and ideas worth spreading."
+        path="/talks"
+      />
       <Navbar />
 
       {/* Hero */}

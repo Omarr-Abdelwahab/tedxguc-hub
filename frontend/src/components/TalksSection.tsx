@@ -133,7 +133,7 @@ const TalksSection = () => {
         )}
 
         {errorMessage && (
-          <p className="text-center text-red-500 py-16">{errorMessage}</p>
+          <p className="text-center text-foreground py-16">{errorMessage}</p>
         )}
 
         {!isLoading && !errorMessage && (

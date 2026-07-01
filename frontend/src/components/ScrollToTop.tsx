@@ -6,6 +6,9 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0 });
+    window.requestAnimationFrame(() => {
+      document.getElementById("main-content")?.focus();
+    });
   }, [pathname]);
 
   return null;

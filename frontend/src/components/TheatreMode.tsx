@@ -29,8 +29,9 @@ const TheatreMode = ({ talk, onClose }: TheatreModeProps) => {
         <button
           onClick={onClose}
           className="absolute top-6 right-6 text-accent-foreground/60 hover:text-primary transition-colors"
+          aria-label="Close theatre mode"
         >
-          <X size={28} />
+          <X size={28} aria-hidden="true" />
         </button>
 
         {/* Video */}

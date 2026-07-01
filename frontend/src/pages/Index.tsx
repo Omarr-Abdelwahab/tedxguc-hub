@@ -8,6 +8,7 @@ import { AnimatePresence } from "framer-motion";
 import TheatreMode from "@/components/TheatreMode";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const Index = () => {
   const [talks, setTalks] = useState<Talk[]>([]);
@@ -59,7 +60,31 @@ const Index = () => {
   }, [talks]);
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="Home"
+        description="TEDxGUC brings Ideas Worth Spreading to the German University in Cairo through talks, events, and community-driven ideas."
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Event",
+          name: "TEDxGUC",
+          organizer: {
+            "@type": "Organization",
+            name: "TEDxGUC",
+            url: "https://tedxguc-hub.vercel.app",
+          },
+          location: {
+            "@type": "Place",
+            name: "German University in Cairo",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Cairo",
+              addressCountry: "EG",
+            },
+          },
+        }}
+      />
       <Navbar />
 
       {/* Hero */}
@@ -193,7 +218,7 @@ const Index = () => {
             </h2>
           </div>
           {isLoading && <p className="text-center text-muted-foreground py-10">Loading highlights...</p>}
-          {errorMessage && <p className="text-center text-red-500 py-10">{errorMessage}</p>}
+          {errorMessage && <p className="text-center text-foreground py-10">{errorMessage}</p>}
 
           {!isLoading && !errorMessage && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {highlightTalks.map((talk, i) => (

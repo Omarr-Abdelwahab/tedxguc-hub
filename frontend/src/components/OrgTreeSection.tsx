@@ -59,7 +59,7 @@ const OrgTreeSection = () => {
   if (errorMessage || !tree) {
     return (
       <section className="py-24 bg-secondary">
-        <div className="container mx-auto px-6 text-center text-red-500">{errorMessage || "Organization tree is unavailable."}</div>
+        <div className="container mx-auto px-6 text-center text-foreground">{errorMessage || "Organization tree is unavailable."}</div>
       </section>
     );
   }

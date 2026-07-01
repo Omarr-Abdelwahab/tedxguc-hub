@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/about</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/team</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/talks</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/events</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/upcoming</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/partners</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/contact</loc>
+  </url>
+  <url>
+    <loc>https://tedxguc-hub.vercel.app/nominate</loc>
+  </url>
+</urlset>

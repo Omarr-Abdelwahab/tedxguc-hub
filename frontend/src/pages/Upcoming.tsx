@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const Upcoming = () => {
   const [upcomingEvent, setUpcomingEvent] = useState<UpcomingEvent | null>(null);
@@ -53,7 +54,7 @@ const Upcoming = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen">
+      <div id="main-content" tabIndex={-1} className="min-h-screen">
         <Navbar />
         <div className="pt-32 pb-20 text-center text-muted-foreground">Loading upcoming event...</div>
         <Footer />
@@ -63,16 +64,21 @@ const Upcoming = () => {
 
   if (errorMessage || !upcomingEvent) {
     return (
-      <div className="min-h-screen">
+      <div id="main-content" tabIndex={-1} className="min-h-screen">
         <Navbar />
-        <div className="pt-32 pb-20 text-center text-red-500">{errorMessage || "Upcoming event data is unavailable."}</div>
+        <div className="pt-32 pb-20 text-center text-foreground">{errorMessage || "Upcoming event data is unavailable."}</div>
         <Footer />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="Upcoming Event"
+        description="Find the next TEDxGUC event, schedule, speakers, and frequently asked questions in one place."
+        path="/upcoming"
+      />
       <Navbar />
 
       {/* Hero */}

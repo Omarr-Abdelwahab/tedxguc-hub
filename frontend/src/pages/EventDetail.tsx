@@ -5,6 +5,7 @@ import { fetchEvents, fetchTalks } from "@/lib/api";
 import type { TEDxEvent, Talk } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const normalizeRouteParam = (value?: string) => {
   if (!value) {
@@ -68,7 +69,12 @@ const EventDetail = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen">
+      <div id="main-content" tabIndex={-1} className="min-h-screen">
+        <Seo
+          title="Loading Event"
+          description="Loading TEDxGUC event details."
+          path={eventId ? `/events/${encodeURIComponent(eventId)}` : "/events"}
+        />
         <Navbar />
         <div className="pt-32 pb-20 text-center text-muted-foreground">Loading event...</div>
         <Footer />
@@ -78,7 +84,12 @@ const EventDetail = () => {
 
   if (!event) {
     return (
-      <div className="min-h-screen">
+      <div id="main-content" tabIndex={-1} className="min-h-screen">
+        <Seo
+          title="Event Not Found"
+          description="The requested TEDxGUC event could not be found."
+          path={eventId ? `/events/${encodeURIComponent(eventId)}` : "/events"}
+        />
         <Navbar />
         <div className="pt-32 pb-20 text-center">
           <h1 className="text-4xl font-black text-foreground">Event not found</h1>
@@ -92,7 +103,12 @@ const EventDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title={event.theme}
+        description={event.recap}
+        path={eventId ? `/events/${encodeURIComponent(eventId)}` : "/events"}
+      />
       <Navbar />
 
       {/* Hero */}

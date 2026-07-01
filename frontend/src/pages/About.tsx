@@ -2,10 +2,16 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import Seo from "@/components/Seo";
 
 const About = () => {
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="About"
+        description="Learn what TEDxGUC is, how TEDx works, and why our independently organized event brings bold ideas to Cairo."
+        path="/about"
+      />
       <Navbar />
 
       {/* Hero */}

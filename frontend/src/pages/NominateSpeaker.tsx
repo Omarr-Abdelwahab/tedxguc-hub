@@ -3,6 +3,7 @@ import { Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { submitSpeakerNomination } from "@/lib/api";
+import Seo from "@/components/Seo";
 
 const NominateSpeaker = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -44,7 +45,12 @@ const NominateSpeaker = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="Nominate Speaker"
+        description="Nominate a speaker with an idea worth spreading for the next TEDxGUC event."
+        path="/nominate"
+      />
       <Navbar />
 
       <section className="pt-32 pb-20 bg-accent">
@@ -200,7 +206,7 @@ const NominateSpeaker = () => {
 
                 {errorMessage && (
                   <div className="bg-red-500/10 border border-red-500 rounded-lg p-4">
-                    <p className="text-red-600 text-sm font-semibold">{errorMessage}</p>
+                    <p className="text-foreground text-sm font-semibold">{errorMessage}</p>
                   </div>
                 )}
 

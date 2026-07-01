@@ -70,8 +70,9 @@ const Navbar = () => {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`md:hidden transition-colors text-accent-foreground`}
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
       </nav>

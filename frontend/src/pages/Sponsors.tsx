@@ -5,6 +5,43 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { fetchSponsors } from "@/lib/api";
 import type { Sponsor } from "@/types/content";
+import Seo from "@/components/Seo";
+
+const sponsorInstagramLinks: Record<string, string> = {
+  "Atypical Studios": "https://www.instagram.com/atypicalstudios.co",
+  Mavin: "https://www.instagram.com/mavinwear",
+  Roshd: "https://www.instagram.com/roshd.eg/",
+  Barley: "https://www.instagram.com/by.barely/?hl=en",
+  "The Blanks": "https://www.instagram.com/theblanks.clo/",
+  Curves: "https://www.instagram.com/curves.eg",
+  "V7": "https://www.instagram.com/v7egypt",
+  "ASN Protein Bars": "https://www.instagram.com/asn.egypt/",
+  "Krepe 2000": "https://www.instagram.com/crepe.2000/",
+  Halo: "https://www.instagram.com/halo.snacks",
+  SlvrSkn: "https://www.instagram.com/slvrskncoffee/",
+  ameto: "https://www.instagram.com/ameto.eg",
+  Signal: "https://www.instagram.com/signalegypt/",
+  Noi: "https://www.instagram.com/noi.eg/",
+  Clary: "https://www.instagram.com/claryegypt/",
+  Amorino: "https://www.instagram.com/amorinoegypt",
+  SAG: "https://www.instagram.com/mgsagautomotive/",
+  "ABC Bank": "https://www.instagram.com/bankabc.eg/",
+  Fawry: "https://www.instagram.com/fawrypayments/",
+  Bobaii: "https://www.instagram.com/bobai_suncare/",
+  "Ten Cola": "https://www.instagram.com/tencola10/",
+  "Your PaperShop": "https://www.instagram.com/yourpapershopeg/",
+  "Froot World": "https://www.instagram.com/froot.world/",
+  "Long Chips": "https://www.instagram.com/longchipsegypt/",
+  NoodleStop: "https://www.instagram.com/noodles.stop/",
+  Dijaja: "https://www.instagram.com/dijaja.eg/",
+  "Maine": "https://www.instagram.com/maineegypt/",
+  Kippis: "https://www.instagram.com/kippiseg/",
+  Radiance: "https://www.instagram.com/radiancemedcenter/",
+  "Dawgs & Shake": "https://www.instagram.com/dawgsnshakes.eg/",
+  "20 Grams": "https://www.instagram.com/20grams_eg/",
+  "Munch & Bunch": "https://www.instagram.com/munchandshake/",
+  "Weirdough": "https://www.instagram.com/itsweirdough/",
+};
 
 const Sponsors = () => {
   const [sponsors, setSponsors] = useState<Sponsor[]>([]);
@@ -38,11 +75,16 @@ const Sponsors = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen bg-background text-foreground">
+      <Seo
+        title="Partners"
+        description="Meet the partners and sponsors that help TEDxGUC bring bold ideas to the stage."
+        path="/partners"
+      />
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 bg-accent overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-accent overflow-hidden">
         <div className="container mx-auto px-6 relative">
           <p className="text-primary font-semibold tracking-[0.3em] uppercase text-xs mb-4">
             Ideas worth supporting
@@ -57,10 +99,10 @@ const Sponsors = () => {
       </section>
 
       {/* Partner Grid */}
-      <section className="py-20 bg-accent">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-6 max-w-6xl">
           {isLoading && (
-            <p className="text-center text-accent-foreground/50">Loading partners...</p>
+            <p className="text-center text-muted-foreground">Loading partners...</p>
           )}
           {errorMessage && (
             <p className="text-center text-primary">{errorMessage}</p>
@@ -71,7 +113,7 @@ const Sponsors = () => {
               {sponsors.map((s, i) => (
                 <div
                   key={s.name}
-                  className="group relative border border-white/10 bg-white/[0.02] px-6 py-7 transition-all duration-300 hover:border-primary hover:bg-primary/[0.06]"
+                  className="group relative border-2 border-border bg-card px-6 py-7 transition-colors duration-300 hover:border-primary"
                 >
                   {/* top-left corner tick */}
                   <span className="absolute top-0 left-0 w-3 h-px bg-primary/60 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
@@ -81,9 +123,20 @@ const Sponsors = () => {
                     <span className="text-xs font-bold text-primary/70 tabular-nums leading-none">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="text-base md:text-lg font-semibold text-accent-foreground/90 tracking-tight group-hover:text-primary transition-colors duration-300">
-                      {s.name}
-                    </span>
+                    {sponsorInstagramLinks[s.name] ? (
+                      <a
+                        href={sponsorInstagramLinks[s.name]}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="text-base md:text-lg font-semibold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300"
+                      >
+                        {s.name}
+                      </a>
+                    ) : (
+                      <span className="text-base md:text-lg font-semibold text-foreground tracking-tight group-hover:text-primary transition-colors duration-300">
+                        {s.name}
+                      </span>
+                    )}
                   </div>
                 </div>
               ))}
@@ -93,7 +146,7 @@ const Sponsors = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-accent border-t border-border/50">
+      <section className="py-24 bg-accent border-t border-accent-foreground/10">
         <div className="container mx-auto px-6 max-w-3xl text-center">
           <h2 className="text-2xl md:text-3xl font-black text-accent-foreground tracking-tight mb-4">
             Partner with TEDxGUC

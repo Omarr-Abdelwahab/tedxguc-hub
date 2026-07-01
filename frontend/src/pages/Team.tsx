@@ -1,10 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import OrgTreeSection from "@/components/OrgTreeSection";
+import Seo from "@/components/Seo";
 
 const Team = () => {
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="Team"
+        description="Meet the curators, executives, and creatives who bring TEDxGUC to life."
+        path="/team"
+      />
       <Navbar />
 
       <section className="pt-32 pb-16 bg-accent">

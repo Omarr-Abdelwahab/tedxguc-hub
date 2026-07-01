@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -51,7 +52,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="Contact"
+        description="Get in touch with the TEDxGUC team about partnerships, nominations, volunteering, or general inquiries."
+        path="/contact"
+      />
       <Navbar />
 
       <section className="pt-32 pb-20 bg-accent">
@@ -128,7 +134,7 @@ const Contact = () => {
                 />
               </div>
               {errorMessage && (
-                <p className="text-sm font-medium text-red-500">{errorMessage}</p>
+                <p className="text-sm font-medium text-foreground">{errorMessage}</p>
               )}
               <button
                 type="submit"

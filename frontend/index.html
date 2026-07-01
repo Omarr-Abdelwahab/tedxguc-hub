@@ -3,23 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" />
     <!-- TODO: Set the document title to the name of your application -->
     <title>TEDxGUC</title>
-    <meta name="description" content="TEDxGUC - Ideas Worth Spreading" />
+    <meta name="description" content="TEDxGUC brings Ideas Worth Spreading to the German University in Cairo — inspiring talks, bold ideas, and next-generation thinkers." />
     <meta name="author" content="TEDxGUC Team" />
 
     <!-- TODO: Update og:title to match your application name -->
     <meta property="og:title" content="TEDxGUC" />
-    <meta property="og:description" content="TEDxGUC - Ideas Worth Spreading" />
+    <meta property="og:description" content="TEDxGUC brings Ideas Worth Spreading to the German University in Cairo — inspiring talks, bold ideas, and next-generation thinkers." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/public/robots.txt" />
+    <meta property="og:locale" content="en_US" />
+    <!-- TODO: replace with a dedicated OG image asset if the design team provides one -->
+    <meta property="og:image" content="https://tedxguc-hub.vercel.app/images/partnerships.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- TODO: add favicon.ico to /public/ and link it here when the asset is available -->
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@TEDxGUC" />
-    <meta name="twitter:image" content="/public/robots.txt" />
+    <meta name="twitter:image" content="https://tedxguc-hub.vercel.app/images/partnerships.jpeg" />
   </head>
 
   <body>
+    <a
+      href="#main-content"
+      class="skip-link"
+      style="position: absolute; top: -100%; left: 0; background: #000; color: #fff; padding: 0.5rem 1rem; z-index: 9999;"
+    >
+      Skip to main content
+    </a>
+    <noscript>
+      <div style="font-family: sans-serif; padding: 2rem; text-align: center;">
+        <h1>TEDxGUC</h1>
+        <p>Ideas Worth Spreading — German University in Cairo.</p>
+        <p>
+          This site requires JavaScript. Please enable it or visit us on
+          <a href="https://www.instagram.com/tedxguc">Instagram</a>.
+        </p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

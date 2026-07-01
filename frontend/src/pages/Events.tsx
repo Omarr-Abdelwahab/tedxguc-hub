@@ -6,6 +6,7 @@ import { fetchEvents } from "@/lib/api";
 import type { TEDxEvent } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const Events = () => {
   const [events, setEvents] = useState<TEDxEvent[]>([]);
@@ -60,7 +61,12 @@ const Events = () => {
     });
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title="Events"
+        description="Browse the TEDxGUC archive of past events, themes, and talks from the stage at the German University in Cairo."
+        path="/events"
+      />
       <Navbar />
 
       <section className="pt-32 pb-20 bg-accent">
@@ -105,7 +111,7 @@ const Events = () => {
 
           {/* Event cards */}
           {isLoading && <p className="text-center text-muted-foreground py-10">Loading events...</p>}
-          {errorMessage && <p className="text-center text-red-500 py-10">{errorMessage}</p>}
+          {errorMessage && <p className="text-center text-foreground py-10">{errorMessage}</p>}
 
           {!isLoading && !errorMessage && <div className="space-y-8 max-w-4xl">
             {filtered.map((event, i) => (

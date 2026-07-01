@@ -5,6 +5,7 @@ import { fetchTalks } from "@/lib/api";
 import type { Talk } from "@/types/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const TalkDetail = () => {
   const { talkId } = useParams();
@@ -48,7 +49,12 @@ const TalkDetail = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen">
+      <div id="main-content" tabIndex={-1} className="min-h-screen">
+        <Seo
+          title="Loading Talk"
+          description="Loading TEDxGUC talk details."
+          path={talkId ? `/talks/${encodeURIComponent(talkId)}` : "/talks"}
+        />
         <Navbar />
         <div className="pt-32 pb-20 text-center text-muted-foreground">Loading talk...</div>
         <Footer />
@@ -58,7 +64,12 @@ const TalkDetail = () => {
 
   if (!talk) {
     return (
-      <div className="min-h-screen">
+      <div id="main-content" tabIndex={-1} className="min-h-screen">
+        <Seo
+          title="Talk Not Found"
+          description="The requested TEDxGUC talk could not be found."
+          path={talkId ? `/talks/${encodeURIComponent(talkId)}` : "/talks"}
+        />
         <Navbar />
         <div className="pt-32 pb-20 text-center">
           <h1 className="text-4xl font-black text-foreground">Talk not found</h1>
@@ -72,7 +83,12 @@ const TalkDetail = () => {
   }
 
   return (
-    <div className="min-h-screen">
+    <div id="main-content" tabIndex={-1} className="min-h-screen">
+      <Seo
+        title={talk.title}
+        description={talk.speakerBio}
+        path={talkId ? `/talks/${encodeURIComponent(talkId)}` : "/talks"}
+      />
       <Navbar />
 
       {/* Hero */}
@@ -112,7 +128,7 @@ const TalkDetail = () => {
       {/* Speaker Info */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-6 max-w-3xl">
-          <h1 className="text-lg font-bold text-red-600 uppercase tracking-widest mb-4">Speaker</h1>
+          <h1 className="text-lg font-bold text-foreground uppercase tracking-widest mb-4">Speaker</h1>
           <h3 className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight">{talk.speaker}</h3>
           <p className="text-foreground/70 leading-relaxed text-base mb-8">{talk.speakerBio}</p>
           
@@ -124,7 +140,7 @@ const TalkDetail = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-bold text-red-600 hover:text-red-700 transition-colors uppercase tracking-wide"
+                  className="text-sm font-bold text-foreground/70 hover:text-primary transition-colors uppercase tracking-wide"
                 >
                   {link.platform}
                 </a>
