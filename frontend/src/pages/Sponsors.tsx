@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Handshake, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { fetchSponsors } from "@/lib/api";
 import type { Sponsor } from "@/types/content";
 
@@ -43,18 +42,7 @@ const Sponsors = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 bg-accent overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.07]">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at 1px 1px, hsl(var(--accent-foreground)) 1px, transparent 0)",
-              backgroundSize: "32px 32px",
-            }}
-          />
-        </div>
-        <div className="absolute -left-20 top-1/2 w-1 h-32 bg-primary" />
+      <section className="relative pt-32 pb-16 bg-accent overflow-hidden">
         <div className="container mx-auto px-6 relative">
           <p className="text-primary font-semibold tracking-[0.3em] uppercase text-xs mb-4">
             Ideas worth supporting
@@ -63,71 +51,44 @@ const Sponsors = () => {
             Our <span className="text-primary">Partners</span>
           </h1>
           <p className="text-accent-foreground/60 mt-6 max-w-xl text-base md:text-lg leading-relaxed">
-            The organizations that make TEDxGUC possible — standing alongside us
-            to amplify ideas worth spreading.
+            The organizations that make TEDxGUC possible.
           </p>
         </div>
       </section>
 
-      {/* Grid */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6 max-w-6xl">
+      {/* Minimal Partner List */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-6 max-w-5xl">
           {isLoading && (
-            <p className="text-center text-muted-foreground py-10">
-              Loading partners...
-            </p>
+            <p className="text-center text-muted-foreground">Loading partners...</p>
           )}
           {errorMessage && (
-            <p className="text-center text-destructive py-10">{errorMessage}</p>
+            <p className="text-center text-destructive">{errorMessage}</p>
           )}
 
           {!isLoading && !errorMessage && (
-            <>
-              {/* Card grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                {sponsors.map((s, i) => (
-                  <motion.div
-                    key={s.name}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.04 }}
-                    className="group relative bg-card border-2 border-border aspect-[4/3] flex flex-col items-center justify-center p-6 overflow-hidden transition-all duration-300 hover:border-primary hover:-translate-y-1"
-                  >
-                    {/* Corner ticks */}
-                    <span className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                    <div className="relative w-16 h-16 mb-4 flex items-center justify-center">
-                      <span className="absolute inset-0 border-2 border-primary/20 rotate-45 group-hover:rotate-[55deg] transition-transform duration-500" />
-                      <span className="relative text-3xl font-black text-primary">
-                        {s.name[0]}
-                      </span>
-                    </div>
-                    <p className="text-sm font-bold text-foreground text-center leading-tight tracking-wide">
-                      {s.name}
-                    </p>
-                    <span className="mt-3 h-[2px] w-6 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  </motion.div>
-                ))}
-              </div>
-            </>
+            <div className="columns-2 sm:columns-3 md:columns-4 gap-x-10 gap-y-4">
+              {sponsors.map((s) => (
+                <div
+                  key={s.name}
+                  className="break-inside-avoid py-2 text-sm md:text-base font-medium text-foreground/80 hover:text-primary transition-colors cursor-default"
+                >
+                  {s.name}
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-accent">
+      <section className="py-20 bg-accent border-t border-border/50">
         <div className="container mx-auto px-6 max-w-3xl text-center">
-          <Handshake size={40} className="text-primary mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-black text-accent-foreground tracking-tight mb-4">
+          <h2 className="text-2xl md:text-3xl font-black text-accent-foreground tracking-tight mb-4">
             Partner with TEDxGUC
           </h2>
           <p className="text-accent-foreground/60 mb-8 max-w-xl mx-auto">
-            Help us bring bold ideas to the stage. Join a community that believes
-            in the power of conversation to spark change.
+            Help us bring bold ideas to the stage.
           </p>
           <Link
             to="/contact"
