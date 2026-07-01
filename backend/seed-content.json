@@ -559,22 +559,43 @@
     }
   },
   "sponsors": [
-    {
-      "name": "TED",
-      "tier": "License Partner"
-    },
-    {
-      "name": "GUC",
-      "tier": "Host University"
-    },
-    {
-      "name": "V7",
-      "tier": "Gold Sponsor"
-    },
-    {
-      "name": "Crepe 2000",
-      "tier": "Silver Sponsor"
-    }
+    { "name": "Weirdough", "tier": "" },
+    { "name": "Atypical Studios", "tier": "" },
+    { "name": "Mavin", "tier": "" },
+    { "name": "Roshd", "tier": "" },
+    { "name": "Barley", "tier": "" },
+    { "name": "The Blanks", "tier": "" },
+    { "name": "Curves", "tier": "" },
+    { "name": "Bobboo", "tier": "" },
+    { "name": "Funday", "tier": "" },
+    { "name": "V7", "tier": "" },
+    { "name": "ASN Protein Bars", "tier": "" },
+    { "name": "Krepe 2000", "tier": "" },
+    { "name": "Halo", "tier": "" },
+    { "name": "SlvrSkn", "tier": "" },
+    { "name": "ameto", "tier": "" },
+    { "name": "Signal", "tier": "" },
+    { "name": "Noi", "tier": "" },
+    { "name": "Clary", "tier": "" },
+    { "name": "Dolicies", "tier": "" },
+    { "name": "Amorino", "tier": "" },
+    { "name": "SAG", "tier": "" },
+    { "name": "ABC Bank", "tier": "" },
+    { "name": "Fawry", "tier": "" },
+    { "name": "Bobaii", "tier": "" },
+    { "name": "Ten Cola", "tier": "" },
+    { "name": "Your PaperShop", "tier": "" },
+    { "name": "Froot World", "tier": "" },
+    { "name": "Long Chips", "tier": "" },
+    { "name": "NoodleStop", "tier": "" },
+    { "name": "Dijaja", "tier": "" },
+    { "name": "Maine", "tier": "" },
+    { "name": "Kippis", "tier": "" },
+    { "name": "Radiance", "tier": "" },
+    { "name": "Dawgs & Shake", "tier": "" },
+    { "name": "20 Grams", "tier": "" },
+    { "name": "Munch & Bunch", "tier": "" },
+    { "name": "Stroop Waffle", "tier": "" }
   ],
   "talks": [
     {
