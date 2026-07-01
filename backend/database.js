@@ -489,13 +489,15 @@ const createSupabaseStore = async () => {
     }));
 
   if (contentItems.length > 0) {
-    await upsertRows("content_items", contentItems, "key");
+    try {
+      await upsertRows("content_items", contentItems, "key");
+    } catch (error) {
+      console.warn("[Database] Supabase seed sync failed, falling back to bundled content:", error.message);
+    }
   }
 
-  const remoteStore = {
-    kind: "supabase",
-    databaseLabel: supabaseUrl,
-    getContentItem: async (key) => {
+  const readContentItem = async (key) => {
+    try {
       const rows = await getRows("content_items", {
         select: "payload",
         key: `eq.${key}`,
@@ -503,8 +505,14 @@ const createSupabaseStore = async () => {
       });
 
       return rows[0] ? parsePayload(rows[0].payload) : null;
-    },
-    getAllContent: async () => {
+    } catch (error) {
+      console.warn(`[Database] Supabase read failed for content_items.${key}, using bundled fallback:`, error.message);
+      return null;
+    }
+  };
+
+  const readAllContentItems = async () => {
+    try {
       const rows = await getRows("content_items", {
         select: "key,payload",
         order: "key.asc",
@@ -514,7 +522,17 @@ const createSupabaseStore = async () => {
         accumulator[row.key] = parsePayload(row.payload);
         return accumulator;
       }, {});
-    },
+    } catch (error) {
+      console.warn("[Database] Supabase read failed for content_items, using bundled fallback:", error.message);
+      return { ...contentEntries };
+    }
+  };
+
+  const remoteStore = {
+    kind: "supabase",
+    databaseLabel: supabaseUrl,
+    getContentItem: async (key) => (await readContentItem(key)) || contentEntries[key] || null,
+    getAllContent: async () => readAllContentItems(),
     getContactSubjects: async () => (await remoteStore.getContentItem("contactSubjects")) || siteContent.contactSubjects,
     getTalks: async () => (await remoteStore.getContentItem("talks")) || siteContent.talks || [],
     getEvents: async () => (await remoteStore.getContentItem("events")) || siteContent.events || [],
