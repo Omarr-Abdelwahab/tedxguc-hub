@@ -3,11 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "db:reset": "node -e \"import('node:fs').then(fs=>{const p='data/tedxguc.sqlite'; if(fs.existsSync(p)){fs.unlinkSync(p); console.log('Deleted', p);} else {console.log('No database file found.');}})\"",
+    "db:reset": "node scripts/reset-db.js",
     "db:export": "node ../scripts/export-db-to-json.js",
     "dev": "node index.js",
     "start": "node index.js",
-    "test": "node --test"
+    "test": "node --test",
+    "refresh-data": "npm run db:reset && npm run dev"
   },
   "dependencies": {
     "nodemailer": "^6.10.0"
@@ -17,9 +18,5 @@
   },
   "engines": {
     "node": "20.x"
-  },
-
-    "refresh-data": "npm run db:reset && npm run dev"
-  
- 
+  }
 }

@@ -415,7 +415,6 @@
       "imageUrl": "/images/chairman.jpeg",
       "description": "Leading TEDxGUC into 2026 with a renewed vision for cross-disciplinary dialogue and community impact.",
       "committeeDescription": "The Chairman's office sets the strategic direction for the entire TEDxGUC organization, overseeing all divisions and maintaining TED licensing standards.",
-      "memberBio": "Kareem is an accomplished operations strategist with a track record of scaling events and organizations to greater impact. His leadership philosophy combines operational excellence with empathy, creating environments where innovation thrives and teams feel valued and empowered.",
       "children": [
         {
           "id": "curator-talks",
@@ -425,7 +424,6 @@
           "imageUrl": "/images/talk-curator.jpeg",
           "description": "Curating a diverse lineup of speakers who challenge conventional thinking.",
           "committeeDescription": "The Talks division scouts, selects, and develops speakers to deliver compelling, well-researched talks that align with the season's theme.",
-          "memberBio": "Moaz is a passionate curator with a keen ear for compelling narratives and transformative ideas. He believes every story has power, and his mission is to discover speakers whose unique perspectives can shift how people see the world and their place in it.",
           "children": [
             {
               "id": "exec-coaching",
@@ -434,8 +432,7 @@
               "level": 3,
               "imageUrl": "/images/coaching.jpeg",
               "description": "Guiding speakers through intensive coaching.",
-              "committeeDescription": "Coaching works closely with each speaker to refine their narrative arc, improve delivery, and build confidence for the stage.",
-              "memberBio": "Ammar is a communication coach and performance strategist who has worked with hundreds of speakers across diverse fields. He excels at identifying a speaker's authentic voice and helping them communicate their ideas with clarity, passion, and impact."
+              "committeeDescription": "The Coaching Team is the core of the TEDxGUC stage performance. The team works with speakers after being scouted by the R&P team to write their scripts, transforming scattered thoughts into an Idea Worth Spreading. Beyond writing scripts, you act as a mentor for their confidence, refining their tone and body language to ensure that when they step into the red circle, they are stage-ready to deliver a powerful idea to the audience."
             },
             {
               "id": "exec-research",
@@ -444,8 +441,7 @@
               "level": 3,
               "imageUrl": "/images/R&P.jpeg",
               "description": "Researching cutting-edge topics and managing production.",
-              "committeeDescription": "Research & Production ensures every talk is backed by credible sources and produced with professional-grade quality.",
-              "memberBio": "Abdulrahman is a meticulous researcher and producer who brings talks to life through rigorous research and creative production direction. His commitment to authenticity and quality ensures that every idea presented on stage is both intellectually sound and emotionally compelling."
+              "committeeDescription": "Research and Production (R&P) is the team that searches for unique speakers, reach out to them, introduce them to TEDxGUC, and guide them through the whole journey. They help craft impactful production slides, stay in constant contact with speakers, and manage everything backstage on event day. In short, R&P shapes talks that inspire the audience and leave a lasting impact. Think of a film director choosing the perfect cast for his upcoming movie, that is exactly where your role begins."
             }
           ]
         },
@@ -457,7 +453,6 @@
           "imageUrl": "/images/operations.jpeg",
           "description": "Ensuring flawless event execution from planning to post-event wrap-up.",
           "committeeDescription": "Operations coordinates all logistical elements of the event — from venue booking and vendor contracts to day-of execution and post-event teardown.",
-          "memberBio": "Kareem is a logistics expert with an impressive portfolio of large-scale events executed flawlessly. He combines strategic planning with hands-on leadership, ensuring every operational detail supports the overall vision while remaining flexible to adapt to unexpected challenges.",
           "children": [
             {
               "id": "exec-events",
@@ -466,8 +461,7 @@
               "level": 3,
               "imageUrl": "/images/events management.jpeg",
               "description": "Coordinating all event logistics and attendee experience.",
-              "committeeDescription": "Events Management designs the full attendee journey from registration to closing, including interactive experiences and networking sessions.",
-              "memberBio": "Laila is an experiential event designer who creates memorable moments that leave lasting impressions. She approaches every event detail as an opportunity to delight attendees and foster meaningful connections among participants."
+              "committeeDescription": "Events Management (EM) is the powerhouse team responsible for bringing every TEDxGUC experience to life from start to finish. The team handles everything from choosing the venue, coordinating with agencies, negotiating contracts, and supervising stage preparation, to making sure every detail is executed smoothly and professionally. Our yearly work includes two major events: the Salon Event in May and the Main Event in September. In addition to these flagship events, the team also manages tasks such as reserving halls and preparing smaller internal events, including the Ramadan Iftar."
             },
             {
               "id": "exec-partnerships",
@@ -476,8 +470,7 @@
               "level": 3,
               "imageUrl": "/images/partnerships.jpeg",
               "description": "Securing strategic partnerships and sponsor relations.",
-              "committeeDescription": "Partnerships builds and maintains relationships with corporate sponsors, media partners, and community organizations.",
-              "memberBio": "Hamza is a relationship builder with strong business acumen and diplomatic skills. He understands that great partnerships are built on mutual value and trust, and he works diligently to create win-win collaborations that elevate TEDxGUC and benefit all stakeholders."
+              "committeeDescription": "In Partnerships team our role is to bring in the partners who fund and empower every TEDxGUC event. As the Partnerships team, we build strong relationships with brands, secure collaborations that support our vision, and ensure each event has the resources it needs to grow. We don't just bring sponsors – we create meaningful connections, and represent TEDxGUC with professionalism and passion. For associates, this is your chance to learn real negotiation skills, manage deals from start to finish, and leave a direct impact on the success of every TEDxGUC experience."
             },
             {
               "id": "exec-logistics",
@@ -486,8 +479,7 @@
               "level": 3,
               "imageUrl": "/images/logistics.jpeg",
               "description": "Managing all on-ground logistics and vendor coordination.",
-              "committeeDescription": "Logistics handles the physical infrastructure — equipment, catering, transportation, signage, and venue preparation.",
-              "memberBio": "Abdallah is a logistics coordinator with a natural talent for solving complex supply chain puzzles. His meticulous planning and vendor management ensure that all physical elements of the event are perfectly coordinated to create a seamless attendee experience."
+              "committeeDescription": "The Logistics Team is the central support system of TEDxGUC. We are responsible for providing every team with the materials, tools, and resources they need to deliver their work efficiently. From preparing supplies, managing inventory, handling transportation, and distributing badges, to ensuring all operational materials are available on time, logistics makes sure no team is ever held back. Our role includes coordinating all physical resources for events, booth days, rehearsals, meetings, and setups. Whether it's printed material, stationery, equipment, props, or on-ground support, the Logistics Team ensures everything is ready, delivered, and organized."
             }
           ]
         },
@@ -499,27 +491,24 @@
           "imageUrl": "/images/OD.jpeg",
           "description": "Building a stronger, more connected team culture.",
           "committeeDescription": "Organizational Development focuses on internal team health — running training workshops, mentorship programs, and culture-building initiatives.",
-          "memberBio": "Nour is an organizational development specialist passionate about creating inclusive, thriving work cultures. She believes that the strength of an organization is directly reflected in the wellbeing and growth of its team members.",
           "children": [
             {
               "id": "exec-assoc-dev",
-              "title": "Associate Development",
+              "title": "Associates Development",
               "name": "Rohanda Ahmed",
               "level": 3,
               "imageUrl": "/images/associate development.jpeg",
               "description": "Creating growth opportunities and mentorship programs.",
-              "committeeDescription": "Associate Development designs onboarding tracks, skill-building workshops, and career mentorship for all new associates.",
-              "memberBio": "Rohanda is a talent development specialist who sees potential in every team member and creates pathways for growth and excellence. Her mentorship programs are known for transforming first-time volunteers into confident leaders."
+              "committeeDescription": "The Associates Development (AD) Team is the backbone of TEDxGUC’s internal culture. AD ensures that every associate feels supported, connected, and empowered throughout the year. The team creates a collaborative, growth-driven environment through: workshops, bonding activities, clear guidance, and consistent follow-ups by tracking attendance and performance. AD strengthens unity across all divisions, builds meaningful internal bonds, and provides associates with the tools and opportunities to learn, grow, and shine in their own way."
             },
             {
               "id": "exec-assoc-exp",
-              "title": "Associate Experience",
+              "title": "Associates Experience",
               "name": "Abdullah Abosamra",
               "level": 3,
               "imageUrl": "/images/Associate experience.jpeg",
               "description": "Designing engaging team experiences and well-being initiatives.",
-              "committeeDescription": "Associate Experience ensures every team member feels valued through social events, recognition programs, and well-being support.",
-              "memberBio": "Abdullah is a well-being advocate and event creator who designs meaningful experiences that strengthen team bonds and celebrate individual contributions. He believes that a happy team is a productive team."
+              "committeeDescription": "Associates Experience (AE) is the team that brings TEDxGUC to life. It’s built as the soul of the organization. We’re the ones responsible for the vibe, the atmosphere, and the feeling of being part of something bigger than yourself. Through outings, internal events, bonding activations, and trips, our job is to make sure every associate feels included, appreciated, and genuinely happy to be here. AE makes the journey memorable. We keep the spirit high, the bonds strong, and the environment always alive."
             }
           ]
         },
@@ -531,17 +520,15 @@
           "imageUrl": "/images/MC.jpeg",
           "description": "Amplifying TEDxGUC's reach through innovative marketing strategies.",
           "committeeDescription": "Marketing & Coordination drives brand awareness, manages social channels, and creates integrated campaigns to engage the TEDxGUC community.",
-          "memberBio": "Laila is a forward-thinking marketing leader with expertise in digital strategy and community engagement. She crafts compelling brand narratives that resonate across platforms and creates campaigns that spark conversation and drive meaningful audience connection.",
           "children": [
             {
               "id": "exec-media",
-              "title": "Media & Design",
+              "title": "Media and Design",
               "name": "Farida Sabrah",
               "level": 3,
               "imageUrl": "/images/media and design.jpeg",
               "description": "Producing visual storytelling content across all platforms.",
-              "committeeDescription": "Media & Design creates the visual identity of TEDxGUC — social media graphics, event branding, video production, and stage visuals.",
-              "memberBio": "Farida is a multimedia artist and designer with a gift for translating complex ideas into stunning visual narratives. Her creative work consistently elevates the TEDxGUC brand and captivates audiences across all touchpoints."
+              "committeeDescription": "Media and Design (MD) is the visual backbone of TEDxGUC, responsible for bringing ideas to life through bold and meaningful visuals. The team designs everything from banners and social media posts to on-ground materials that shape how the audience sees and recognizes the identity of TEDxGUC. By transforming concepts into compelling designs, the team ensures that every message is visually clear, consistent, and impactful. Joining Media and Design means turning creativity into purpose—using design to support ideas worth spreading and making every detail count."
             },
             {
               "id": "exec-campaigns",
@@ -550,8 +537,7 @@
               "level": 3,
               "imageUrl": "/images/CC.jpeg",
               "description": "Crafting compelling narratives and managing multi-channel campaigns.",
-              "committeeDescription": "Campaigns & Copywriting develops the voice of TEDxGUC — from taglines and social captions to email newsletters and press releases.",
-              "memberBio": "Malak is a talented copywriter and campaign strategist who brings the TEDxGUC message to life through compelling storytelling. Her work balances creative expression with strategic thinking to maximize impact and engagement."
+              "committeeDescription": "Campaigns and Copywriting (CC) is the creative link between what happens behind the scenes and how the audience experiences TEDxGUC. The team transforms ideas, moments, and hard work into stories that engage, inspire, and connect with our audience. From crafting campaigns to writing impactful posts and producing content for social media, this team shapes the voice, image, and presence of TEDxGUC. Joining Campaigns and Copywriting means being at the forefront of spreading ideas worth spreading, using creativity, strategy, and storytelling to make every message meaningful and every moment visible."
             }
           ]
         }

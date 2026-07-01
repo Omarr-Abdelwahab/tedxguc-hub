@@ -52,7 +52,7 @@ const syncLocalDatabase = async (seedContent, keys) => {
       updated_at = excluded.updated_at
   `);
 
-  const selectedKeys = keys.length > 0 ? keys : ["talks", "events"];
+  const selectedKeys = keys.length > 0 ? keys : Object.keys(seedContent);
   const updatedAt = new Date().toISOString();
 
   for (const key of selectedKeys) {

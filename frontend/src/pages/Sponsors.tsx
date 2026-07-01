@@ -120,9 +120,6 @@ const Sponsors = () => {
                   <span className="absolute top-0 left-0 h-3 w-px bg-primary/60 origin-top scale-y-0 transition-transform duration-300 group-hover:scale-y-100" />
 
                   <div className="flex items-center gap-4">
-                    <span className="text-xs font-bold text-primary/70 tabular-nums leading-none">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
                     {sponsorInstagramLinks[s.name] ? (
                       <a
                         href={sponsorInstagramLinks[s.name]}

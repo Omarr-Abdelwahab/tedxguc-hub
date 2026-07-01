@@ -267,14 +267,22 @@ const createLocalStore = async () => {
       updated_at = excluded.updated_at
   `);
 
-  const currentSeedSignature = getSeedContentSignature();
-  const storedSeedSignature = getSeedSignature.get()?.signature || null;
-  const shouldRefreshSeed = isDatabaseEmpty(db) || storedSeedSignature !== currentSeedSignature;
+  const refreshSeedIfNeeded = () => {
+    const currentSeedSignature = getSeedContentSignature();
+    const storedSeedSignature = getSeedSignature.get()?.signature || null;
+    const shouldRefreshSeed = isDatabaseEmpty(db) || storedSeedSignature !== currentSeedSignature;
 
-  if (shouldRefreshSeed) {
+    if (!shouldRefreshSeed) {
+      return false;
+    }
+
     console.log("[Database] Refreshing content_items from seed-content.json...");
     seedDatabaseFromContent(db, upsertContentItem, clearContentItems, setSeedSignature);
-  } else {
+
+    return true;
+  };
+
+  if (!refreshSeedIfNeeded()) {
     console.log("[Database] Seed signature matches, skipping content refresh");
   }
 
@@ -302,28 +310,49 @@ const createLocalStore = async () => {
     kind: "local",
     databaseLabel: isVercel ? "/tmp/database.sqlite (ephemeral)" : (existsSync(dbPath) ? dbPath : null),
     getContentItem: async (key) => {
+      refreshSeedIfNeeded();
       const row = getContentRow.get(key);
       return row ? parsePayload(row.payload) : null;
     },
     getAllContent: async () => {
+      refreshSeedIfNeeded();
       const rows = getAllContentRows.all();
       return rows.reduce((accumulator, row) => {
         accumulator[row.key] = parsePayload(row.payload);
         return accumulator;
       }, {});
     },
-    getContactSubjects: async () => (await localStore.getContentItem("contactSubjects")) || siteContent.contactSubjects,
-    getTalks: async () => (await localStore.getContentItem("talks")) || [],
-    getEvents: async () => (await localStore.getContentItem("events")) || [],
+    getContactSubjects: async () => {
+      refreshSeedIfNeeded();
+      return (await localStore.getContentItem("contactSubjects")) || siteContent.contactSubjects;
+    },
+    getTalks: async () => {
+      refreshSeedIfNeeded();
+      return (await localStore.getContentItem("talks")) || [];
+    },
+    getEvents: async () => {
+      refreshSeedIfNeeded();
+      return (await localStore.getContentItem("events")) || [];
+    },
     getEventById: async (eventId) => (await localStore.getEvents()).find((event) => event.id === eventId) || null,
-    getOrgTreesBySeason: async () => (await localStore.getContentItem("orgTreesBySeason")) || {},
-    getSponsors: async () => (await localStore.getContentItem("sponsors")) || [],
-    getUpcomingContent: async () => ({
-      upcomingEvent: await localStore.getContentItem("upcomingEvent"),
-      upcomingSchedule: (await localStore.getContentItem("upcomingSchedule")) || [],
-      upcomingFAQs: (await localStore.getContentItem("upcomingFAQs")) || [],
-      upcomingSpeakers: (await localStore.getContentItem("upcomingSpeakers")) || [],
-    }),
+    getOrgTreesBySeason: async () => {
+      refreshSeedIfNeeded();
+      return (await localStore.getContentItem("orgTreesBySeason")) || {};
+    },
+    getSponsors: async () => {
+      refreshSeedIfNeeded();
+      return (await localStore.getContentItem("sponsors")) || [];
+    },
+    getUpcomingContent: async () => {
+      refreshSeedIfNeeded();
+
+      return {
+        upcomingEvent: await localStore.getContentItem("upcomingEvent"),
+        upcomingSchedule: (await localStore.getContentItem("upcomingSchedule")) || [],
+        upcomingFAQs: (await localStore.getContentItem("upcomingFAQs")) || [],
+        upcomingSpeakers: (await localStore.getContentItem("upcomingSpeakers")) || [],
+      };
+    },
     addContactSubmission: async ({ name, email, subject, message }) => {
       const submission = {
         id: `contact-${randomUUID()}`,

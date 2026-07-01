@@ -34,10 +34,12 @@ const __dirname = path.dirname(__filename);
 const PORT = Number(process.env.PORT || 3001);
 const HOST = process.env.HOST || "0.0.0.0";
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
+const isProduction = Boolean(process.env.NODE_ENV === "production" || process.env.VERCEL);
 const frontendDir = path.join(__dirname, "..", "frontend");
 const distDir = path.join(frontendDir, "dist");
 const publicDir = path.join(frontendDir, "public");
 const CORS_ALLOW_HEADERS = "Content-Type,Authorization,x-admin-token";
+const getApiCacheControl = () => (isProduction ? "public, max-age=300, stale-while-revalidate=600" : "no-store");
 
 const sendJson = (res, statusCode, payload) => {
   res.writeHead(statusCode, {
@@ -245,12 +247,12 @@ export const requestHandler = async (req, res) => {
         brand: "TEDxGUC",
         waitlistLabel: "Join Waitlist",
         newsletterEmailEnabled: isMailerConfigured(),
-      }, "public, max-age=300, stale-while-revalidate=600");
+      }, getApiCacheControl());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/content") {
-      sendJsonCached(res, 200, await getAllContent(), "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, await getAllContent(), getApiCacheControl());
       return;
     }
 
@@ -281,22 +283,22 @@ export const requestHandler = async (req, res) => {
         return;
       }
 
-      sendJsonCached(res, 200, { key: contentKey, data: content }, "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, { key: contentKey, data: content }, getApiCacheControl());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/talks") {
-      sendJsonCached(res, 200, { talks: await getTalks() }, "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, { talks: await getTalks() }, getApiCacheControl());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/events") {
-      sendJsonCached(res, 200, { events: await getEvents() }, "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, { events: await getEvents() }, getApiCacheControl());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/sponsors") {
-      sendJsonCached(res, 200, { sponsors: await getSponsors() }, "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, { sponsors: await getSponsors() }, getApiCacheControl());
       return;
     }
 
@@ -309,17 +311,17 @@ export const requestHandler = async (req, res) => {
         return;
       }
 
-      sendJsonCached(res, 200, { event }, "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, { event }, getApiCacheControl());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/org-trees") {
-      sendJsonCached(res, 200, { orgTreesBySeason: await getOrgTreesBySeason() }, "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, { orgTreesBySeason: await getOrgTreesBySeason() }, getApiCacheControl());
       return;
     }
 
     if (req.method === "GET" && requestUrl.pathname === "/api/upcoming") {
-      sendJsonCached(res, 200, await getUpcomingContent(), "public, max-age=300, stale-while-revalidate=600");
+      sendJsonCached(res, 200, await getUpcomingContent(), getApiCacheControl());
       return;
     }
 
